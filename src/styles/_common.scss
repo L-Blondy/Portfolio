@@ -1,0 +1,30 @@
+@import "./home.scss";
+
+*,
+*::before,
+*::after {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: Exo
+}
+
+section {
+   height: 100vh;
+
+   .works {
+      background: yellow;
+   }
+
+   .profile {
+      background: green;
+   }
+
+   .resume {
+      background: red;
+   }
+
+   .contact {
+      background: blue;
+   }
+}

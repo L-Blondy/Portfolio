@@ -1,0 +1,51 @@
+@import "./_variables.scss";
+
+.home {
+   @include flex-center;
+   position: relative;
+   height: 100vh;
+   width: 100%;
+   overflow: hidden;
+
+   &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 169, 149, 0.05);
+   }
+
+   .bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-height: 100%;
+      z-index: -1;
+   }
+}
+
+.navbar {
+   @include flex-center;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1;
+   height: 80px;
+
+   .navlinks {
+      @include flex-center;
+      list-style: none;
+
+      &-link {
+         text-decoration: none;
+         color: $clr-font-light;
+         text-transform: uppercase;
+         padding: 0.5rem 1rem;
+         margin: 0 calc(2vw);
+      }
+   }
+}
