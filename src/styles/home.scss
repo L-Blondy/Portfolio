@@ -2,6 +2,8 @@
 
 .home {
    @include flex-center;
+   flex-direction: column;
+   justify-content: space-between;
    position: relative;
    height: 100vh;
    width: 100%;
@@ -29,7 +31,6 @@
 
 .navbar {
    @include flex-center;
-   position: absolute;
    top: 0;
    left: 0;
    width: 100%;
@@ -44,8 +45,28 @@
          text-decoration: none;
          color: $clr-font-light;
          text-transform: uppercase;
+         font-size: 1.1rem;
+         letter-spacing: 3px;
          padding: 0.5rem 1rem;
          margin: 0 calc(2vw);
       }
    }
+}
+
+.my-name {
+   background: pink;
+   display: flex;
+
+   .laurent {
+      background: green;
+      margin-right: 3vw;
+   }
+
+   .blondy {
+      background: blue;
+   }
+}
+
+.chevron-down {
+   margin-bottom: 4rem;
 }
