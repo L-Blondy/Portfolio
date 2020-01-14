@@ -31,11 +31,16 @@
 
 .navbar {
    @include flex-center;
+   // position: relative;
    top: 0;
    left: 0;
    width: 100%;
    z-index: 1;
    height: 80px;
+
+   .burger {
+      display: none;
+   }
 
    .navlinks {
       @include flex-center;
@@ -53,20 +58,193 @@
    }
 }
 
-.my-name {
-   background: pink;
-   display: flex;
+.title {
+   @include flex-center;
+   flex-direction: column;
+   padding-top: 1rem;
 
-   .laurent {
-      background: green;
-      margin-right: 3vw;
+   .my-name {
+      display: flex;
+
+      .laurent {
+         margin-right: calc(1.5vw + 3rem);
+      }
    }
 
-   .blondy {
-      background: blue;
+   .what-i-do {
+      margin-top: 3rem;
    }
 }
 
 .chevron-down {
    margin-bottom: 4rem;
+}
+
+/***************
+*    1200px
+***************/
+@media (max-width: 1200px) {
+   .navbar .navlinks-link {
+      font-size: 1rem;
+   }
+
+   .title>.my-name {
+      transform: scale(0.9)
+   }
+
+   .what-i-do {
+      transform: scale(0.95)
+   }
+}
+
+/***************
+*    992px
+***************/
+@media (max-width: 992px) {
+   .navbar .navlinks-link {
+      letter-spacing: 1.5px;
+   }
+
+   .title {
+
+      >.my-name {
+         @include flex-center;
+         flex-direction: column;
+         transform: none;
+         stroke-width: 0px;
+
+         .laurent {
+            transform: scale(0.8);
+            margin-right: 0;
+         }
+
+         .blondy {
+            transform: scale(1.2);
+            margin-top: 4.5rem;
+         }
+      }
+
+      >.what-i-do {
+         transform: scale(0.85);
+         margin-top: 4rem;
+      }
+   }
+
+   .chevron-down {
+      transform: scale(0.9);
+   }
+}
+
+/***************
+*    768px
+***************/
+@media (max-width: 767.8px) {
+   @import "./burger.scss";
+
+   .navbar .navlinks {
+      position: absolute;
+      flex-direction: column;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: black;
+      transition: opacity 500ms;
+
+
+      &-link {
+         letter-spacing: 3px;
+         font-size: 1.1rem;
+      }
+
+      li {
+         line-height: 3rem;
+         transform: scale(0.5);
+         transition: transform 500ms;
+      }
+
+      &.open {
+         opacity: 1;
+      }
+   }
+
+   .navbar .navlinks.open li {
+      transform: scale(1);
+   }
+
+   .title {
+      padding-bottom: 30px;
+   }
+
+   .chevron-down {
+      transform: scale(0.7);
+      margin-bottom: 2rem;
+   }
+}
+
+/***************
+*    576px
+***************/
+@media (max-width: 576px) {
+   .title {
+      >.my-name {
+         @include flex-center;
+         flex-direction: column;
+         transform: none;
+         stroke-width: 0px;
+
+         .laurent {
+            transform: scale(0.5);
+            margin-right: 0;
+         }
+
+         .blondy {
+            transform: scale(0.75);
+            margin-top: 2rem;
+         }
+      }
+
+      >.what-i-do {
+         transform: scale(0.65);
+         margin-top: 2rem;
+      }
+   }
+
+   .chevron-down {
+      transform: scale(0.6);
+   }
+}
+
+/***************
+*    768px
+***************/
+@media (max-width: 767.8px) and (orientation: landscape) {
+   .title {
+      padding-bottom: 40px;
+
+      .my-name {
+         flex-direction: row;
+         width: 70%;
+
+         .blondy {
+            transform: scale(0.75);
+            margin-top: 0.5rem;
+         }
+      }
+
+      .what-i-do {
+         transform: scale(0.65);
+         margin-top: 1rem;
+      }
+   }
+
+   .chevron-down {
+      transform: scale(0.5);
+      margin-bottom: 1rem;
+   }
+
+   .navbar .navlinks>li {
+      line-height: 2.5rem;
+   }
 }

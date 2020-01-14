@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "rm -rf dist && parcel build index.html --public-url https://l-blondy.github.io/Portfolio/",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cssnano": "^4.1.10",
+    "gh-pages": "^2.2.0",
     "sass": "^1.24.3"
   }
 }

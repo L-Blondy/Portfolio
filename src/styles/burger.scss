@@ -1,0 +1,165 @@
+.navbar {
+   >.burger {
+      display: initial;
+      position: relative;
+      z-index: 2;
+      height: 56px;
+      width: 60px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: none;
+      border: none;
+
+      .line {
+         background: $clr-font-light;
+         height: 2px;
+         width: 30px;
+         transform-origin: center center;
+      }
+   }
+
+   >.burger.cross {
+
+      .line {
+         animation-duration: 500ms;
+         animation-fill-mode: forwards;
+      }
+
+      .line1 {
+         animation-name: line1;
+
+         @keyframes line1 {
+            0% {
+               transform: translateY(-15px);
+            }
+
+            30% {
+               transform: translateY(0);
+               width: 30px;
+            }
+
+            100% {
+               transform: rotate(45deg) translateY(2px);
+               width: 40px;
+            }
+         }
+      }
+
+      .line2 {
+         animation-name: line2;
+
+         @keyframes line2 {
+            0% {
+               width: 40px;
+            }
+
+            29% {
+               width: 30px;
+               opacity: 1;
+            }
+
+            30% {
+               width: 30px;
+               opacity: 0;
+            }
+
+            100% {
+               width: 30px;
+               opacity: 0;
+            }
+         }
+      }
+
+      .line3 {
+         animation-name: line3;
+
+         @keyframes line3 {
+            0% {
+               transform: translateY(15px);
+            }
+
+            30% {
+               transform: translateY(0);
+               width: 30px;
+            }
+
+            100% {
+               transform: rotate(-45deg) translateY(-2px);
+               width: 40px;
+            }
+         }
+      }
+   }
+
+   >.burger.close {
+
+      .line {
+         animation-duration: 500ms;
+         animation-fill-mode: forwards;
+      }
+
+      .line1 {
+         animation-name: line11;
+
+         @keyframes line11 {
+            0% {
+               transform: rotate(45deg);
+            }
+
+            30% {
+               transform: rotate(0) translateY(0);
+               width: 30px;
+            }
+
+            100% {
+               transform: translateY(-15px);
+               width: 30px;
+            }
+         }
+      }
+
+      .line2 {
+         animation-name: line22;
+
+         @keyframes line22 {
+            0% {
+               width: 30px;
+               opacity: 0;
+            }
+
+            30% {
+               width: 30px;
+               opacity: 1;
+            }
+
+            100% {
+               width: 40px;
+               opacity: 1;
+            }
+         }
+      }
+
+      .line3 {
+         animation-name: line33;
+
+         @keyframes line33 {
+            0% {
+               transform: rotate(-45deg);
+            }
+
+            30% {
+               transform: rotate(0) translateY(0);
+               width: 30px;
+            }
+
+            100% {
+               transform: translateY(15px);
+               width: 30px;
+            }
+         }
+      }
+   }
+}
