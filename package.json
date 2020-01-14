@@ -2,10 +2,10 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "entry.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "rm -rf dist && parcel build index.html --public-url https://l-blondy.github.io/Portfolio/",
+    "start": "rm -rf dist && parcel index.html",
+    "build": "rm -rf dist && parcel build index.html",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "author": "",

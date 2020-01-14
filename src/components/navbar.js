@@ -7,7 +7,6 @@ const burgerClick = ( e ) => {
 	burger.classList.toggle( "close" )
 }
 
-
 const navlinkClick = ( e ) => {
 	if ( burger.classList.contains( "cross" ) ) {
 		burgerClick()
