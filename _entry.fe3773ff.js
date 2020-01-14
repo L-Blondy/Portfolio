@@ -7,4 +7,4 @@ var s=document.querySelector(".burger"),e=document.querySelector(".navlinks"),c=
 },{}],"DLqZ":[function(require,module,exports) {
 "use strict";require("./svg.js"),require("../styles/_common.scss"),require("./navbar.js"),console.log(1);
 },{"./svg.js":"HW4p","../styles/_common.scss":"g7oc","./navbar.js":"EuNu"}]},{},["DLqZ"], null)
-//# sourceMappingURL=https://l-blondy.github.io/Portfolio/_entry.fe3773ff.js.map
+//# sourceMappingURL=/_entry.fe3773ff.js.map
