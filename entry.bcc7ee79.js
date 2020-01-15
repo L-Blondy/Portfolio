@@ -5,8 +5,12 @@ document.querySelector(".what-i-do").innerHTML+='<svg width="402" height="21" vi
 },{}],"EuNu":[function(require,module,exports) {
 var s=document.querySelector(".burger"),e=document.querySelector(".navlinks"),c=function(c){e.classList.toggle("open"),s.classList.toggle("cross"),s.classList.toggle("close")},t=function(e){s.classList.contains("cross")&&c()};s.addEventListener("click",c),e.addEventListener("click",t);
 },{}],"FYrJ":[function(require,module,exports) {
-"use strict";function e(){function e(){var e=Math.min(window.innerHeight,document.documentElement.clientHeight);document.documentElement.style.setProperty("--vh100","".concat(e,"px"))}window.addEventListener("resize",e),e()}Object.defineProperty(exports,"__esModule",{value:!0}),exports.fixVH_forMobileDevices=e;
-},{}],"BZ3n":[function(require,module,exports) {
-"use strict";require("./entry.scss"),require("./src/components/svg.js"),require("./src/components/navbar.js");var e=require("./src/utils/fixVH_forMobileDevices.js");(0,e.fixVH_forMobileDevices)();
-},{"./entry.scss":"HBMz","./src/components/svg.js":"HW4p","./src/components/navbar.js":"EuNu","./src/utils/fixVH_forMobileDevices.js":"FYrJ"}]},{},["BZ3n"], null)
-//# sourceMappingURL=https://l-blondy.github.io/Portfolio/entry.0bb487af.js.map
+"use strict";function e(){function e(){var e=Math.min(window.innerHeight,document.documentElement.clientHeight);document.documentElement.style.setProperty("--vh100","".concat(e,"px"))}window.addEventListener("resize",e),e()}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
+},{}],"U2ji":[function(require,module,exports) {
+"use strict";function e(){document.addEventListener("click",function(e){var t=e.target.getAttribute("href"),r=document.querySelector(t);t&&"#"===e.target.getAttribute("href")[0]&&(e.preventDefault(),r.scrollIntoView({behavior:"smooth"}))})}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
+},{}],"iWjG":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),Object.defineProperty(exports,"fixVH_forMobileDevices",{enumerable:!0,get:function(){return e.default}}),Object.defineProperty(exports,"fixHashNav",{enumerable:!0,get:function(){return r.default}});var e=t(require("./fixVH_forMobileDevices.js")),r=t(require("./fixHashNav.js"));function t(e){return e&&e.__esModule?e:{default:e}}
+},{"./fixVH_forMobileDevices.js":"FYrJ","./fixHashNav.js":"U2ji"}],"BZ3n":[function(require,module,exports) {
+"use strict";require("./entry.scss"),require("./src/components/svg.js"),require("./src/components/navbar.js");var r=require("./src/utils");(0,r.fixVH_forMobileDevices)(),(0,r.fixHashNav)();
+},{"./entry.scss":"HBMz","./src/components/svg.js":"HW4p","./src/components/navbar.js":"EuNu","./src/utils":"iWjG"}]},{},["BZ3n"], null)
+//# sourceMappingURL=https://l-blondy.github.io/Portfolio/entry.bcc7ee79.js.map
