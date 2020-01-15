@@ -2,4 +2,8 @@ import "./entry.scss"
 import "./src/components/svg.js"
 import "./src/components/navbar.js"
 
-console.log( 12 )
+import { handle_responsive_CSS_variables, fixHashNav } from "./src/utils"
+
+handle_responsive_CSS_variables()
+fixHashNav()
+

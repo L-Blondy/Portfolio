@@ -1,4 +1,6 @@
 @import "./src/styles/home.scss";
+@import "./src/styles/services.scss";
+@import "./src/styles/profile.scss";
 
 *,
 *::before,
@@ -6,11 +8,16 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
-   font-family: Exo
+   font-family: Exo;
+}
+
+body,
+html {
+   scroll-behavior: smooth;
+   overflow-x: hidden;
 }
 
 section {
-   height: 100vh;
 
    .works {
       background: yellow;

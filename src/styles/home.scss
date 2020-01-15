@@ -1,11 +1,9 @@
 @import "./_variables.scss";
 
 .home {
-   @include flex-center;
-   flex-direction: column;
-   justify-content: space-between;
    position: relative;
    height: 100vh;
+   height: var(--vh100, 100vh);
    width: 100%;
    overflow: hidden;
 
@@ -25,17 +23,15 @@
       left: 50%;
       transform: translate(-50%, -50%);
       min-height: 100%;
+      min-width: 100%;
       z-index: -1;
    }
 }
 
 .navbar {
    @include flex-center;
-   // position: relative;
-   top: 0;
-   left: 0;
+   @include absolute-top;
    width: 100%;
-   z-index: 1;
    height: 80px;
 
    .burger {
@@ -60,8 +56,9 @@
 
 .title {
    @include flex-center;
+   @include absolute-center;
    flex-direction: column;
-   padding-top: 1rem;
+   padding-bottom: 10px;
 
    .my-name {
       display: flex;
@@ -77,7 +74,18 @@
 }
 
 .chevron-down {
+   position: absolute;
+   z-index: 2;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
    margin-bottom: 4rem;
+   width: calc(65px + 4vw);
+
+   svg {
+      width: 100%;
+      pointer-events: none;
+   }
 }
 
 /***************
@@ -111,7 +119,6 @@
          @include flex-center;
          flex-direction: column;
          transform: none;
-         stroke-width: 0px;
 
          .laurent {
             transform: scale(0.8);
@@ -129,10 +136,6 @@
          margin-top: 4rem;
       }
    }
-
-   .chevron-down {
-      transform: scale(0.9);
-   }
 }
 
 /***************
@@ -143,23 +146,26 @@
 
    .navbar .navlinks {
       position: absolute;
+      z-index: 1;
       flex-direction: column;
       opacity: 0;
       top: 0;
       left: 0;
-      height: 100%;
-      width: 100%;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      height: var(--vh100, 100vh);
       background: black;
       transition: opacity 500ms;
 
 
       &-link {
          letter-spacing: 3px;
-         font-size: 1.1rem;
+         font-size: 1.2rem;
       }
 
       li {
-         line-height: 3rem;
+         line-height: 3.5rem;
          transform: scale(0.5);
          transition: transform 500ms;
       }
@@ -173,12 +179,7 @@
       transform: scale(1);
    }
 
-   .title {
-      padding-bottom: 30px;
-   }
-
    .chevron-down {
-      transform: scale(0.7);
       margin-bottom: 2rem;
    }
 }
@@ -192,7 +193,6 @@
          @include flex-center;
          flex-direction: column;
          transform: none;
-         stroke-width: 0px;
 
          .laurent {
             transform: scale(0.5);
@@ -210,10 +210,6 @@
          margin-top: 2rem;
       }
    }
-
-   .chevron-down {
-      transform: scale(0.6);
-   }
 }
 
 /***************
@@ -222,14 +218,24 @@
 @media (max-width: 767.8px) and (orientation: landscape) {
    .title {
       padding-bottom: 40px;
+      width: 100%;
 
       .my-name {
          flex-direction: row;
          width: 70%;
 
+         .laurent {
+            transform-origin: right center;
+            padding-right: 3rem;
+            transform: scale(0.6);
+            margin-right: 0;
+         }
+
          .blondy {
-            transform: scale(0.75);
-            margin-top: 0.5rem;
+            transform: scale(0.6);
+            padding-left: 3rem;
+            transform-origin: left center;
+            margin-top: 0.7rem;
          }
       }
 
@@ -240,11 +246,17 @@
    }
 
    .chevron-down {
-      transform: scale(0.5);
       margin-bottom: 1rem;
+      width: 75px;
    }
 
    .navbar .navlinks>li {
       line-height: 2.5rem;
+   }
+}
+
+@media (max-width: 992px) and (orientation: landscape) {
+   .chevron-down {
+      margin-bottom: 1rem;
    }
 }

@@ -1,0 +1,13 @@
+@import "./_variables.scss";
+
+.skills {
+   &-skill {
+      display: flex;
+      align-items: center;
+
+      >span {
+         padding-left: 1rem;
+         line-height: 3rem;
+      }
+   }
+}
