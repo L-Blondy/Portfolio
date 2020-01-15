@@ -5,6 +5,6 @@ document.querySelector(".what-i-do").innerHTML+='<svg width="402" height="21" vi
 },{}],"EuNu":[function(require,module,exports) {
 var s=document.querySelector(".burger"),e=document.querySelector(".navlinks"),c=function(c){e.classList.toggle("open"),s.classList.toggle("cross"),s.classList.toggle("close")},t=function(e){s.classList.contains("cross")&&c()};s.addEventListener("click",c),e.addEventListener("click",t);
 },{}],"BZ3n":[function(require,module,exports) {
-"use strict";require("./entry.scss"),require("./src/components/svg.js"),require("./src/components/navbar.js"),console.log(12);
+"use strict";function e(){var e=window.innerHeight;document.documentElement.style.setProperty("--vh100","".concat(e,"px"))}require("./entry.scss"),require("./src/components/svg.js"),require("./src/components/navbar.js"),e(),console.log(12);
 },{"./entry.scss":"HBMz","./src/components/svg.js":"HW4p","./src/components/navbar.js":"EuNu"}]},{},["BZ3n"], null)
-//# sourceMappingURL=https://l-blondy.github.io/Portfolio/entry.dfcd9a5f.js.map
+//# sourceMappingURL=https://l-blondy.github.io/Portfolio/entry.ced69dca.js.map
