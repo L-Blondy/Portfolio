@@ -13,4 +13,4 @@ var s=document.querySelector(".burger"),e=document.querySelector(".navlinks"),c=
 },{"./fixVH_forMobileDevices.js":"FYrJ","./fixHashNav.js":"U2ji"}],"BZ3n":[function(require,module,exports) {
 "use strict";require("./entry.scss"),require("./src/components/svg.js"),require("./src/components/navbar.js");var r=require("./src/utils");(0,r.fixVH_forMobileDevices)(),(0,r.fixHashNav)();
 },{"./entry.scss":"HBMz","./src/components/svg.js":"HW4p","./src/components/navbar.js":"EuNu","./src/utils":"iWjG"}]},{},["BZ3n"], null)
-//# sourceMappingURL=https://l-blondy.github.io/Portfolio/entry.bcc7ee79.js.map
+//# sourceMappingURL=https://l-blondy.github.io/Portfolio/entry.bc149498.js.map
