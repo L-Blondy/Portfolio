@@ -1,4 +1,4 @@
-import "./entry.scss"
+import "./src/styles/common.scss"
 import "./src/components/svg.js"
 import "./src/components/navbar.js"
 

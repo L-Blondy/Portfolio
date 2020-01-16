@@ -4,7 +4,6 @@
    @include flex-center;
    flex-wrap: wrap;
    background: $clr-bg;
-   padding: 5rem 3rem;
 
    .service {
       @include flex-center;
@@ -21,7 +20,7 @@
       h2 {
          font-weight: 400;
          min-height: 3em;
-         margin-top: calc(0.8rem + 1vw);
+         margin-top: calc(1rem + 0.6vw);
       }
    }
 
@@ -46,6 +45,11 @@
          z-index: 2;
          width: 150%;
          height: 50%;
+
+         svg {
+            width: auto;
+            height: 100%;
+         }
       }
 
       .resp {
@@ -55,6 +59,11 @@
 }
 
 @media (max-width: 576px) {
+   .services>.service {
+      padding: 0rem 1rem 0 1rem;
+      margin: 1rem 0;
+   }
+
    .services>.service>h2 {
       font-size: 1.3rem;
    }
