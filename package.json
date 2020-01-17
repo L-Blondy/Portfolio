@@ -13,6 +13,7 @@
   "devDependencies": {
     "cssnano": "^4.1.10",
     "gh-pages": "^2.2.0",
+    "lb-write": "^1.0.4",
     "sass": "^1.24.3"
   }
 }

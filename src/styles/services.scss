@@ -21,6 +21,7 @@
          font-weight: 400;
          min-height: 3em;
          margin-top: calc(1rem + 0.6vw);
+         overflow: hidden;
       }
    }
 
@@ -59,9 +60,45 @@
 }
 
 @media (max-width: 576px) {
-   .services>.service {
-      padding: 0rem 1rem 0 1rem;
-      margin: 1rem 0;
+   .services {
+      flex-direction: column;
+
+      >.service {
+         padding: 1rem;
+         margin: 1rem 0;
+         width: 100%;
+         justify-content: center !important;
+         align-items: center;
+
+         .hex2 {
+            flex-shrink: 0;
+         }
+
+         h2 {
+            margin-top: 0;
+            min-height: 0;
+         }
+
+         &:nth-child(odd) {
+            flex-direction: row;
+            text-align: start;
+            padding-left: 3.5rem;
+
+            h2 {
+               margin-left: 3.5rem;
+            }
+         }
+
+         &:nth-child(even) {
+            flex-direction: row-reverse;
+            text-align: end;
+            padding-right: 3rem;
+
+            h2 {
+               margin-right: 3rem;
+            }
+         }
+      }
    }
 
    .services>.service>h2 {
