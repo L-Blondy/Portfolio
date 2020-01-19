@@ -15,7 +15,7 @@
 
       .line {
          background: $clr-font-light;
-         height: 2px;
+         height: 3px;
          width: 30px;
          transform-origin: center center;
       }
@@ -42,7 +42,7 @@
             }
 
             100% {
-               transform: rotate(45deg) translateY(2px);
+               transform: rotate(45deg) translate(2px, 2px);
                width: 40px;
             }
          }
@@ -87,7 +87,7 @@
             }
 
             100% {
-               transform: rotate(-45deg) translateY(-2px);
+               transform: rotate(-45deg) translate(2px, -2px);
                width: 40px;
             }
          }

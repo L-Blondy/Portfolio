@@ -47,7 +47,7 @@
          color: $clr-font-light;
          text-transform: uppercase;
          font-size: 1.1rem;
-         letter-spacing: 3px;
+         letter-spacing: 4px;
          padding: 0.5rem 1rem;
          margin: 0 calc(2vw);
       }
@@ -59,6 +59,7 @@
    @include absolute-center;
    flex-direction: column;
    padding-bottom: 10px;
+   color: $clr-font-light;
 
    .my-name {
       display: flex;
@@ -80,7 +81,7 @@
    left: 50%;
    transform: translateX(-50%);
    margin-bottom: 4rem;
-   width: calc(65px + 4vw);
+   width: calc(90px + 2vw);
 
    svg {
       width: 100%;
@@ -93,7 +94,7 @@
 ***************/
 @media (max-width: 1200px) {
    .navbar .navlinks-link {
-      font-size: 1rem;
+      font-size: 1.15rem;
    }
 
    .title>.my-name {
@@ -110,7 +111,7 @@
 ***************/
 @media (max-width: 992px) {
    .navbar .navlinks-link {
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
    }
 
    .title {
@@ -121,20 +122,25 @@
          transform: none;
 
          .laurent {
-            transform: scale(0.8);
+            transform: scale(0.85);
             margin-right: 0;
          }
 
          .blondy {
-            transform: scale(1.2);
+            transform: scale(1.3);
             margin-top: 4.5rem;
          }
       }
 
       >.what-i-do {
-         transform: scale(0.85);
+         transform: scale(0.9);
          margin-top: 4rem;
       }
+   }
+
+   .chevron-down>svg>path {
+      stroke-width: 5px;
+      transform-origin: center center;
    }
 }
 
@@ -195,22 +201,29 @@
          @include flex-center;
          flex-direction: column;
          transform: none;
+         stroke-width: 1.5px;
 
          .laurent {
-            transform: scale(0.5);
+            transform: scale(0.6);
             margin-right: 0;
          }
 
          .blondy {
-            transform: scale(0.75);
+            transform: scale(0.8);
             margin-top: 2rem;
          }
       }
 
       >.what-i-do {
-         transform: scale(0.65);
+         transform: scale(0.9);
+         stroke-width: 1px;
          margin-top: 2rem;
+         margin-bottom: 0.5rem;
       }
+   }
+
+   .chevron-down>svg>path {
+      transform: scale(0.85);
    }
 }
 
