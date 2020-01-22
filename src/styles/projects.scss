@@ -1,0 +1,91 @@
+@import "./_variables.scss";
+
+$central-space: 3rem;
+$video-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+.app {
+   display: flex;
+   align-items: stretch;
+   margin-bottom: 7rem;
+
+   &-video,
+   &-intro {
+      position: relative;
+      flex-grow: 1;
+      width: 50%;
+      background: rgba(0, 0, 0, 0.05);
+   }
+
+   &-video {
+      margin-right: $central-space;
+      display: flex;
+      justify-content: center;
+
+      &__tablet,
+      &__phone {
+         box-shadow: $video-shadow;
+         border-radius: 15px;
+         transition: transform 500ms;
+      }
+
+      &__tablet {
+         width: 400px;
+         transform: translate(-15%);
+      }
+
+      &__phone {
+         position: absolute;
+         width: 200px;
+         top: 50%;
+         left: 50%;
+         transform: translate(20%, -12%);
+      }
+   }
+
+   &-intro {
+      margin-left: $central-space;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      &__technologies {
+         display: flex;
+         >div {
+            height: 50px;
+            width: 50px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 0.2rem;
+         }
+
+         .javascript {
+            background-image: url(../assets/icons/javascript.svg);
+         }
+
+         .html5 {
+            background-image: url(../assets/icons/html5.svg);
+         }
+
+         .css3 {
+            background-image: url(../assets/icons/css3.svg);
+         }
+
+         .react {
+            background-image: url(../assets/icons/react.svg);
+         }
+      }
+   }
+}
+
+@media (max-width: 1660px) {
+
+   .app-video__tablet {
+      transform: scale(0.9);
+   }
+
+   .app-video__phone {
+      transform: translate(25%, -18%) scale(0.9);
+   }
+}
