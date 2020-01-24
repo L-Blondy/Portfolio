@@ -2,6 +2,9 @@
 @import "./services.scss";
 @import "./profile.scss";
 @import "./projects.scss";
+@import "./resume.scss";
+@import "./contact.scss";
+@import "./footer.scss";
 
 *,
 *::before,
@@ -20,50 +23,76 @@ html {
 
 section {
    padding: 5rem 20vw;
-
-   .works {
-      background: yellow;
-   }
-
-   .profile {
-      background: green;
-   }
-
-   .resume {
-      background: red;
-   }
-
-   .contact {
-      background: blue;
-   }
 }
 
 .common {
    &__section-title {
       color: $clr-primary;
       font-weight: 400;
-      font-size: 2.8rem;
+      font-size: 2.9rem;
       letter-spacing: 2px;
       padding-bottom: 3rem;
       text-align: center;
    }
+
+   &__btn {
+      padding: 0.4em 1.2em;
+      border-radius: 3px;
+      border-style: solid;
+      border-width: 1px;
+      cursor: pointer;
+      user-select: none;
+      flex-shrink: 0;
+      text-decoration: none;
+
+      &.contained {
+         background: $clr-primary;
+         color: $clr-font-light;
+         border-color: $clr-primary;
+
+         &:focus,
+         &:hover {
+            opacity: 0.8;
+         }
+      }
+
+      &.outlined {
+         background: none;
+         border-color: $clr-primary;
+         color: $clr-primary;
+
+         &:focus,
+         &:hover {
+            background: #15878E11;
+         }
+      }
+   }
 }
 
 @media (max-width: 1660px) {
-   section {
-      padding: 5rem 15vw;
+
+   section,
+   footer {
+      padding-left: 15vw;
+      padding-right: 15vw;
    }
 }
 
 
 @media (max-width: 1200px) {
-   section {
-      padding: 5rem 10vw;
+
+   section,
+   footer {
+      padding-left: 10vw;
+      padding-right: 10vw;
    }
 }
 
 @media (max-width: 576px) {
-   section {
-      padding: 5rem 1.8rem;
+
+   section,
+   footer {
+      padding-left: 1.8rem;
+      padding-right: 1.8rem;
    }
 }

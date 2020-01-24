@@ -2,22 +2,33 @@
 
 $central-space: 3rem;
 $video-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+$intro-spacing: 2rem;
+$icon-size:32px;
+$icon-spacing:1.8rem;
+
+section.projects {
+   background: $clr-bg;
+   padding-top: 8rem;
+   padding-bottom: 8rem;
+}
 
 .app {
    display: flex;
    align-items: stretch;
-   margin-bottom: 7rem;
+   padding-top: 6rem;
+   padding-bottom: 6rem;
+   color: $clr-font-black;
+   font-size: 1.12rem;
 
    &-video,
    &-intro {
       position: relative;
       flex-grow: 1;
       width: 50%;
-      background: rgba(0, 0, 0, 0.05);
+      // background: rgba(0, 0, 0, 0.05);
    }
 
    &-video {
-      margin-right: $central-space;
       display: flex;
       justify-content: center;
 
@@ -26,11 +37,11 @@ $video-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
          box-shadow: $video-shadow;
          border-radius: 15px;
          transition: transform 500ms;
+         // border: 3px solid #191919;
       }
 
       &__tablet {
          width: 400px;
-         transform: translate(-15%);
       }
 
       &__phone {
@@ -38,30 +49,43 @@ $video-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
          width: 200px;
          top: 50%;
          left: 50%;
-         transform: translate(20%, -12%);
       }
    }
 
    &-intro {
-      margin-left: $central-space;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
 
+      &__title {
+         font-size: 2.4rem;
+         font-weight: 400;
+         letter-spacing: 1px;
+         padding-bottom: 2rem;
+      }
+
+      &__description {
+         // font-size: 1.05rem;
+         width: 100%;
+         padding-bottom: $intro-spacing;
+      }
+
       &__technologies {
          display: flex;
+         padding-bottom: $intro-spacing;
+
          >div {
-            height: 50px;
-            width: 50px;
+            height: $icon-size;
+            width: $icon-size;
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            margin: 0.2rem;
          }
 
          .javascript {
             background-image: url(../assets/icons/javascript.svg);
+            border-radius: 2px;
          }
 
          .html5 {
@@ -74,8 +98,77 @@ $video-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
          .react {
             background-image: url(../assets/icons/react.svg);
+            border-radius: 2px;
          }
       }
+
+      .app-intro__buttons {
+         display: flex;
+
+         .button_view-project,
+         .button_github {
+            font-size: inherit;
+            letter-spacing: 0.3px;
+         }
+
+         .button_github {
+            margin: 0 1rem;
+         }
+      }
+   }
+}
+
+.app-left {
+   .app-video {
+      margin-right: $central-space;
+
+      &__tablet {
+         transform: translate(-15%);
+      }
+
+      &__phone {
+         transform: translate(20%, -12%);
+      }
+   }
+
+   .app-intro {
+      margin-left: $central-space;
+      padding-left: $central-space;
+   }
+
+   .app-intro__technologies>div {
+      margin-right: $icon-spacing;
+   }
+}
+
+.app-right {
+   flex-direction: row-reverse;
+   text-align: right;
+
+   .app-video {
+      margin-left: $central-space;
+
+      &__tablet {
+         transform: translate(15%);
+      }
+
+      &__phone {
+         transform: translate(-120%, -12%);
+      }
+   }
+
+   .app-intro {
+      align-items: flex-end;
+      margin-right: $central-space;
+      padding-right: $central-space;
+   }
+
+   .app-intro__technologies>div {
+      margin-left: $icon-spacing;
+   }
+
+   .app-intro__buttons {
+      flex-direction: row-reverse;
    }
 }
 

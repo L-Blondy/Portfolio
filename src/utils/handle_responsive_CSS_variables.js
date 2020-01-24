@@ -4,8 +4,10 @@ export default function handle_responsive_CSS_variables () {
 
 	if ( window.matchMedia( "(max-width:1200px)" ).matches ) {
 		document.documentElement.style.setProperty( "--hex2-height", "5.92rem" )
+		document.documentElement.style.setProperty( "--hex1-width", "3.5rem" )
 	}
 	else if ( window.matchMedia( "(min-width:1200px)" ).matches ) {
 		document.documentElement.style.setProperty( "--hex2-height", "7rem" )
+		document.documentElement.style.setProperty( "--hex1-width", "3.5rem" )
 	}
 }

@@ -1,0 +1,204 @@
+@import "./_variables.scss";
+
+$form-font-size: 1.3em;
+$clr-placeholder: #96A3A2;
+
+.contact {
+   background: $clr-bg;
+   padding-top: 7rem;
+   padding-bottom: 7rem;
+
+   &-content {
+      padding-top: 2rem;
+      display: flex;
+
+      &__intro {
+         width: calc(50% - 8.2em);
+         padding-right: 9%;
+         flex-shrink: 0;
+
+         &--text {
+            font-size: 1.375rem;
+            padding-bottom: 1em;
+         }
+
+         &--data {
+
+            &__email,
+            &__phone {
+               display: flex;
+               align-items: center;
+
+               span {
+                  font-size: 1.1rem;
+                  line-height: 2.3em;
+                  padding-left: 1em;
+                  white-space: nowrap;
+               }
+            }
+         }
+      }
+
+      &__form {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         flex-grow: 1;
+         // background: rgba(0, 0, 0, 0.05);
+
+         &--user-data>input,
+         &--message {
+            font-size: $form-font-size;
+            line-height: 1.5em;
+            background: none;
+         }
+
+         &--user-data {
+            display: flex;
+            width: 100%;
+
+            input {
+               border: none;
+               border-bottom: 1px solid $clr-primary;
+               width: 0.1%;
+               overflow: hidden;
+               padding: 0 0.5rem;
+               transition: width 500ms;
+               transform: scaleX(0);
+
+               &[name="name"] {
+                  transition: width 500ms, transform 100ms;
+                  transition-delay: 300ms;
+               }
+
+               &::placeholder {
+                  color: $clr-placeholder;
+               }
+            }
+
+            input.name.opened {
+               width: 47%;
+            }
+
+            input.email.opened {
+               width: 48%;
+               margin-right: 5%;
+            }
+
+            input.opened {
+               transform: scaleX(1);
+            }
+         }
+
+         &--message {
+            width: 100%;
+            border: 1px solid $clr-primary;
+            border-radius: 3px;
+            height: 12em;
+            margin: 3rem 0;
+            padding: 0.5rem 0.7rem;
+            transition: transform 700ms 600ms;
+            transform-origin: top;
+            transform: scaleY(0);
+
+            &::placeholder {
+               color: $clr-placeholder;
+               opacity: 0;
+               transition: opacity 2000ms 700ms;
+               user-select: none;
+            }
+
+            &.opened {
+               transform: scaleY(1);
+
+               &::placeholder {
+                  opacity: 1;
+               }
+
+            }
+         }
+
+         button {
+            @include flex-center;
+            position: relative;
+            font-size: 1.2rem;
+            padding: 0.5em 1.2em;
+            overflow: hidden;
+            border: none;
+         }
+      }
+   }
+}
+
+@media (max-width: 1200px) {
+   .contact-content {
+      flex-direction: column;
+      align-items: center;
+
+      &__intro {
+         width: auto;
+         flex-shrink: 0;
+         padding: 0;
+         margin-bottom: 4em;
+
+         &--data {
+            padding-left: 1em;
+         }
+      }
+
+      &__form {
+         padding: 0 3em;
+      }
+
+      button {
+         margin: auto;
+      }
+   }
+}
+
+@media (max-width: 1200px) {
+   .contact-content__form {
+      padding: 0 1em;
+   }
+}
+
+@media (max-width: 576px) {
+   .contact-content {
+      &__intro {
+         margin-bottom: 3em;
+
+         &--text {
+            text-align: center;
+            padding-bottom: 2em;
+
+            span {
+               display: block;
+               line-height: 1.5em;
+            }
+         }
+      }
+
+      &__form {
+         font-size: 0.9rem;
+         width: 90%;
+         padding: 0;
+
+         &--user-data {
+            flex-direction: column;
+
+            input.opened {
+               width: 100% !important;
+               margin: 0;
+
+               &[name="name"] {
+                  margin-top: 2rem;
+               }
+            }
+         }
+
+         &--message {
+            height: 15em;
+         }
+      }
+   }
+}

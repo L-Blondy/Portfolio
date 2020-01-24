@@ -1,0 +1,47 @@
+@import "./_variables.scss";
+
+.resume {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: $clr-font-dark;
+   font-size: 1rem;
+
+   .text-wrapper {
+      color: $clr-bg;
+
+      .like-what-you-see {
+         font-weight: 400;
+         font-size: 2.6em;
+         padding-bottom: 1.5rem;
+      }
+
+      .check-out {
+         font-size: 1.5em;
+      }
+   }
+
+   .button_view-resume {
+      font-size: 1.5em;
+   }
+}
+
+@media (max-width:992px) {
+
+   .resume {
+      flex-direction: column;
+      text-align: center;
+      font-size: 0.9rem;
+   }
+
+   .button_view-resume {
+      margin-top: 2rem;
+      padding: 0.5em 1.6em !important;
+   }
+}
+
+@media (max-width:576px) {
+   .resume {
+      font-size: 0.7rem;
+   }
+}
