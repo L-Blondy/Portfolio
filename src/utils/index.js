@@ -1,2 +1,2 @@
-export { default as handle_responsive_CSS_variables } from "./handle_responsive_CSS_variables.js"
-export { default as fixHashNav } from "./fixHashNav.js"
+export { default as fix_VH } from "./fix_VH.js"
+export { default as fix_HashNav } from "./fix_HashNav.js"

@@ -1,4 +1,4 @@
-export default function fixHashNav () {
+export default function fix_HashNav () {
 	document.addEventListener( "click", e => {
 		const href = e.target.getAttribute( "href" )
 		const target = document.querySelector( href )

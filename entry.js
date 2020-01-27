@@ -1,14 +1,13 @@
 import "./src/styles/common.scss"
 import "./src/components/navbar.js"
 import "lb-onvisible"
-import { handle_responsive_CSS_variables, fixHashNav } from "./src/utils"
-// import { writeOnVisible, WriteSequence } from "lb-write"
+import { fix_VH, fix_HashNav } from "./src/utils"
 
-fixHashNav()
-handle_responsive_CSS_variables()
+fix_HashNav()
+fix_VH()
 
 function handleResize () {
-	handle_responsive_CSS_variables()
+	fix_VH()
 }
 window.addEventListener( "resize", handleResize )
 
