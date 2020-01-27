@@ -4,7 +4,7 @@ $clr-font-dark: #005568;
 $clr-font-black: #333;
 $clr-primary: #15878E;
 
-$hex-dot-width: 1rem;
+// $hex-dot-width: 1rem;
 
 @mixin flex-center {
    display: flex;
@@ -33,7 +33,4 @@ $hex-dot-width: 1rem;
 
 :root {
    --vh100: 100vh;
-   --hex1-width: 7rem;
-   --hex2-height: 7rem;
-   --hex-inner-ratio: 0.88;
 }

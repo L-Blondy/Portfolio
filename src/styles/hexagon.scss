@@ -1,179 +1,19 @@
 @import "./_variables.scss";
 
-//test
-.hex1 {
-   position: relative;
-   height: calc(4rem * 0.58);
-   height: calc(var(--hex1-width) * 0.58);
-   display: flex;
-   flex-shrink: 0;
-   justify-content: center;
-   align-items: center;
-
-   &::before,
-   &::after {
-      position: absolute;
-      content: "";
-      left: 0;
-      border-left: calc(4rem / 2) solid transparent;
-      border-left: calc(var(--hex1-width) / 2) solid transparent;
-      border-right: calc(4rem / 2) solid transparent;
-      border-right: calc(var(--hex1-width) / 2) solid transparent;
-   }
-
-   &::before {
-      bottom: 100%;
-      border-bottom: calc(4rem * 0.29) solid $clr-primary;
-      border-bottom: calc(var(--hex1-width) * 0.29) solid $clr-primary;
-   }
-
-   &::after {
-      top: 100%;
-      border-top: calc(4rem * 0.29) solid $clr-primary;
-      border-top: calc(var(--hex1-width) * 0.29) solid $clr-primary;
-   }
+.hex {
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
 }
 
-.hex1.inner {
-   z-index: 1 !important;
-   height: calc(4rem * 0.5104) !important;
-   height: calc(var(--hex1-width) * 0.58 * var(--hex-inner-ratio)) !important;
-   width: calc(4rem * 0.88) !important;
-   width: calc(var(--hex1-width) * var(--hex-inner-ratio)) !important;
+.hex1-out {}
 
-   &::before,
-   &::after {
-      position: absolute;
-      content: "";
-      left: 0;
-      border-left: calc(7rem * 0.25) solid transparent;
-      border-left: calc(var(--hex1-width) * var(--hex-inner-ratio) / 2) solid transparent;
-      border-right: calc(7rem * 0.25) solid transparent;
-      border-right: calc(var(--hex1-width) * var(--hex-inner-ratio) / 2) solid transparent;
-   }
+.hex1-full {}
 
-   &::before {
-      border-bottom: calc(4rem * 0.258) solid $clr-bg;
-      border-bottom: calc(var(--hex1-width) * 0.29 * var(--hex-inner-ratio)) solid $clr-bg;
-   }
-
-   &::after {
-      border-top: calc(4rem * 0.258) solid $clr-bg;
-      border-top: calc(var(--hex1-width) * 0.29 * var(--hex-inner-ratio)) solid $clr-bg;
-   }
+.hex2-out {
+   background-image: url(../assets/hex/hex2-out.svg);
 }
 
-.hex1.full>.inner {
-   background: inherit !important;
-
-   &::before {
-      border-bottom-color: $clr-primary !important;
-   }
-
-   &::after {
-      border-top-color: $clr-primary !important;
-   }
-
-}
-
-.hex2 {
-   position: relative;
-   flex-shrink: 0;
-   width: calc(7rem * 0.58);
-   width: calc(var(--hex2-height) * 0.58);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-   &::before,
-   &::after {
-      position: absolute;
-      content: "";
-      top: 0;
-      bottom: 0;
-      border-top: calc(7rem / 2) solid transparent;
-      border-top: calc(var(--hex2-height) / 2) solid transparent;
-      border-bottom: calc(7rem / 2) solid transparent;
-      border-bottom: calc(var(--hex2-height) / 2) solid transparent;
-   }
-
-   &::before {
-      left: 100%;
-      border-left: calc(4rem * 0.445) solid $clr-primary;
-      border-left: calc(var(--hex2-height) * 0.29) solid $clr-primary;
-   }
-
-   &::after {
-      right: 100%;
-      border-right: calc(4rem * 0.445) solid $clr-primary;
-      border-right: calc(var(--hex2-height) * 0.29) solid $clr-primary;
-   }
-}
-
-.hex2.inner {
-   z-index: 1 !important;
-   width: calc(7rem * 0.58 * 0.89) !important;
-   width: calc(var(--hex2-height) * 0.58 * var(--hex-inner-ratio)) !important;
-   height: calc(7rem * 0.89) !important;
-   height: calc(var(--hex2-height) * var(--hex-inner-ratio)) !important;
-
-   &::before,
-   &::after {
-      position: absolute;
-      content: "";
-      border-top: calc(7rem * 0.445) solid transparent;
-      border-top: calc(var(--hex2-height) * var(--hex-inner-ratio)/ 2) solid transparent;
-      border-bottom: calc(7rem * 0.445) solid transparent;
-      border-bottom: calc(var(--hex2-height) * var(--hex-inner-ratio)/ 2) solid transparent;
-   }
-
-   &::before {
-      border-left: calc(7rem * 0.29 * 0.89) solid $clr-bg;
-      border-left: calc(var(--hex2-height) * 0.29 * var(--hex-inner-ratio)) solid $clr-bg;
-   }
-
-   &::after {
-      border-right: calc(7rem * 0.29 * 0.89) solid $clr-bg;
-      border-right: calc(var(--hex2-height) * 0.29 * var(--hex-inner-ratio)) solid $clr-bg;
-   }
-}
-
-.hex2.full>.inner {
-   background: inherit !important;
-
-   &::before {
-      border-left-color: $clr-primary !important;
-   }
-
-   &::after {
-      border-right-color: $clr-primary !important;
-   }
-
-}
-
-.hex-dot {
-   flex-shrink: 0;
-   position: relative;
-   height: $hex-dot-width * 0.58;
-   width: $hex-dot-width;
-   background: $clr-primary;
-   flex-shrink: 0;
-
-   &::before,
-   &::after {
-      position: absolute;
-      content: "";
-      border-left: $hex-dot-width / 2 solid transparent;
-      border-right: $hex-dot-width / 2 solid transparent;
-   }
-
-   &::before {
-      bottom: 100%;
-      border-bottom: $hex-dot-width * 0.29 solid $clr-primary;
-   }
-
-   &::after {
-      top: 100%;
-      border-top: $hex-dot-width * 0.29 solid $clr-primary;
-   }
+.hex2-full {
+   background-image: url(../assets/hex/hex2-full.svg);
 }

@@ -15,7 +15,6 @@
       padding: 0.5rem 1rem 0 1rem;
       margin: 1rem 0;
       min-width: 14rem;
-      min-width: calc(var(--hex2-height) * 2);
 
       h2 {
          font-weight: 400;
@@ -24,36 +23,26 @@
       }
    }
 
-   .hex2 {
+   .hex {
+      @include flex-center;
+      flex-shrink: 0;
       height: 7rem;
-      height: var(--hex2-height);
-      background: $clr-primary;
-      font-size: 1rem;
-      color: $clr-primary;
+      width: 7rem;
 
-      &.inner {
-         background: $clr-bg;
-      }
-
-      &.full .inner {
-         color: $clr-bg;
-      }
-
-      .icon-container {
-         @include flex-center;
-         position: relative;
-         z-index: 2;
-         width: 150%;
-         height: 50%;
+      &.hex2-full {
+         padding-bottom: 0.2rem;
 
          svg {
-            width: auto;
-            height: 100%;
+            width: 50%;
+            height: 50%;
          }
       }
 
-      .resp {
-         height: 48%;
+      &.hex2-out {
+         svg {
+            width: 48%;
+            height: 48%;
+         }
       }
    }
 }
@@ -62,29 +51,28 @@
    .services {
       flex-direction: column;
 
+      .hex {
+         @include flex-center;
+         flex-shrink: 0;
+         height: 6rem;
+         width: 6rem;
+      }
+
       >.service {
          padding: 1rem;
-         margin: 1rem 0;
+         margin: 0.5rem 0;
          width: 100%;
          justify-content: center !important;
          align-items: center;
 
-         .hex2 {
-            flex-shrink: 0;
-         }
-
-         h2 {
-            margin-top: 0;
-            min-height: 0;
-         }
 
          &:nth-child(odd) {
             flex-direction: row;
             text-align: start;
-            padding-left: 3.5rem;
+            padding-left: 3rem;
 
             h2 {
-               margin-left: 3.5rem;
+               margin-left: 1.5rem;
             }
          }
 
@@ -94,7 +82,7 @@
             padding-right: 3rem;
 
             h2 {
-               margin-right: 3rem;
+               margin-right: 1.5rem;
             }
          }
       }
