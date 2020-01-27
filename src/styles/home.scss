@@ -61,16 +61,23 @@
    padding-bottom: 10px;
    color: $clr-font-light;
 
-   .my-name {
-      display: flex;
-
-      .laurent {
-         margin-right: calc(1.5vw + 3rem);
-      }
+   .laurent_blondy {
+      background-image: url(../assets/laurent_blondy/laurent_blondy_desktop.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: calc(500px + 23vw);
+      height: calc(33px + 2vw);
    }
 
    .what-i-do {
-      margin-top: 3rem;
+      background-image: url(../assets/front-end-dev/front-end-dev_desktop.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: calc(300px + 10vw);
+      height: calc(20px + 0.6vw);
+      margin-top: 2.5rem;
    }
 }
 
@@ -96,14 +103,6 @@
    .navbar .navlinks-link {
       font-size: 1.15rem;
    }
-
-   .title>.my-name {
-      transform: scale(0.9)
-   }
-
-   .what-i-do {
-      transform: scale(0.95)
-   }
 }
 
 /***************
@@ -115,26 +114,14 @@
    }
 
    .title {
-
-      >.my-name {
-         @include flex-center;
-         flex-direction: column;
-         transform: none;
-
-         .laurent {
-            transform: scale(0.85);
-            margin-right: 0;
-         }
-
-         .blondy {
-            transform: scale(1.3);
-            margin-top: 4.5rem;
-         }
+      .laurent_blondy {
+         background-image: url(../assets/laurent_blondy/laurent_blondy_lg-tablet.svg);
+         width: calc(60vw + 150px);
+         height: calc(55px + 2.5vw);
       }
 
-      >.what-i-do {
-         transform: scale(0.9);
-         margin-top: 4rem;
+      .what-i-do {
+         background-image: url(../assets/front-end-dev/front-end-dev_tablet.svg);
       }
    }
 
@@ -187,6 +174,43 @@
       transform: scale(1);
    }
 
+   .title {
+      padding-bottom: 30px;
+
+      .my-name {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+
+         .laurent_blondy {
+            background-image: none;
+            width: 0;
+            height: 0;
+         }
+
+         .laurent,
+         .blondy {
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+         }
+
+         .laurent {
+            background-image: url(../assets/laurent_blondy/laurent.svg);
+            width: calc(35vw + 120px);
+            height: calc(9.3vw + 25px);
+            margin-bottom: 0.7rem;
+         }
+
+         .blondy {
+            background-image: url(../assets/laurent_blondy/blondy.svg);
+            width: calc(50vw + 120px);
+            height: calc(11vw + 45px);
+         }
+      }
+   }
+
    .chevron-down {
       margin-bottom: 2.5rem;
    }
@@ -197,28 +221,11 @@
 ***************/
 @media (max-width: 576px) {
    .title {
-      >.my-name {
-         @include flex-center;
-         flex-direction: column;
-         transform: none;
-         stroke-width: 1.5px;
-
-         .laurent {
-            transform: scale(0.6);
-            margin-right: 0;
-         }
-
-         .blondy {
-            transform: scale(0.8);
-            margin-top: 2rem;
-         }
-      }
-
-      >.what-i-do {
-         transform: scale(0.9);
-         stroke-width: 1px;
-         margin-top: 2rem;
-         margin-bottom: 0.5rem;
+      .what-i-do {
+         background-image: url(../assets/front-end-dev/front-end-dev_phone.svg);
+         width: calc(40vw + 100px);
+         height: calc(3.5vw + 10px);
+         margin-top: 1.7rem;
       }
    }
 
@@ -236,26 +243,25 @@
    }
 
    .title {
-      padding-bottom: 40px;
+      padding-bottom: 20px;
       width: 100%;
 
       .my-name {
-         flex-direction: row;
-         width: 70%;
 
-         .laurent {
-            transform-origin: right center;
-            padding-right: 3rem;
-            transform: scale(0.6);
-            margin-right: 0;
-         }
-
+         .laurent,
          .blondy {
-            transform: scale(0.6);
-            padding-left: 3rem;
-            transform-origin: left center;
-            margin-top: 0.7rem;
+            background-image: none;
+            height: 0;
+            width: 0;
+            display: none;
          }
+
+         .laurent_blondy {
+            background-image: url(../assets/laurent_blondy/laurent_blondy_lg-tablet.svg);
+            width: calc(60vw + 150px);
+            height: calc(55px + 2.5vw);
+         }
+
       }
 
       .what-i-do {

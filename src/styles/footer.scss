@@ -119,19 +119,17 @@ footer {
    }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 767.8px) {
    footer {
       flex-direction: column;
       padding-bottom: 7rem;
 
       .fullname {
-         order: 2;
-         font-size: 2.625rem;
-         padding: 2rem 0;
+         font-size: calc(1.65rem + 4vw);
       }
 
       .external-links {
-         padding: 1rem 0;
+         padding: 3rem 0;
 
          .hex-container:nth-child(2) {
             margin: 0 3rem;
@@ -139,28 +137,13 @@ footer {
       }
 
       .copyright {
-         padding: 0.5rem;
+         padding: 1rem;
       }
    }
 }
 
 @media (max-width: 576px) {
-   footer {
-
-      .fullname {
-         font-size: calc(1.4rem + 4vw);
-      }
-
-      .external-links {
-         padding: 1rem 0;
-
-         .hex-container:nth-child(2) {
-            margin: 0 calc(7vw + 0.5rem);
-         }
-      }
-
-      .copyright {
-         padding: 0.5rem;
-      }
+   footer .external-links .hex-container:nth-child(2) {
+      margin: 0 calc(7vw + 0.5rem);
    }
 }
