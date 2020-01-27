@@ -25,7 +25,6 @@ section.projects {
       position: relative;
       flex-grow: 1;
       width: 50%;
-      // background: rgba(0, 0, 0, 0.05);
    }
 
    &-video {
@@ -37,7 +36,6 @@ section.projects {
          box-shadow: $video-shadow;
          border-radius: 15px;
          transition: transform 500ms;
-         // border: 3px solid #191919;
       }
 
       &__tablet {
@@ -75,30 +73,9 @@ section.projects {
          display: flex;
          padding-bottom: $intro-spacing;
 
-         >div {
+         >.svg-icon {
             height: $icon-size;
             width: $icon-size;
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-         }
-
-         .javascript {
-            background-image: url(../assets/icons/javascript.svg);
-            border-radius: 2px;
-         }
-
-         .html5 {
-            background-image: url(../assets/icons/html5.svg);
-         }
-
-         .css3 {
-            background-image: url(../assets/icons/css3.svg);
-         }
-
-         .react {
-            background-image: url(../assets/icons/react.svg);
-            border-radius: 2px;
          }
       }
 

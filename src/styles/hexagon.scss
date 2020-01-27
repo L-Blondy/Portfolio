@@ -8,11 +8,17 @@
    background-size: contain;
 }
 
+.hex1-full-dot {
+   height: 1.1rem;
+   width: 1.1rem;
+}
+
 .hex1-out {
    background-image: url(../assets/hex/hex1-out.svg);
 }
 
-.hex1-full {
+.hex1-full,
+.hex1-full-dot {
    background-image: url(../assets/hex/hex1-full.svg);
 }
 
