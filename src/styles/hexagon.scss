@@ -1,14 +1,20 @@
 @import "./_variables.scss";
 
 .hex {
+   @include flex-center;
+   flex-shrink: 0;
    background-position: center;
    background-repeat: no-repeat;
    background-size: contain;
 }
 
-.hex1-out {}
+.hex1-out {
+   background-image: url(../assets/hex/hex1-out.svg);
+}
 
-.hex1-full {}
+.hex1-full {
+   background-image: url(../assets/hex/hex1-full.svg);
+}
 
 .hex2-out {
    background-image: url(../assets/hex/hex2-out.svg);

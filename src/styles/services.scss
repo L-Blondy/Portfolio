@@ -25,23 +25,22 @@
 
    .hex {
       @include flex-center;
-      flex-shrink: 0;
       height: 7rem;
       width: 7rem;
 
       &.hex2-full {
-         padding-bottom: 0.2rem;
+         padding-bottom: 0.1rem;
 
          svg {
-            width: 50%;
-            height: 50%;
+            width: 48%;
+            height: 48%;
          }
       }
 
       &.hex2-out {
          svg {
-            width: 48%;
-            height: 48%;
+            width: 45%;
+            height: 45%;
          }
       }
    }
@@ -52,8 +51,6 @@
       flex-direction: column;
 
       .hex {
-         @include flex-center;
-         flex-shrink: 0;
          height: 6rem;
          width: 6rem;
       }

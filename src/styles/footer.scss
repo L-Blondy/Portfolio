@@ -35,63 +35,42 @@ footer {
       align-items: center;
       flex-shrink: 0;
 
-      .hex-container:nth-child(2) {
-         margin: 0 2.5rem;
-      }
+      .hex {
+         @include flex-center;
+         height: 6rem;
+         width: 6rem;
 
-      .hex1 {
-         width: 4rem;
-         width: var(--hex1-width);
-         background: $clr-primary;
-         color: $clr-primary;
-
-         &.inner {
-            background: $clr-bg-footer;
-
-            &::before,
-            &::after {
-               border-bottom-color: $clr-bg-footer;
-               border-top-color: $clr-bg-footer;
-            }
-
-            .icon-container {
-               @include flex-center;
-               align-items: center;
-               position: relative;
-               z-index: 2;
-               width: 95%;
-               height: 105%;
-
-               svg {
-                  width: auto;
-                  height: 100%;
-
-                  &.npm {
-                     height: auto;
-                  }
-               }
-            }
+         &:nth-child(2) {
+            margin: 0 2rem;
          }
 
-         &.full .inner {
-            color: $clr-bg;
+         svg {
+            height: 45%;
+            width: 67%;
          }
       }
    }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
 
    footer {
       flex-wrap: wrap;
       padding-top: 4rem;
-      padding-bottom: 6rem;
+      padding-bottom: 4rem;
 
       .fullname,
       .external-links {
          width: 50%;
          display: flex;
-         justify-content: center;
+      }
+
+      .fullname {
+         justify-content: flex-start;
+      }
+
+      .external-links {
+         justify-content: flex-end;
       }
 
       .prenom {
@@ -110,11 +89,18 @@ footer {
 @media (max-width: 992px) {
    footer {
       .fullname {
-         font-size: 2.3rem;
+         // font-size: 2.5rem;
       }
 
-      .external-links .hex-container:nth-child(2) {
-         margin: 0 2rem;
+      .external-links {
+         .hex {
+            height: 5rem;
+            width: 5rem;
+         }
+
+         .hex:nth-child(2) {
+            margin: 0 1.5rem;
+         }
       }
    }
 }
@@ -124,15 +110,25 @@ footer {
       flex-direction: column;
       padding-bottom: 7rem;
 
+      .fullname,
+      .external-links {
+         justify-content: center;
+      }
+
       .fullname {
-         font-size: calc(1.65rem + 4vw);
+         font-size: calc(2rem + 3vw);
       }
 
       .external-links {
-         padding: 3rem 0;
+         padding: 2rem 0;
 
-         .hex-container:nth-child(2) {
-            margin: 0 3rem;
+         .hex {
+            height: calc(4rem + 3vw);
+            width: calc(4rem + 3vw);
+         }
+
+         .hex:nth-child(2) {
+            margin: 0 2rem;
          }
       }
 
@@ -143,7 +139,22 @@ footer {
 }
 
 @media (max-width: 576px) {
-   footer .external-links .hex-container:nth-child(2) {
-      margin: 0 calc(7vw + 0.5rem);
+   footer .external-links .hex:nth-child(2) {
+      margin: 0 6vw;
+   }
+}
+
+@media (max-width: 320px) {
+   footer .fullname {
+      font-size: calc(1.5rem + 3vw);
+   }
+
+   footer .external-links .hex {
+      height: 4rem;
+      width: 4rem;
+   }
+
+   footer .external-links .hex:nth-child(2) {
+      margin: 0 3vw;
    }
 }
