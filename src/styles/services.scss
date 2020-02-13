@@ -13,6 +13,7 @@
       padding: 0.5rem 1rem 0 1rem;
       margin: 1rem 0;
       min-width: 14rem;
+      opacity: 0;
 
       h2 {
          font-weight: 400;
@@ -43,14 +44,6 @@
             height: 45%;
          }
       }
-   }
-   .draw-hex > .to-draw{
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      animation: draw-hex 1000ms linear;
    }
 }
 

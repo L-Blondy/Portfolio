@@ -105,8 +105,11 @@
    }
 }
 
-.burger,.navlinks>li,.title,.chevron-down {
-   animation-duration: 500ms;
+.burger,
+.navlinks>li,
+.title,
+.chevron-down {
+   animation-duration: 1000ms;
    animation-delay: 500ms;
    animation-fill-mode: forwards;
    -ms-animation: fadeIn 1000ms forwards !important;

@@ -45,12 +45,29 @@
 }
 
 @keyframes draw-hex {
-	0% {
-		stroke-dasharray: 350;
-		stroke-dashoffset: 350;
-	}
-	100% {
-		stroke-dasharray: 350;
-		stroke-dashoffset: 0;
-	}
+   0% {
+      stroke-dasharray: 350;
+      stroke-dashoffset: 350;
+   }
+
+   100% {
+      stroke-dasharray: 350;
+      stroke-dashoffset: 0;
+   }
+}
+
+@keyframes fadeFromLeft-little {
+   from {
+      opacity: 0;
+      transform: translateX(-30px)
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0)
+   }
+}
+
+.fadeFromLeft-little {
+   animation: fadeFromLeft-little 300ms forwards;
 }

@@ -50,9 +50,15 @@
             align-items: center;
             min-width: calc(25% + 35px);
 
+            .hex1-full-dot {
+               opacity: 0;
+               animation-duration: 300ms;
+            }
+
             >span {
                padding-left: 1rem;
                line-height: 3.3em;
+               min-height: 3.3em;
             }
          }
       }
