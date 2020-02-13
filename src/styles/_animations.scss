@@ -43,3 +43,14 @@
       transform: translateY(0)
    }
 }
+
+@keyframes draw-hex {
+	0% {
+		stroke-dasharray: 350;
+		stroke-dashoffset: 350;
+	}
+	100% {
+		stroke-dasharray: 350;
+		stroke-dashoffset: 0;
+	}
+}

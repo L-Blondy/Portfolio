@@ -13,8 +13,7 @@
       background: none;
       border: none;
       opacity: 0;
-      animation: fadeFromBottom-nav 2000ms 500ms forwards;
-      -ms-animation: fadeIn 1000ms forwards;
+      animation-name: fadeFromBottom-nav;
 
       .line {
          background: $clr-font-light;

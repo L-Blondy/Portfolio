@@ -13,7 +13,7 @@ function handleResize () {
 }
 window.addEventListener( "resize", handleResize )
 
-/*************** VIDEO *****************/
+/*************** VIDEO *****************A/
 // const weather_tablet_vid = document.querySelector( ".app-video__tablet" )
 // const weather_phone_vid = document.querySelector( ".app-video__phone" )
 

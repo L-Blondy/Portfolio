@@ -1,25 +1,3 @@
-<svg class="self" width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path class="self" d="M93.093 114.013L121.957 63.8811L93.093 14L35.4894 14L6.99999 63.8811L35.4894 114.013L93.093 114.013Z" stroke="#15878E" stroke-width="6"/>
-
-<style>
-	.self {
-		animation: drawHex 1000ms forwards linear;
-	}
-	@keyframes drawHex {
-		0% {
-			stroke-dasharray: 400;
-			stroke-dashoffset: 400;
-		}
-		
-		99.9% {
-			stroke-dasharray: 400;
-			stroke-dashoffset: 0;
-		}
-		100% {
-			stroke-dasharray: 0;
-			stroke-dashoffset: 0;
-		}
-	}
-</style>
-
+<svg class="my-hex" width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="my-hex" d="M93.093 114.013L121.957 63.8811L93.093 14L35.4894 14L6.99999 63.8811L35.4894 114.013L93.093 114.013Z" stroke="#15878E" stroke-width="6"/>
 </svg>

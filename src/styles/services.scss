@@ -29,18 +29,28 @@
       &.hex2-full {
          padding-bottom: 0.1rem;
 
-         svg {
+         .icon {
+            position: relative;
+            z-index: 1;
             width: 48%;
             height: 48%;
          }
       }
 
       &.hex2-out {
-         svg {
+         .icon {
             width: 45%;
             height: 45%;
          }
       }
+   }
+   .draw-hex > .to-draw{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      animation: draw-hex 1000ms linear;
    }
 }
 
