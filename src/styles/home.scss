@@ -42,6 +42,12 @@
       @include flex-center;
       list-style: none;
 
+      &>li {
+         opacity: 0;
+         animation: fadeFromBottom-nav 2000ms 500ms forwards;
+         -ms-animation: fadeIn 1000ms forwards;
+      }
+
       &-link {
          text-decoration: none;
          color: $clr-font-light;
@@ -60,6 +66,9 @@
    flex-direction: column;
    padding-bottom: 10px;
    color: $clr-font-light;
+   opacity: 0;
+   animation: grow-title 2000ms forwards 500ms;
+   -ms-animation: fadeIn 1000ms forwards;
 
    .laurent_blondy {
       background-image: url(../assets/laurent_blondy/laurent_blondy_desktop.svg);
@@ -89,6 +98,9 @@
    transform: translateX(-50%);
    margin-bottom: 4rem;
    width: calc(90px + 2vw);
+   animation: fadeFromTop-chevron 2000ms forwards 500ms;
+   -ms-animation: fadeIn 1000ms forwards;
+   opacity: 0;
 
    svg {
       width: 100%;

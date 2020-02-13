@@ -1,0 +1,45 @@
+@keyframes grow-title {
+   from {
+      transform: translate(-50%, -50%) scale(0.9);
+      opacity: 0;
+   }
+
+   to {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+   }
+}
+
+@keyframes fadeFromTop-chevron {
+   from {
+      transform: translate(-50%, -60%);
+      opacity: 0;
+   }
+
+   to {
+      transform: translate(-50%, 0);
+      opacity: 1;
+   }
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+@keyframes fadeFromBottom-nav {
+   from {
+      opacity: 0;
+      transform: translateY(40%)
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0)
+   }
+}

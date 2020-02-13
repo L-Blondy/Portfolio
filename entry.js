@@ -1,7 +1,9 @@
 import "./src/styles/common.scss"
 import "./src/components/navbar.js"
-import "lb-onvisible"
+import { onVisible } from "lb-onvisible"
 import { fix_VH, fix_HashNav } from "./src/utils"
+
+const { log } = console
 
 fix_HashNav()
 fix_VH()
