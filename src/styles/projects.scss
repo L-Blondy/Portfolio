@@ -5,6 +5,20 @@ $video-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 $intro-spacing: 2rem;
 $icon-size:32px;
 $icon-spacing:1.8rem;
+$tablet-w: 400px;
+$phone-w: 200px;
+$anim-duration: 1000ms;
+
+.button_view-project,
+.button_github,
+.app-intro__technologies>.svg-icon,
+.app-intro__description,
+.app-intro__title,
+.app-video__tablet,
+.app-video__phone,
+.projects-title {
+   animation-duration: 1000ms !important;
+}
 
 section.projects {
    background: $clr-bg;
@@ -35,16 +49,16 @@ section.projects {
       &__phone {
          box-shadow: $video-shadow;
          border-radius: 15px;
-         transition: transform 500ms;
+         background: none;
       }
 
       &__tablet {
-         width: 400px;
+         width: $tablet-w;
       }
 
       &__phone {
          position: absolute;
-         width: 200px;
+         width: $phone-w;
          top: 50%;
          left: 50%;
       }
@@ -64,7 +78,6 @@ section.projects {
       }
 
       &__description {
-         // font-size: 1.05rem;
          width: 100%;
          padding-bottom: $intro-spacing;
       }
@@ -100,11 +113,12 @@ section.projects {
       margin-right: $central-space;
 
       &__tablet {
-         transform: translate(-15%);
+         margin-left: -15%;
       }
 
       &__phone {
-         transform: translate(20%, -12%);
+         margin-left: 15%;
+         margin-top: -8%;
       }
    }
 
@@ -126,11 +140,13 @@ section.projects {
       margin-left: $central-space;
 
       &__tablet {
-         transform: translate(15%);
+         margin-left: 15%;
       }
 
       &__phone {
-         transform: translate(-120%, -12%);
+         right: 65%;
+         left: auto;
+         margin-top: -8%;
       }
    }
 
@@ -152,10 +168,10 @@ section.projects {
 @media (max-width: 1660px) {
 
    .app-video__tablet {
-      transform: scale(0.9);
+      width: $tablet-w * 0.9;
    }
 
    .app-video__phone {
-      transform: translate(25%, -18%) scale(0.9);
+      width: $phone-w * 0.9;
    }
 }

@@ -14,7 +14,7 @@
     "cssnano": "^4.1.10",
     "gh-pages": "^2.2.0",
     "lb-burger": "^1.1.0",
-    "lb-onvisible": "^1.0.6",
+    "lb-onvisible": "^1.0.9",
     "lb-write": "^1.0.6",
     "sass": "^1.24.3"
   }

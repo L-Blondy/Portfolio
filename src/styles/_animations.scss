@@ -32,10 +32,10 @@
    }
 }
 
-@keyframes fadeFromBottom-nav {
+@keyframes fadeFromBottom-1 {
    from {
       opacity: 0;
-      transform: translateY(40%)
+      transform: translateY(30px)
    }
 
    to {
@@ -44,19 +44,7 @@
    }
 }
 
-@keyframes draw-hex {
-   0% {
-      stroke-dasharray: 350;
-      stroke-dashoffset: 350;
-   }
-
-   100% {
-      stroke-dasharray: 350;
-      stroke-dashoffset: 0;
-   }
-}
-
-@keyframes fadeFromLeft-little {
+@keyframes fadeFromLeft-1 {
    from {
       opacity: 0;
       transform: translateX(-30px)
@@ -68,6 +56,14 @@
    }
 }
 
-.fadeFromLeft-little {
-   animation: fadeFromLeft-little 300ms forwards;
+.fadeIn {
+   animation: fadeIn 300ms forwards;
+}
+
+.fadeFromLeft-1 {
+   animation: fadeFromLeft-1 300ms forwards;
+}
+
+.fadeFromBottom-1 {
+   animation: fadeFromLeft-1 300ms forwards;
 }
