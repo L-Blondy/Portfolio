@@ -33,19 +33,16 @@
    @include absolute-top;
    width: 100%;
    height: 100px;
+   opacity: 0;
 
-   .burger {
+   .burger,
+   .logo {
       display: none;
    }
 
    .navlinks {
       @include flex-center;
       list-style: none;
-
-      &>li {
-         opacity: 0;
-         animation-name: fadeFromBottom-1;
-      }
 
       &-link {
          text-decoration: none;
@@ -60,32 +57,40 @@
 }
 
 .title {
-   @include flex-center;
    @include absolute-center;
+   width: 100%;
    flex-direction: column;
    padding-bottom: 10px;
    color: $clr-font-light;
    opacity: 0;
    animation-name: grow-title;
+   font-family: 'Marcellus SC', serif;
 
-   .laurent_blondy {
-      background-image: url(../assets/laurent_blondy/laurent_blondy_desktop.svg);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      width: calc(500px + 23vw);
-      height: calc(33px + 2vw);
+   .my-name,
+   .headline {
+      text-align: center;
+      font-family: inherit;
+      letter-spacing: 0.18em;
    }
 
-   .what-i-do {
-      background-image: url(../assets/front-end-dev/front-end-dev_desktop.svg);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      width: calc(300px + 10vw);
-      height: calc(20px + 0.6vw);
-      margin-top: 2.5rem;
+   .my-name {
+      font-size: 4.2rem;
+      padding-bottom: 2rem;
    }
+
+
+   .headline {
+      font-size: 2.1rem;
+   }
+
+   .view-projects {
+      display: block;
+      margin: 5rem auto -5rem auto;
+      top: 3rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+   }
+
 }
 
 .chevron-down {
@@ -94,23 +99,27 @@
    bottom: 0;
    left: 50%;
    transform: translateX(-50%);
-   margin-bottom: 4rem;
-   width: calc(90px + 2vw);
+   margin-bottom: 5rem;
+   width: calc(50px + 2vw);
    animation-name: fadeFromTop-chevron;
    opacity: 0;
 
    svg {
       width: 100%;
       pointer-events: none;
+
+      path {
+         stroke-width: 5px;
+      }
    }
 }
 
-.burger,
+.navbar,
 .navlinks>li,
 .title,
 .chevron-down {
-   animation-duration: 1000ms;
-   animation-delay: 500ms;
+   animation-duration: 1000ms !important;
+   animation-delay: 500ms !important;
    animation-fill-mode: forwards;
    -ms-animation: fadeIn 1000ms forwards !important;
 }
@@ -132,20 +141,18 @@
       letter-spacing: 2px;
    }
 
+
    .title {
-      .laurent_blondy {
-         background-image: url(../assets/laurent_blondy/laurent_blondy_lg-tablet.svg);
-         width: calc(60vw + 150px);
-         height: calc(55px + 2.5vw);
+      .my-name {
+         font-size: 3.4rem;
       }
 
-      .what-i-do {
-         background-image: url(../assets/front-end-dev/front-end-dev_tablet.svg);
+      .headline {
+         font-size: 2.1rem;
       }
    }
 
    .chevron-down>svg>path {
-      stroke-width: 5px;
       transform-origin: center center;
    }
 }
@@ -157,7 +164,15 @@
    @import "./burger.scss";
 
    .navbar {
-      height: 120px;
+      justify-content: space-between;
+      padding: 0 2rem;
+
+      .logo {
+         display: block;
+         color: $clr-font-light;
+         font-family: "Exo";
+         font-size: 2.2rem;
+      }
    }
 
    .navbar .navlinks {
@@ -198,44 +213,22 @@
    }
 
    .title {
-      padding-bottom: 30px;
-
       .my-name {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         flex-direction: column;
-
-         .laurent_blondy {
-            background-image: none;
-            width: 0;
-            height: 0;
-         }
-
-         .laurent,
-         .blondy {
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-         }
-
-         .laurent {
-            background-image: url(../assets/laurent_blondy/laurent.svg);
-            width: calc(28vw + 120px);
-            height: calc(8vw + 25px);
-            margin-bottom: 0.7rem;
-         }
-
-         .blondy {
-            background-image: url(../assets/laurent_blondy/blondy.svg);
-            width: calc(42vw + 120px);
-            height: calc(9vw + 45px);
-         }
+         width: 70%;
+         font-size: 2.7rem;
+         letter-spacing: 4px;
+         margin: auto;
       }
-   }
 
-   .chevron-down {
-      margin-bottom: 3rem;
+      .headline {
+         font-size: 2rem;
+         letter-spacing: 1px;
+      }
+
+      .view-projects {
+         margin-top: 4rem;
+         margin-bottom: 0;
+      }
    }
 }
 
@@ -244,16 +237,32 @@
 ***************/
 @media (max-width: 576px) {
    .title {
-      .what-i-do {
-         background-image: url(../assets/front-end-dev/front-end-dev_phone.svg);
-         width: calc(30vw + 100px);
-         height: calc(3.0vw + 10px);
-         margin-top: 1.7rem;
+      .view-projects {
+         font-size: 1.2rem;
+      }
+
+      .my-name {
+         font-size: 2.6rem;
+         // margin-bottom: 0.5rem;
+      }
+
+      .headline {
+         font-size: 2.1rem;
+         letter-spacing: 0;
+      }
+
+      .view-projects {
+         margin-top: calc(2.5rem + 6vh);
+         margin-bottom: -7vh;
+         font-size: 1.05rem;
+         padding: 0.55em 1.1em;
+         letter-spacing: 0.5px;
       }
    }
 
-   .chevron-down>svg>path {
-      transform: scale(0.85);
+
+   .chevron-down {
+      display: none;
    }
 }
 
@@ -265,46 +274,38 @@
       height: 80px;
    }
 
-   .title {
-      padding-bottom: 20px;
-      width: 100%;
-
-      .my-name {
-
-         .laurent,
-         .blondy {
-            background-image: none;
-            height: 0;
-            width: 0;
-            display: none;
-         }
-
-         .laurent_blondy {
-            background-image: url(../assets/laurent_blondy/laurent_blondy_lg-tablet.svg);
-            width: calc(60vw + 150px);
-            height: calc(55px + 2.5vw);
-         }
-
-      }
-
-      .what-i-do {
-         transform: scale(0.65);
-         margin-top: 1rem;
-      }
-   }
-
    .chevron-down {
-      margin-bottom: 1rem;
-      width: 75px;
+      display: none;
    }
 
    .navbar .navlinks>li {
       line-height: 2.5rem;
+   }
+
+   .title {
+      .my-name {
+         width: 70%;
+         font-size: 2.6rem;
+         letter-spacing: 4px;
+         margin: auto;
+         padding-bottom: 1rem;
+      }
+
+      .headline {
+         font-size: 2.5rem;
+         letter-spacing: 1px;
+      }
+
+      .view-projects {
+         margin-top: 1rem;
+         margin-bottom: 0;
+      }
    }
 }
 
 @media (max-width: 992px) and (orientation: landscape) {
    .chevron-down {
       margin-bottom: 1rem;
+      display: none;
    }
 }

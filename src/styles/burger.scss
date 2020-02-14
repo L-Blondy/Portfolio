@@ -12,8 +12,6 @@
       flex-direction: column;
       background: none;
       border: none;
-      opacity: 0;
-      animation-name: fadeFromBottom-1;
 
       .line {
          background: $clr-font-light;
@@ -35,7 +33,7 @@
 
          @keyframes line1 {
             0% {
-               transform: translateY(-15px);
+               transform: translateY(-12px);
             }
 
             30% {
@@ -80,7 +78,7 @@
 
          @keyframes line3 {
             0% {
-               transform: translateY(15px);
+               transform: translateY(12px);
             }
 
             30% {
@@ -117,7 +115,7 @@
             }
 
             100% {
-               transform: translateY(-15px);
+               transform: translateY(-12px);
                width: 30px;
             }
          }
@@ -158,7 +156,7 @@
             }
 
             100% {
-               transform: translateY(15px);
+               transform: translateY(12px);
                width: 30px;
             }
          }
