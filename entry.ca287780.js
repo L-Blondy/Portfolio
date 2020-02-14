@@ -33,4 +33,4 @@ module.exports={"weather-phone":{mp4:require("./weather-phone.mp4")},"weather-ph
 },{"./fix_VH.js":"bRtA","./fix_HashNav.js":"W62B"}],"BZ3n":[function(require,module,exports) {
 "use strict";require("./src/styles/common.scss");var e=require("./src/components/navbar.js"),s=require("./src/components/services.js"),r=require("./src/components/profile.js"),t=require("./src/components/projects.js"),i=require("./src/utils");(0,e.setupNavBar)(),(0,s.setupServices)(),(0,r.setupProfile)(),(0,i.fix_HashNav)(),(0,i.fix_VH)();var o=(new t.Videos).setState();function c(){(0,i.fix_VH)(),o.setState()}console.log(o),window.addEventListener("resize",c);
 },{"./src/styles/common.scss":"WPjX","./src/components/navbar.js":"EuNu","./src/components/services.js":"k4T8","./src/components/profile.js":"EDYS","./src/components/projects.js":"Vuba","./src/utils":"iWjG"}]},{},["BZ3n"], null)
-//# sourceMappingURL=https://l-blondy.github.io/Portfolio/entry.7d839b32.js.map
+//# sourceMappingURL=https://l-blondy.github.io/Portfolio/entry.ca287780.js.map
