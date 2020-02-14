@@ -88,6 +88,7 @@ Videos.prototype.setState = function () {
 		this.state = 3
 	}
 }
+//test
 Videos.prototype.setup = function () {
 	this.containers.forEach( ( container, i ) => {
 
