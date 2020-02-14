@@ -2,7 +2,7 @@ import "./src/styles/common.scss"
 import { setupNavBar } from "./src/components/navbar.js"
 import { setupServices } from "./src/components/services.js"
 import { setupProfile } from "./src/components/profile.js"
-import { handleVideo } from "./src/components/projects.js"
+import { Videos } from "./src/components/projects.js"
 import { fix_VH, fix_HashNav } from "./src/utils"
 
 setupNavBar()
@@ -10,11 +10,13 @@ setupServices()
 setupProfile()
 fix_HashNav()
 fix_VH()
-handleVideo()
+
+const videos = new Videos().setState()
+console.log( videos )
 
 function handleResize () {
 	fix_VH()
-	handleVideo()
+	videos.setState()
 }
 window.addEventListener( "resize", handleResize )
 
