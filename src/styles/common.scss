@@ -61,8 +61,8 @@ section {
 
       &.outlined {
          background: none;
-         border-color: $clr-primary;
          color: $clr-primary;
+         border-color: currentColor;
 
          &:focus,
          &:hover {
@@ -70,6 +70,11 @@ section {
          }
       }
    }
+}
+
+yellow {
+   color: #FFB800;
+   font-family: inherit;
 }
 
 @media (max-width: 1660px) {
