@@ -20,6 +20,7 @@ cursive;
    height: var(--vh100, 100vh);
    width: 100%;
    overflow: hidden;
+   z-index: -4;
 
    &::before {
       position: absolute;
@@ -29,7 +30,7 @@ cursive;
       left: 0;
       right: 0;
       background: rgba(0, 169, 149, 0.05);
-      z-index: -1
+      z-index: -1;
    }
 
    .bg {
@@ -69,6 +70,7 @@ cursive;
    width: 100%;
    height: 100px;
    opacity: 0;
+   z-index: 3;
 
    .burger,
    .logo {
@@ -87,6 +89,10 @@ cursive;
          letter-spacing: 3px;
          padding: 0.5rem 1rem;
          margin: 0 calc(2vw);
+
+         &:hover {
+            opacity: 0.8;
+         }
       }
    }
 
@@ -108,7 +114,7 @@ cursive;
       @import "./burger.scss";
 
       justify-content: space-between;
-      padding: 0 2rem;
+      padding: 0 4rem;
 
       .logo {
          display: block;
@@ -158,12 +164,15 @@ cursive;
       }
    }
 
-   @media (max-width: 767.8px) and (orientation: landscape) {
-      .navbar {
-         height: 80px;
-      }
+   @media (max-width: 576px) {
+      padding: 0 2rem;
+   }
 
-      .navbar .navlinks>li {
+   @media (max-width: 767.8px) and (orientation: landscape) {
+      padding: 0 2rem;
+      height: 80px;
+
+      .navlinks>li {
          line-height: 2.5rem;
       }
    }
@@ -224,12 +233,13 @@ cursive;
       font-size: 0.9rem;
    }
 
-   @media (max-width: 767.8px) {
-      font-size: 0.8rem;
-   }
+   // @media (max-width: 767.8px) {
+   //    font-size: 0.8rem;
+   // }
 
-   @media (max-width: 576px) {
-      font-size: 1rem;
+   @media (max-width: 767.8px) {
+      // font-size: 0.9rem;
+      font-size: calc(0.57rem + 1.5vw);
       margin-top: 0;
 
       .my-name {
@@ -271,8 +281,8 @@ cursive;
 
          >* {
             font-size: 1em;
-            padding-left: 1.5em;
-            padding-right: 1.5em;
+            padding-left: 1.8em;
+            padding-right: 1.8em;
          }
 
          .learn-more {
@@ -283,6 +293,7 @@ cursive;
 
    @media (max-width: 767.8px) and (orientation: landscape) {
       margin-top: 0;
+      font-size: 0.9rem;
 
       .headline {
          margin: 0.7rem 0 1.2rem 0;
@@ -322,27 +333,75 @@ cursive;
       display: none;
    }
 
-   @media (max-width: 767.8px) and (orientation: landscape) {
+   @media (max-width: 767.8px),
+   (max-height: 800px) and (orientation: landscape) {
       display: none;
    }
 }
 
-.external-links {
-   display: flex;
+.bottom-bar {
+   position: absolute;
    opacity: 0.85;
+   bottom: 2rem;
+   left: 0;
+   width: 100%;
+   padding: 0 2rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   z-index: 3;
 
-   .hex {
-      @include flex-center;
-      height: 3rem;
-      width: 3rem;
+   .scroll-down {
+      position: relative;
+      z-index: 8;
+      color: $clr-font-light;
+      text-decoration: none;
+      transform-origin: bottom left;
+      font-size: 0.65rem;
+      transform: rotate(-90deg) translateY(2em);
+      display: none;
+   }
 
-      &:nth-child(2) {
-         margin: 0 0.5em;
+   .external-links {
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+
+      .hex {
+         @include flex-center;
+         height: 2.5rem;
+         width: 2.5rem;
+
+         &:nth-child(2) {
+            margin: 0.5rem 0;
+         }
+
+         .svg-icon {
+            height: 45%;
+            width: 67%;
+         }
+      }
+   }
+
+   @media (max-width: 767.8px) {
+      padding: 0 4rem;
+      bottom: 4rem;
+
+      .external-links {
+         flex-direction: row;
+
+         .hex:nth-child(2) {
+            margin: 0 0.5rem;
+         }
       }
 
-      .svg-icon {
-         height: 45%;
-         width: 67%;
+      .scroll-down {
+         display: initial;
       }
+   }
+
+   @media (max-width: 576px) {
+      padding: 0 2rem;
+      bottom: 2rem;
    }
 }

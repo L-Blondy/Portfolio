@@ -23,6 +23,7 @@ $clr-placeholder: #96A3A2;
          }
 
          &--data {
+            font-size: 1.375rem;
 
             &__email,
             &__phone {
@@ -30,7 +31,7 @@ $clr-placeholder: #96A3A2;
                align-items: center;
 
                span {
-                  font-size: 1.1rem;
+                  font-size: 1.15rem;
                   line-height: 2.3em;
                   padding-left: 1em;
                   white-space: nowrap;
@@ -44,7 +45,6 @@ $clr-placeholder: #96A3A2;
          flex-direction: column;
          align-items: flex-start;
          flex-grow: 1;
-         // background: rgba(0, 0, 0, 0.05);
 
          &--user-data>input,
          &--message {

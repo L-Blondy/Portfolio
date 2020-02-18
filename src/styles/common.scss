@@ -20,8 +20,26 @@
 
 body,
 html {
+   position: relative;
+   z-index: -10;
    scroll-behavior: smooth;
    overflow-x: hidden;
+
+   &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #F5F5F5;
+      border-radius: 3px;
+   }
+
+   &::-webkit-scrollbar {
+      width: 12px;
+      background-color: #F5F5F5;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      border-radius: 3px;
+      background: #15878E;
+   }
 }
 
 section {
@@ -31,7 +49,7 @@ section {
 .common {
    &__section-title {
       color: $clr-primary;
-      font-weight: 400;
+      font-weight: 100;
       font-size: 2.9rem;
       letter-spacing: 2px;
       padding-bottom: 3rem;
