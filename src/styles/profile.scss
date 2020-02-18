@@ -39,7 +39,7 @@
 
       &__description {
          padding-bottom: 2rem;
-         font-size: 1em;
+         font-size: 1.15rem;
       }
 
       &__skills {
@@ -50,17 +50,19 @@
             display: flex;
             align-items: center;
             min-width: calc(25% + 35px);
+            font-size: 1.15rem;
 
             .hex1-full-dot {
                opacity: 0;
                animation-duration: 300ms;
             }
 
-            >span {
+            span {
                padding-left: 1rem;
-               font-size: 1em;
+               font-size: 1.15rem;
                line-height: 3em;
                min-height: 3em;
+               flex-shrink: 0;
             }
          }
       }

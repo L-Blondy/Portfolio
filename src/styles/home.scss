@@ -342,7 +342,7 @@ cursive;
 .bottom-bar {
    position: absolute;
    opacity: 0.85;
-   bottom: 2rem;
+   bottom: 4rem;
    left: 0;
    width: 100%;
    padding: 0 2rem;
@@ -358,7 +358,7 @@ cursive;
       text-decoration: none;
       transform-origin: bottom left;
       font-size: 0.65rem;
-      transform: rotate(-90deg) translateY(2em);
+      transform: rotate(-90deg) translateY(2.5em);
       display: none;
    }
 
@@ -398,6 +398,11 @@ cursive;
       .scroll-down {
          display: initial;
       }
+   }
+
+   @media (max-width: 767.8px) and (orientation:landscape) {
+      padding: 0 2rem;
+      bottom: 1rem;
    }
 
    @media (max-width: 576px) {
