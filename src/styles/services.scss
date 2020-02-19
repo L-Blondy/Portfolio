@@ -46,6 +46,35 @@
    }
 }
 
+@media (max-width: 1200px) {
+   .services {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+
+      .service {
+         padding: 0rem 0.5rem 0 0.5rem;
+         margin: 1rem 0;
+         min-width: 10rem;
+         font-size: 0.9rem;
+
+         &-description {
+            margin-top: 0.7rem;
+         }
+
+         .hex {
+            height: 6rem;
+            width: 6rem;
+         }
+      }
+   }
+}
+
+@media (max-width: 767.8px) {
+   .services .service {
+      min-width: 10rem;
+   }
+}
+
 @media (max-width: 576px) {
    .services {
       flex-direction: column;

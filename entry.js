@@ -1,13 +1,17 @@
 import "./src/styles/common.scss"
 import { setupNavBar } from "./src/components/navbar.js"
 import { setupServices } from "./src/components/services.js"
-import { setupProfile } from "./src/components/profile.js"
+import { setupDotAnim } from "./src/components/dotAnim.js"
 import { Videos } from "./src/components/projects.js"
 import { fix_VH, fix_HashNav } from "./src/utils"
 
+let skills = document.querySelectorAll( ".profile-content__skills-skill span" )
+let myData = document.querySelectorAll( ".contact-content__intro--data span" )
+
 setupNavBar()
 setupServices()
-setupProfile()
+setupDotAnim( skills, 2 )
+setupDotAnim( myData, 1 )
 fix_HashNav()
 fix_VH()
 

@@ -9,6 +9,7 @@ footer {
    background: $clr-bg-footer;
    color: $clr-font-light;
    padding: 3rem 20vw;
+   overflow: hidden;
 
    .fullname {
       font-size: 2.625rem;

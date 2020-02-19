@@ -259,25 +259,25 @@
 	<!-- STOP PROJECTS -->
 	<!-- START RESUME -->
 	<section id="resume" class="resume">
-		<div class="text-wrapper">
+		<div class="text-wrapper" data-onvisible="fadeFromLeft">
 			<h3 class="like-what-you-see">Like What You See ?</h3>
 			<p class="check-out">Check out my resume to learn more.</p>
 		</div>
-		<a class="button_view-resume common__btn contained" href="#" name="view resume">View Resume</a>
+		<a class="button_view-resume common__btn contained" href="#" name="view resume" data-onvisible="fadeFromRight">View Resume</a>
 	</section>
 	<!-- STOP RESUME -->
 	<!-- START CONTACT -->
 	<section id="contact" class="contact">
-		<h1 class="common__section-title">Contact me</h1>
+		<h1 class="common__section-title" data-onvisible="fadeFromBottom-1">Contact me</h1>
 		<div class="contact-content">
 			<div class="contact-content__intro">
-				<div class="contact-content__intro--text">
+				<div class="contact-content__intro--text" data-onvisible="fadeFromLeft">
 					<span>Feel free to reach out.</span><span> I'd love to hear from you !</span>
 				</div>
 				<div class="contact-content__intro--data">
 					<div class="contact-content__intro--data__email">
-						<div class="hex hex1-full-dot"></div>
-						<span>laurent.blondy@gmail.com</span>
+						<div class="hex hex1-full-dot" data-onvisible="fadeFromLeft-1"></div>
+						<span data-onvisible="fadeIn">laurent.blondy@gmail.com</span>
 					</div>
 					<div class="contact-content__intro--data__phone">
 						<div class="hex hex1-full-dot"></div>
@@ -287,14 +287,14 @@
 			</div>
 			<form class="contact-content__form" action="https://formspree.io/mvokneej" method="POST">
 				<div class="contact-content__form--user-data">
-					<input type="email" name="email" class="email" id="email" spellcheck="false" placeholder="Enter your Email" data-onVisible="opened"required />
+					<input type="email" name="email" class="email" id="email" spellcheck="false" placeholder="Enter your Email" data-onVisible="opened" required />
 					<label style="position: absolute;pointer-events:none;opacity:0" for="email">Email</label>
 					<input type="text" name="name" class="name" id="name" spellcheck="false" placeholder="Enter your Name" data-onVisible="opened" required>
 					<label style="position: absolute;pointer-events:none;opacity:0" for="name">Name</label>
 				</div>
 				<textarea class="contact-content__form--message" name="message" id="message" placeholder="Tell me what I can do for you" data-onVisible="opened" required></textarea>
-				<label  style="position: absolute;pointer-events:none;opacity:0" for="message">Message</label>
-				<button type="submit" name="send" class="common__btn contained" aria-label="Send Email">
+				<label style="position: absolute;pointer-events:none;opacity:0" for="message">Message</label>
+				<button type="submit" name="send" class="common__btn contained" aria-label="Send Email" data-onvisible="fadeFromBottom">
 					Send Message
 				</button>
 			</form>
@@ -304,14 +304,14 @@
 	<!-- START FOOTER -->
 	<footer>
 
-		<div class="fullname">
+		<div class="fullname" data-onvisible="fadeFromLeft">
 			<span class="prenom">Laurent</span>
 			<span class="nom">Blondy</span>
 		</div>
 
-		<div class="copyright">Copyright 2019. All rights reserved.</div>
+		<div class="copyright" data-onvisible="fadeFromBottom">Copyright 2019. All rights reserved.</div>
 
-		<div class="external-links">
+		<div class="external-links" data-onvisible="fadeFromRight">
 			<a class="hex hex1-out" href="#" aria-label="github">
 				<div class="svg-icon github"> </div>
 			</a>

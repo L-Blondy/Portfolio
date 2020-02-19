@@ -36,8 +36,10 @@ $clr-placeholder: #96A3A2;
                span {
                   font-size: 1.1rem;
                   line-height: 2.3em;
+                  min-height: 2.3em;
                   padding-left: 1em;
                   white-space: nowrap;
+                  animation-duration: 700ms;
                }
             }
          }
@@ -128,6 +130,8 @@ $clr-placeholder: #96A3A2;
             padding: 0.5em 1.2em;
             overflow: hidden;
             border: none;
+            opacity: 0;
+            animation-delay: 600ms;
          }
       }
    }
@@ -143,7 +147,7 @@ $clr-placeholder: #96A3A2;
          width: auto;
          flex-shrink: 0;
          padding: 0;
-         margin-bottom: 4em;
+         margin-bottom: 2.5em;
 
          &--data {
             padding-left: 1em;
@@ -164,6 +168,10 @@ $clr-placeholder: #96A3A2;
 
    .contact-content__form {
       padding: 0 1em;
+
+      button {
+         animation-delay: 200ms;
+      }
    }
 }
 
@@ -191,6 +199,11 @@ $clr-placeholder: #96A3A2;
             .hex {
                height: 1rem;
                width: 1rem;
+            }
+
+            span {
+               padding-left: 0.6em;
+               min-width: 13.4em;
             }
          }
       }

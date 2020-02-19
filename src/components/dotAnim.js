@@ -1,8 +1,7 @@
 import { writeOnVisible, WriteSequence } from "lb-write"
 
-export function setupProfile () {
+export function setupDotAnim ( skills, speed ) {
 
-	let skills = document.querySelectorAll( ".profile-content__skills-skill span" )
 	skills = [].slice.call( skills )
 
 	if ( "Promise" in window ) {
@@ -10,11 +9,11 @@ export function setupProfile () {
 		let skills_seqs = [];
 		skills.forEach( ( skill, i ) => {
 			if ( i === 0 ) return
-			const skill_seq = new WriteSequence( skill, { speed: 3 } )
+			const skill_seq = new WriteSequence( skill, { speed } )
 			skills_seqs = [ ...skills_seqs, skill_seq ]
 		} )
 
-		writeOnVisible( skills[ 0 ], { speed: 3 } )
+		writeOnVisible( skills[ 0 ], { speed } )
 			.then( () => handleSkillSeq( skills_seqs, skills ) )
 	}
 	else {
