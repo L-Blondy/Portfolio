@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Description" content="Author: L.Blondy, Category: Portfolio, Wev developer">
 	<title>Portfolio</title>
 
 	<link rel="shortcut icon" type="image/png" href="src/assets/favicon.png" />
@@ -15,27 +16,27 @@
 <body>
 	<!-- START HOME -->
 	<section id="home" class="home">
-		<img class="bg" src="src/assets/bg/bg-1870.jpg"
+		<img class="bg" src="src/assets/bg/bg-1870.jpg" alt="code bg"
 			srcset="src/assets/bg/bg-500.jpg 500w,src/assets/bg/bg-800.jpg 800w,src/assets/bg/bg-1100.jpg 1100w,src/assets/bg/bg-1400.jpg 1400w,src/assets/bg/bg-1870.jpg 1870w" />
 
 		<nav class="navbar fadeFromBottom-1">
 
 			<ul class="navlinks">
 				<li>
-					<a href="#profile" class="navlinks-link">Profile</a>
+					<a href="#profile" name="profile" class="navlinks-link">Profile</a>
 				</li>
 				<li>
-					<a href="#projects" class="navlinks-link">Projects</a>
+					<a href="#projects" name="projects" class="navlinks-link">Projects</a>
 				</li>
 				<li>
-					<a href="#resume" class="navlinks-link">Resume</a>
+					<a href="#resume" name="resume" class="navlinks-link">Resume</a>
 				</li>
 				<li>
-					<a href="#contact" class="navlinks-link">Contact</a>
+					<a href="#contact" name="contact" class="navlinks-link">Contact</a>
 				</li>
 			</ul>
 			<div class="logo">LB</div>
-			<button class="burger close">
+			<button class="burger close" aria-label="Menu">
 				<div class="line line1"></div>
 				<div class="line line2"></div>
 				<div class="line line3"></div>
@@ -52,28 +53,31 @@
 				<headline2> Amazing Web Apps</headline2>
 			</div>
 			<div class="call-to-action">
-				<button class="common__btn contained view-projects">View Projects</button>
-				<button class="common__btn outlined learn-more">Learn More</button>
+				<button class="common__btn contained view-projects" aria-label="View Projects">View Projects</button>
+				<button class="common__btn outlined learn-more" aria-label="Learn More">Learn More</button>
 			</div>
 		</span>
 
-		<a class="chevron-down" href="#services">
+		<a class="chevron-down" href="#services" name="services">
 			<svg width="100%" viewBox="0 0 127 54" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M2 2L54.2628 47.8893C59.547 52.529 67.453 52.5291 72.7372 47.8893L125 2" stroke="#EBEBEB" stroke-width="4" />
 			</svg>
 		</a>
 
-		<div class="bottom-bar">
-			<a class="scroll-down" href="#services">SCROLL DOWN</a>
+		<div class="bottom-bar fadeFromTop">
+			<a class="scroll-down " href="#services" name="services">SCROLL DOWN</a>
 			<div class="external-links">
-				<a class="hex hex1-out white" href="#">
+				<a class="hex hex1-out white" href="#" aria-label="github">
 					<div class="svg-icon github-white"> </div>
+					<div class="label">Github</div>
 				</a>
-				<a class="hex hex1-out white" href="#">
+				<a class="hex hex1-out white" href="#" aria-label="linkedin">
 					<div class="svg-icon linkedin-white"> </div>
+					<div class="label">Linkedin</div>
 				</a>
-				<a class="hex hex1-out white" href="#">
+				<a class="hex hex1-out white" href="#" aria-label="npm">
 					<div class="svg-icon npm-white"> </div>
+					<div class="label">NPM</div>
 				</a>
 			</div>
 		</div>
@@ -124,8 +128,7 @@
 	<section id="profile" class="profile">
 
 		<div class="profile-bg">
-			<!-- <div class="profile-bg__img"></div> -->
-			<img class="profile-bg__img" src="src/assets/code/code-1000.jpg"
+			<img class="profile-bg__img" src="src/assets/code/code-1000.jpg" alt="background image"
 				srcset="src/assets/code/code-300.jpg 300w, src/assets/code/code-500.jpg 500w,src/assets/code/code-700.jpg 700w,src/assets/code/code-1000.jpg 1000w" />
 
 			<div class="profile-bg__gradient"></div>
@@ -133,12 +136,12 @@
 
 		<div class="profile-content">
 			<h1 class="common__section-title" data-onvisible="fadeFromRight">Profile</h1>
-			<div class=" profile-content__description" data-onvisible="fadeFromLeft-1">
+			<p class=" profile-content__description" data-onvisible="fadeFromLeft-1">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 				laboris
 				nisi ut aliquip ex ea commodo consequat.
 				Animations + Browser compatibility + Automation + libraries + Typescript + webpack + babel + BEM
-			</div>
+			</p>
 
 			<div class="profile-content__skills">
 				<div class="profile-content__skills-skill">
@@ -200,8 +203,8 @@
 					<div class="svg-icon css3"></div>
 				</div>
 				<div class="app-intro__buttons">
-					<a class="button_view-project common__btn contained" href="#">View Project</a>
-					<a class="button_github common__btn outlined" href="#">GitHub</a>
+					<a class="button_view-project common__btn contained" href="#" name="view project">View Project</a>
+					<a class="button_github common__btn outlined" href="#" name="github">GitHub</a>
 				</div>
 			</div>
 		</div>
@@ -223,8 +226,8 @@
 					<div class="svg-icon css3"></div>
 				</div>
 				<div class="app-intro__buttons">
-					<a class="button_view-project common__btn contained" href="#">View Project</a>
-					<a class="button_github common__btn outlined" href="#">GitHub</a>
+					<a class="button_view-project common__btn contained" href="#" name="view project">View Project</a>
+					<a class="button_github common__btn outlined" href="#" name="github">GitHub</a>
 				</div>
 			</div>
 		</div>
@@ -246,8 +249,8 @@
 					<div class="svg-icon css3"></div>
 				</div>
 				<div class="app-intro__buttons">
-					<a class="button_view-project common__btn contained" href="#">View Project</a>
-					<a class="button_github common__btn outlined" href="#">GitHub</a>
+					<a class="button_view-project common__btn contained" href="#" name="view project">View Project</a>
+					<a class="button_github common__btn outlined" href="#" name="github">GitHub</a>
 				</div>
 			</div>
 		</div>
@@ -260,7 +263,7 @@
 			<h3 class="like-what-you-see">Like What You See ?</h3>
 			<p class="check-out">Check out my resume to learn more.</p>
 		</div>
-		<a class="button_view-resume common__btn contained" href="#">View Resume</a>
+		<a class="button_view-resume common__btn contained" href="#" name="view resume">View Resume</a>
 	</section>
 	<!-- STOP RESUME -->
 	<!-- START CONTACT -->
@@ -284,11 +287,14 @@
 			</div>
 			<form class="contact-content__form" action="https://formspree.io/mvokneej" method="POST">
 				<div class="contact-content__form--user-data">
-					<input type="email" name="email" class="email" spellcheck="false" placeholder="Enter your Email" data-onVisible="opened" required />
-					<input type="text" name="name" class="name" spellcheck="false" placeholder="Enter your Name" data-onVisible="opened" required>
+					<input type="email" name="email" class="email" id="email" spellcheck="false" placeholder="Enter your Email" data-onVisible="opened"required />
+					<label style="position: absolute;pointer-events:none;opacity:0" for="email">Email</label>
+					<input type="text" name="name" class="name" id="name" spellcheck="false" placeholder="Enter your Name" data-onVisible="opened" required>
+					<label style="position: absolute;pointer-events:none;opacity:0" for="name">Name</label>
 				</div>
-				<textarea class="contact-content__form--message" name="message" placeholder="Tell me what I can do for you" data-onVisible="opened" required></textarea>
-				<button type="submit" name="send" class="common__btn contained">
+				<textarea class="contact-content__form--message" name="message" id="message" placeholder="Tell me what I can do for you" data-onVisible="opened" required></textarea>
+				<label  style="position: absolute;pointer-events:none;opacity:0" for="message">Message</label>
+				<button type="submit" name="send" class="common__btn contained" aria-label="Send Email">
 					Send Message
 				</button>
 			</form>
@@ -306,13 +312,13 @@
 		<div class="copyright">Copyright 2019. All rights reserved.</div>
 
 		<div class="external-links">
-			<a class="hex hex1-out" href="#">
+			<a class="hex hex1-out" href="#" aria-label="github">
 				<div class="svg-icon github"> </div>
 			</a>
-			<a class="hex hex1-full" href="#">
+			<a class="hex hex1-full" href="#" aria-label="linkedin">
 				<div class="svg-icon linkedin"> </div>
 			</a>
-			<a class="hex hex1-out" href="#">
+			<a class="hex hex1-out" href="#" aria-label="npm">
 				<div class="svg-icon npm"> </div>
 			</a>
 		</div>

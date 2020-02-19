@@ -22,8 +22,11 @@ $anim-duration: 1000ms;
 
 section.projects {
    background: $clr-bg;
-   padding-top: 8rem;
-   padding-bottom: 8rem;
+
+   @media (min-width: 576.2px) {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+   }
 }
 
 .app {

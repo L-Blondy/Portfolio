@@ -84,7 +84,7 @@ section {
 
          &:focus,
          &:hover {
-            background: rgba(21, 135, 142, 0.08);
+            background: rgba(21, 135, 142, 0.1);
          }
       }
    }
@@ -118,7 +118,13 @@ yellow {
 
    section,
    footer {
-      padding-left: 1.8rem;
-      padding-right: 1.8rem;
+      padding: 4rem 1.8rem;
+   }
+
+   .common__section-title {
+      font-size: 2.3rem;
+      letter-spacing: 0px;
+      padding-bottom: 2rem;
+      text-align: center;
    }
 }

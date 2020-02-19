@@ -39,18 +39,19 @@
 
       &__description {
          padding-bottom: 2rem;
-         font-size: 1.15rem;
+         font-size: inherit;
       }
 
       &__skills {
          display: flex;
          flex-wrap: wrap;
+         font-size: inherit;
 
          &-skill {
             display: flex;
             align-items: center;
             min-width: calc(25% + 35px);
-            font-size: 1.15rem;
+            font-size: inherit;
 
             .hex1-full-dot {
                opacity: 0;
@@ -59,7 +60,7 @@
 
             span {
                padding-left: 1rem;
-               font-size: 1.15rem;
+               font-size: inherit;
                line-height: 3em;
                min-height: 3em;
                flex-shrink: 0;
@@ -89,5 +90,18 @@
 @media (max-width: 576px) {
    .profile-content__skills-skill {
       min-width: calc(45% + 12px);
+   }
+
+   .profile-content {
+      font-size: 1.05rem;
+
+      &__description {
+         padding-bottom: 1rem;
+      }
+
+      &__skills-skill span {
+         line-height: 2.6em;
+         min-height: 2.6em;
+      }
    }
 }

@@ -141,19 +141,29 @@ footer {
 }
 
 @media (max-width: 576px) {
-   footer .external-links .hex:nth-child(2) {
-      margin: 0 6vw;
+   footer {
+      .external-links {
+         padding: 2rem 0;
+
+         .hex {
+            height: calc(3rem + 3vw);
+            width: calc(3rem + 3vw);
+         }
+
+         .hex:nth-child(2) {
+            margin: 0 6vw;
+         }
+      }
+
+      .fullname {
+         font-size: calc(1rem + 5vw);
+      }
    }
 }
 
 @media (max-width: 320px) {
    footer .fullname {
       font-size: calc(1.5rem + 3vw);
-   }
-
-   footer .external-links .hex {
-      height: 4rem;
-      width: 4rem;
    }
 
    footer .external-links .hex:nth-child(2) {

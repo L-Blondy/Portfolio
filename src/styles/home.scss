@@ -6,7 +6,8 @@ cursive;
 .navbar,
 .navlinks>li,
 .title,
-.chevron-down {
+.chevron-down,
+.bottom-bar {
    animation-duration: 1000ms !important;
    animation-delay: 500ms !important;
    animation-fill-mode: forwards;
@@ -233,13 +234,9 @@ cursive;
       font-size: 0.9rem;
    }
 
-   // @media (max-width: 767.8px) {
-   //    font-size: 0.8rem;
-   // }
-
    @media (max-width: 767.8px) {
       // font-size: 0.9rem;
-      font-size: calc(0.57rem + 1.5vw);
+      font-size: calc(0.63rem + 1.5vw);
       margin-top: 0;
 
       .my-name {
@@ -320,6 +317,10 @@ cursive;
    animation-name: fadeFromTop-chevron;
    opacity: 0;
 
+   &:hover svg {
+      opacity: 0.7;
+   }
+
    svg {
       width: 100%;
       pointer-events: none;
@@ -341,7 +342,6 @@ cursive;
 
 .bottom-bar {
    position: absolute;
-   opacity: 0.85;
    bottom: 4rem;
    left: 0;
    width: 100%;
@@ -350,6 +350,8 @@ cursive;
    justify-content: space-between;
    align-items: flex-end;
    z-index: 3;
+   opacity: 0;
+   pointer-events: none;
 
    .scroll-down {
       position: relative;
@@ -360,17 +362,25 @@ cursive;
       font-size: 0.65rem;
       transform: rotate(-90deg) translateY(2.5em);
       display: none;
+      pointer-events: auto;
+      opacity: 0.85;
    }
 
    .external-links {
       display: flex;
       flex-direction: column;
       margin-left: auto;
+      pointer-events: auto;
+      opacity: 0.85;
 
       .hex {
          @include flex-center;
          height: 2.5rem;
          width: 2.5rem;
+         text-decoration: none;
+         color: $clr-font-light;
+         position: relative;
+         transition: opacity 100ms;
 
          &:nth-child(2) {
             margin: 0.5rem 0;
@@ -379,6 +389,25 @@ cursive;
          .svg-icon {
             height: 45%;
             width: 67%;
+         }
+
+         .label {
+            position: absolute;
+            right: 100%;
+            padding: 0 0.5rem;
+            opacity: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            transition: inherit
+         }
+
+         &:hover .label {
+            opacity: 1;
+         }
+
+         &:hover {
+            opacity: 0.75;
          }
       }
    }
@@ -392,6 +421,10 @@ cursive;
 
          .hex:nth-child(2) {
             margin: 0 0.5rem;
+         }
+
+         .hex .label {
+            display: none;
          }
       }
 
