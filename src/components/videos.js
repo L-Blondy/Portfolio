@@ -1,5 +1,34 @@
 let sources = getSources( require( "../assets/video/*.*" ) )
 
+export function setProjectsClasses ( videoState ) {
+
+	const projects = [].slice.call( document.querySelectorAll( ".projects .app" ) )
+	if ( videoState === 1 || videoState === 2 ) {
+		projects.forEach( p => {
+			if ( p.classList.contains( "app-left" ) ) {
+				p.classList.remove( "app-left" )
+				p.classList.add( "app-card" )
+			}
+			else if ( p.classList.contains( "app-right" ) ) {
+				p.classList.remove( "app-right" )
+				p.classList.add( "app-card" )
+			}
+		} )
+	}
+	if ( videoState === 3 ) {
+		projects.forEach( ( p, i ) => {
+			if ( i % 2 === 0 && !p.classList.contains( "app-left" ) ) {
+				p.classList.add( "app-left" )
+				p.classList.remove( "app-card" )
+			}
+			else if ( i % 2 !== 0 && !p.classList.contains( "app-right" ) ) {
+				p.classList.add( "app-right" )
+				p.classList.remove( "app-card" )
+			}
+		} )
+	}
+}
+
 export function Videos () {
 
 	this.containers = [].slice.call( document.querySelectorAll( ".app-video" ) )
@@ -18,16 +47,19 @@ Videos.prototype.setState = function () {
 
 	if ( window.matchMedia( "(max-width:576px)" ).matches ) {
 		this.state = 1
+		setProjectsClasses( 1 )
 		this.src = [ "weather-pic.jpg", "weather-pic.jpg", "weather-pic.jpg" ]
 	}
 
 	else if ( window.matchMedia( "(max-width:991.8px)" ).matches ) {
 		this.state = 2
+		setProjectsClasses( 2 )
 		this.src = [ "weather-tablet.mp4", "weather-tablet.mp4", "weather-tablet.mp4" ]
 	}
 
 	else if ( window.matchMedia( "(min-width:992px)" ).matches ) {
 		this.state = 3
+		setProjectsClasses( 3 )
 		this.src = [
 			[ "weather-tablet.mp4", "weather-tablet.mp4", "weather-tablet.mp4" ],
 			[ "weather-phone2.mp4", "weather-phone2.mp4", "weather-phone2.mp4" ]

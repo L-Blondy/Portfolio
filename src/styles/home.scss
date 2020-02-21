@@ -90,6 +90,7 @@ cursive;
          letter-spacing: 3px;
          padding: 0.5rem 1rem;
          margin: 0 calc(2vw);
+         user-select: none;
 
          &:hover {
             opacity: 0.8;
@@ -142,7 +143,6 @@ cursive;
          transition: opacity 500ms;
          pointer-events: none;
 
-
          &-link {
             letter-spacing: 3px;
             font-size: 1.2rem;
@@ -190,6 +190,7 @@ cursive;
    font-family: $title-font;
    margin-top: 1rem;
    font-size: 1rem;
+   user-select: none;
 
    .my-name {
       font-family: inherit;
@@ -397,12 +398,15 @@ cursive;
             padding: 0 0.5rem;
             opacity: 0;
             height: 100%;
-            display: flex;
+            display: none;
             align-items: center;
-            transition: inherit
+            transition: inherit;
+            text-align: end;
+            white-space: nowrap;
          }
 
          &:hover .label {
+            display: flex;
             opacity: 1;
          }
 

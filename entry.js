@@ -2,7 +2,7 @@ import "./src/styles/common.scss"
 import { setupNavBar } from "./src/components/navbar.js"
 import { setupServices } from "./src/components/services.js"
 import { setupDotAnim } from "./src/components/dotAnim.js"
-import { Videos } from "./src/components/projects.js"
+import { Videos } from "./src/components/videos.js"
 import { fix_VH, fix_HashNav } from "./src/utils"
 
 let skills = document.querySelectorAll( ".profile-content__skills-skill span" )
@@ -16,7 +16,6 @@ fix_HashNav()
 fix_VH()
 
 const videos = new Videos().setState()
-console.log( videos )
 
 function handleResize () {
 	fix_VH()
@@ -25,8 +24,6 @@ function handleResize () {
 window.addEventListener( "resize", handleResize )
 
 
-
-//testasd
 
 
 

@@ -37,6 +37,10 @@ section.projects {
    color: $clr-font-black;
    font-size: 1.12rem;
 
+   .app-card__title {
+      display: none;
+   }
+
    &-video,
    &-intro {
       position: relative;
@@ -169,6 +173,74 @@ section.projects {
    }
 }
 
+.app-card {
+   background: white;
+   @include flex-center;
+   flex-direction: column;
+   border-radius: 25px;
+   font-size: 1rem;
+   margin: 0 2rem 2rem 2rem;
+   padding: 4em 2em;
+   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.05);
+
+   .app-card__title {
+      display: block !important;
+   }
+
+   &__title {
+      font-size: 2em;
+      font-weight: 400;
+      padding-bottom: 2.5rem;
+   }
+
+   .app-video {
+      width: 70%;
+   }
+
+   .app-image,
+   .app-video__tablet {
+      width: 100%;
+      border: 5px solid rgb(77, 77, 77);
+      background: rgb(77, 77, 77);
+      border-radius: 15px;
+   }
+
+   .app-intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding-top: 2em;
+
+      &__title {
+         display: none;
+      }
+
+      &__description {
+         font-size: 1.1em;
+         width: 70%;
+         text-align: center;
+      }
+
+      &__technologies>div {
+         margin: 0 $icon-spacing / 2;
+      }
+
+      &__buttons {
+         justify-content: center;
+
+         .common__btn {
+            margin: 0 0.5rem;
+            min-width: 50%;
+            white-space: nowrap;
+            text-align: center;
+         }
+
+      }
+   }
+}
+
 @media (max-width: 1660px) {
 
    .app-video__tablet {
@@ -177,5 +249,42 @@ section.projects {
 
    .app-video__phone {
       width: $phone-w * 0.9;
+   }
+}
+
+@media(max-width:768px) {
+   .app-card {
+
+      .app-video,
+      .app-intro__description {
+         width: 80%;
+      }
+   }
+}
+
+@media(max-width:650px) {
+   .app-card {
+
+      .app-video,
+      .app-intro__description {
+         width: 90%;
+      }
+   }
+}
+
+@media(max-width:576px) {
+   .app-card {
+      padding: 3em 1.5em;
+
+      .app-image,
+      .app-intro__description {
+         border-width: 3px;
+         width: 100%;
+      }
+
+      .app-intro__description {
+         font-size: 1em;
+         padding-bottom: 1em;
+      }
    }
 }
