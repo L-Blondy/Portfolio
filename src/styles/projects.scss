@@ -17,274 +17,314 @@ $anim-duration: 1000ms;
 .app-video__tablet,
 .app-video__phone,
 .projects-title {
-   animation-duration: 1000ms !important;
+    animation-duration: 1000ms !important;
 }
 
 section.projects {
-   background: $clr-bg;
+    background: $clr-bg;
 
-   @media (min-width: 576.2px) {
-      padding-top: 7rem;
-      padding-bottom: 7rem;
-   }
+    @media (min-width: 576.2px) {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
 }
 
 .app {
-   display: flex;
-   align-items: stretch;
-   padding-top: 6rem;
-   padding-bottom: 6rem;
-   color: $clr-font-black;
-   font-size: 1.12rem;
+    display: flex;
+    align-items: stretch;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    color: $clr-font-black;
+    font-size: 1.12rem;
 
-   .app-card__title {
-      display: none;
-   }
+    .app-card__title {
+        display: none;
+    }
 
-   &-video,
-   &-intro {
-      position: relative;
-      flex-grow: 1;
-      width: 50%;
-   }
+    &-video,
+    &-intro {
+        position: relative;
+        flex-grow: 1;
+        width: 50%;
+    }
 
-   &-video {
-      display: flex;
-      justify-content: center;
+    &-video {
+        display: flex;
+        justify-content: center;
 
-      &__tablet,
-      &__phone {
-         box-shadow: $video-shadow;
-         border-radius: 15px;
-         background: none;
-      }
+        &__tablet,
+        &__phone {
+            box-shadow: $video-shadow;
+            border-radius: 15px;
+            background: none;
+        }
 
-      &__tablet {
-         width: $tablet-w;
-      }
+        &__tablet {
+            width: $tablet-w;
+        }
 
-      &__phone {
-         position: absolute;
-         width: $phone-w;
-         top: 50%;
-         left: 50%;
-      }
-   }
+        &__phone {
+            position: absolute;
+            width: $phone-w;
+            top: 50%;
+            left: 50%;
+        }
+    }
 
-   &-intro {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+    &-intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
 
-      &__title {
-         font-size: 2.4rem;
-         font-weight: 400;
-         letter-spacing: 1px;
-         padding-bottom: 2rem;
-      }
+        &__title {
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            padding-bottom: 2rem;
+        }
 
-      &__description {
-         width: 100%;
-         padding-bottom: $intro-spacing;
-         font-size: 1.15rem;
-      }
+        &__description {
+            width: 100%;
+            padding-bottom: $intro-spacing;
+            font-size: 1.15rem;
+        }
 
-      &__technologies {
-         display: flex;
-         padding-bottom: $intro-spacing;
+        &__technologies {
+            display: flex;
+            padding-bottom: $intro-spacing;
 
-         >.svg-icon {
-            height: $icon-size;
-            width: $icon-size;
-         }
-      }
+            >.svg-icon {
+                height: $icon-size;
+                width: $icon-size;
+            }
+        }
 
-      .app-intro__buttons {
-         display: flex;
+        .app-intro__buttons {
+            display: flex;
 
-         .button_view-project,
-         .button_github {
-            font-size: inherit;
-            letter-spacing: 0.3px;
-         }
+            .button_view-project,
+            .button_github {
+                font-size: inherit;
+                letter-spacing: 0.3px;
+            }
 
-         .button_github {
-            margin: 0 1rem;
-         }
-      }
-   }
+            .button_github {
+                margin: 0 1rem;
+            }
+        }
+    }
 }
 
 .app-left {
-   .app-video {
-      margin-right: $central-space;
+    .app-video {
+        margin-right: $central-space;
 
-      &__tablet {
-         margin-left: -15%;
-      }
+        &__tablet {
+            margin-left: -15%;
+        }
 
-      &__phone {
-         margin-left: 15%;
-         margin-top: -8%;
-      }
-   }
+        &__phone {
+            margin-left: 15%;
+            margin-top: -8%;
+        }
+    }
 
-   .app-intro {
-      margin-left: $central-space;
-      padding-left: $central-space;
-   }
+    .app-intro {
+        margin-left: $central-space;
+        padding-left: $central-space;
+    }
 
-   .app-intro__technologies>div {
-      margin-right: $icon-spacing;
-   }
+    .app-intro__technologies>div {
+        margin-right: $icon-spacing;
+    }
 }
 
 .app-right {
-   flex-direction: row-reverse;
-   text-align: right;
+    flex-direction: row-reverse;
+    text-align: right;
 
-   .app-video {
-      margin-left: $central-space;
+    .app-video {
+        margin-left: $central-space;
 
-      &__tablet {
-         margin-left: 15%;
-      }
+        &__tablet {
+            margin-left: 15%;
+        }
 
-      &__phone {
-         right: 65%;
-         left: auto;
-         margin-top: -8%;
-      }
-   }
+        &__phone {
+            right: 65%;
+            left: auto;
+            margin-top: -8%;
+        }
+    }
 
-   .app-intro {
-      align-items: flex-end;
-      margin-right: $central-space;
-      padding-right: $central-space;
-   }
+    .app-intro {
+        align-items: flex-end;
+        margin-right: $central-space;
+        padding-right: $central-space;
+    }
 
-   .app-intro__technologies>div {
-      margin-left: $icon-spacing;
-   }
+    .app-intro__technologies>div {
+        margin-left: $icon-spacing;
+    }
 
-   .app-intro__buttons {
-      flex-direction: row-reverse;
-   }
+    .app-intro__buttons {
+        flex-direction: row-reverse;
+    }
 }
 
 .app-card {
-   background: white;
-   @include flex-center;
-   flex-direction: column;
-   border-radius: 25px;
-   font-size: 1rem;
-   margin: 0 2rem 2rem 2rem;
-   padding: 4em 2em;
-   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.05);
+    background: white;
+    @include flex-center;
+    flex-direction: column;
+    border-radius: 25px;
+    font-size: 1rem;
+    margin: 0 2rem 2rem 2rem;
+    padding: 4em 2em;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.05);
 
-   .app-card__title {
-      display: block !important;
-   }
+    .app-card__title {
+        display: block !important;
+    }
 
-   &__title {
-      font-size: 2em;
-      font-weight: 400;
-      padding-bottom: 2.5rem;
-   }
+    &__title {
+        font-size: 2em;
+        font-weight: 400;
+        padding-bottom: 2.5rem;
+    }
 
-   .app-video {
-      width: 70%;
-   }
+    .app-video {
+        display: inline;
+        min-width: 70%;
+    }
 
-   .app-image,
-   .app-video__tablet {
-      width: 100%;
-      border: 5px solid rgb(77, 77, 77);
-      background: rgb(77, 77, 77);
-      border-radius: 15px;
-   }
+    .app-image,
+    .app-video__tablet {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 4%;
+        font-size: 0;
+    }
 
-   .app-intro {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding-top: 2em;
+    .app-intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-top: 2em;
 
-      &__title {
-         display: none;
-      }
+        &__title {
+            display: none;
+        }
 
-      &__description {
-         font-size: 1.1em;
-         width: 70%;
-         text-align: center;
-      }
-
-      &__technologies>div {
-         margin: 0 $icon-spacing / 2;
-      }
-
-      &__buttons {
-         justify-content: center;
-
-         .common__btn {
-            margin: 0 0.5rem;
-            min-width: 50%;
-            white-space: nowrap;
+        &__description {
+            font-size: 1.1em;
+            width: 70%;
             text-align: center;
-         }
+        }
 
-      }
-   }
+        &__technologies>div {
+            margin: 0 $icon-spacing / 2;
+        }
+
+        &__buttons {
+            justify-content: center;
+
+            .common__btn {
+                margin: 0 0.5rem;
+                min-width: 50%;
+                white-space: nowrap;
+                text-align: center;
+            }
+
+        }
+    }
 }
 
 @media (max-width: 1660px) {
 
-   .app-video__tablet {
-      width: $tablet-w * 0.9;
-   }
+    .app-video__tablet {
+        width: $tablet-w * 0.9;
+    }
 
-   .app-video__phone {
-      width: $phone-w * 0.9;
-   }
+    .app-video__phone {
+        width: $phone-w * 0.9;
+    }
 }
 
 @media(max-width:768px) {
-   .app-card {
+    .app-card {
 
-      .app-video,
-      .app-intro__description {
-         width: 80%;
-      }
-   }
+        .app-video,
+        .app-intro__description {
+            width: 80%;
+        }
+    }
 }
 
 @media(max-width:650px) {
-   .app-card {
+    .app-card {
 
-      .app-video,
-      .app-intro__description {
-         width: 90%;
-      }
-   }
+        .app-video,
+        .app-intro__description {
+            width: 90%;
+        }
+    }
 }
 
 @media(max-width:576px) {
-   .app-card {
-      padding: 3em 1.5em;
+    .app-card {
+        padding: 2.5em 2em;
+        margin-left: 0;
+        margin-right: 0;
 
-      .app-image,
-      .app-intro__description {
-         border-width: 3px;
-         width: 100%;
-      }
+        .app-video,
+        .app-intro__description {
+            width: 100%;
+        }
 
-      .app-intro__description {
-         font-size: 1em;
-         padding-bottom: 1em;
-      }
-   }
+        .app-card__title {
+            font-size: 1.7em;
+            padding-bottom: 0.7em;
+        }
+
+        .app-intro {
+            padding-top: 1em;
+
+            &__description {
+                font-size: 1em;
+                padding-bottom: 1em;
+            }
+
+            &__technologies {
+                width: 100%;
+                justify-content: space-evenly;
+            }
+
+            &__buttons {
+                width: 100%;
+
+                .common__btn {
+                    font-size: 1rem;
+                    min-width: 0;
+                    width: 45%;
+                    max-width: 7em;
+                    min-width: 6em;
+
+                    span {
+                        display: none;
+                    }
+
+                    &:nth-child(1) {
+                        margin-right: 0.3em;
+                    }
+
+                    &:nth-child(2) {
+                        margin-left: 0.3em;
+                    }
+                }
+            }
+        }
+    }
 }
