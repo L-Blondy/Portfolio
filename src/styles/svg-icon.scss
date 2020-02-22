@@ -1,46 +1,104 @@
+$clr-tooltip: #005568;
+
 .svg-icon {
-   background-position: center;
-   background-size: contain;
-   background-repeat: no-repeat;
+    position: relative;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.app-intro__technologies {
+    .svg-icon {
+        &::after {
+            position: absolute;
+            bottom: calc(100% + 13px);
+            left: 50%;
+            transform: translate(-50%);
+            background: $clr-tooltip;
+            padding: 0.4em 1em;
+            border-radius: 3px;
+            color: white;
+            white-space: nowrap;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: calc(100% + 7px);
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid $clr-tooltip;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        &::before,
+        &::after {
+            opacity: 0;
+            transition: opacity 150ms;
+        }
+
+        &:hover::before,
+        &:hover::after {
+            opacity: 1;
+        }
+    }
 }
 
 .javascript {
-   background-image: url(../assets/icons/javascript.svg);
-   border-radius: 2px;
+    background-image: url(../assets/icons/javascript.svg);
+    border-radius: 2px;
+
+    &::after {
+        content: "Javascript";
+    }
 }
 
 .html5 {
-   background-image: url(../assets/icons/html5.svg);
+    background-image: url(../assets/icons/html5.svg);
+
+    &::after {
+        content: "HTML5";
+    }
 }
 
 .css3 {
-   background-image: url(../assets/icons/css3.svg);
+    background-image: url(../assets/icons/css3.svg);
+
+    &::after {
+        content: "CSS3";
+    }
 }
 
 .react {
-   background-image: url(../assets/icons/react.svg);
-   border-radius: 2px;
+    background-image: url(../assets/icons/react.svg);
+    border-radius: 2px;
+
+    &::after {
+        content: "React JS";
+    }
 }
 
 .linkedin {
-   background-image: url(../assets/icons/linkedin.svg);
+    background-image: url(../assets/icons/linkedin.svg);
 }
 
 .linkedin-white {
-   background-image: url(../assets/icons/linkedin-white.svg);
+    background-image: url(../assets/icons/linkedin-white.svg);
 }
 
 .github {
-   background-image: url(../assets/icons/github.svg);
+    background-image: url(../assets/icons/github.svg);
 }
 
 .github-white {
-   background-image: url(../assets/icons/github-white.svg);
+    background-image: url(../assets/icons/github-white.svg);
 }
 
 .npm {
-   background-image: url(../assets/icons/npm.svg);
+    background-image: url(../assets/icons/npm.svg);
 }
+
 .npm-white {
-   background-image: url(../assets/icons/npm-white.svg);
+    background-image: url(../assets/icons/npm-white.svg);
 }

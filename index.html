@@ -26,7 +26,7 @@
 					<a href="#profile" name="profile" class="navlinks-link">Profile</a>
 				</li>
 				<li>
-					<a href="#projects" name="projects" class="navlinks-link">Projects</a>
+					<a href="#portfolio" name="portfolio" class="navlinks-link">Portfolio</a>
 				</li>
 				<li>
 					<a href="#resume" name="resume" class="navlinks-link">Resume</a>
@@ -50,11 +50,12 @@
 			</div>
 			<div class="headline">
 				<headline1>I <yellow>CODE</yellow> & Design</headline1>
-				<headline2> Amazing Web Apps</headline2>
+				<headline2> Highly Responsive</headline2>
+				<headline3>Web Applications</headline3>
 			</div>
 			<div class="call-to-action">
-				<button class="common__btn contained view-projects" aria-label="View Projects">View Projects</button>
-				<button class="common__btn outlined learn-more" aria-label="Learn More">Learn More</button>
+				<button class="common__btn contained view-portfolio hover-bright" aria-label="View Portfolio">View Portfolio</button>
+				<button class="common__btn outlined learn-more  hover-dark" aria-label="Learn More">Learn More</button>
 			</div>
 		</span>
 
@@ -65,7 +66,7 @@
 		</a>
 
 		<div class="bottom-bar fadeFromTop">
-			<a class="scroll-down " href="#services" name="services">SCROLL DOWN</a>
+			<a class="scroll-down hover-dark " href="#services" name="services">SCROLL DOWN</a>
 			<div class="external-links">
 				<a class="hex hex1-out white" href="#" aria-label="github">
 					<div class="svg-icon github-white"> </div>
@@ -181,23 +182,22 @@
 
 	</section>
 	<!-- STOP PROFILE -->
-	<!-- START PROJECTS -->
-	<section id="projects" class="projects" data-state="">
+	<!-- START PORTFOLIO -->
+	<section id="portfolio" class="portfolio" data-state="">
 
-		<h1 class="common__section-title projects-title" data-onvisible="fadeFromBottom">Projects</h1>
+		<h1 class="common__section-title portfolio-title" data-onvisible="fadeFromBottom">Portfolio</h1>
 
 		<div class="app app-left">
-			<h2 class="app-card__title" data-onvisible="fadeFromBottom">
-				AccuWeather
-			</h2>
 			<span class="app-video"> </span>
 			<div class=" app-intro">
-				<h2 class="app-intro__title" data-onvisible="fadeFromRight">
+				<h2 class="app-intro__title">
 					AccuWeather
 				</h2>
-				<div class="app-intro__description" data-onvisible="fadeFromRight">
-					Customizable and easy to use web app to check the weather anywhere in the world.
-					Forecast up to 15 days, free to use.
+				<div class="app-intro__description">
+					Web Application based on <strong>React JS</strong> & <strong>Styled Components</strong> that provides worldwide weather data.
+					I based the app on 3 APIs: the locations provided by the Algolia API are sent to the WeatherBit and 7Timer APIs in order to fetch, organize and display the data.
+					The app includes a theming feature for the eye comfort in bright and dark environments.
+
 				</div>
 				<div class="app-intro__technologies">
 					<div class="svg-icon javascript"></div>
@@ -206,16 +206,13 @@
 					<div class="svg-icon css3"></div>
 				</div>
 				<div class="app-intro__buttons">
-					<a class="button_view-project common__btn contained" href="#" name="view project"><span>View</span> Project</a>
+					<a class="button_visit-website common__btn contained hover-bright" href="#" name="visit website">Visit<span> Website</span></a>
 					<a class="button_github common__btn outlined" href="#" name="github">GitHub</a>
 				</div>
 			</div>
 		</div>
 
 		<div class="app app-right">
-			<h2 class="app-card__title" data-onvisible="fadeFromBottom">
-				AccuWeather
-			</h2>
 			<div class="app-video"> </div>
 			<div class="app-intro">
 				<h2 class="app-intro__title">
@@ -232,16 +229,13 @@
 					<div class="svg-icon css3"></div>
 				</div>
 				<div class="app-intro__buttons">
-					<a class="button_view-project common__btn contained" href="#" name="view project"><span>View</span> Project</a>
+					<a class="button_visit-website common__btn contained hover-bright" href="#" name="visit website">Visit<span> Website</span></a>
 					<a class="button_github common__btn outlined" href="#" name="github">GitHub</a>
 				</div>
 			</div>
 		</div>
 
 		<div class="app app-left">
-			<h2 class="app-card__title" data-onvisible="fadeFromBottom">
-				AccuWeather
-			</h2>
 			<div class="app-video"> </div>
 			<div class="app-intro">
 				<h2 class="app-intro__title">
@@ -258,21 +252,21 @@
 					<div class="svg-icon css3"></div>
 				</div>
 				<div class="app-intro__buttons">
-					<a class="button_view-project common__btn contained" href="#" name="view project"><span>View</span> Project</a>
+					<a class="button_visit-website common__btn contained hover-bright" href="#" name="visit website">Visit<span> Website</span></a>
 					<a class="button_github common__btn outlined" href="#" name="github">GitHub</a>
 				</div>
 			</div>
 		</div>
 
 	</section>
-	<!-- STOP PROJECTS -->
+	<!-- STOP PORTFOLIO -->
 	<!-- START RESUME -->
 	<section id="resume" class="resume">
 		<div class="text-wrapper" data-onvisible="fadeFromLeft">
 			<h3 class="like-what-you-see">Like What You See ?</h3>
 			<p class="check-out">Check out my resume to learn more.</p>
 		</div>
-		<a class="button_view-resume common__btn contained" href="#" name="view resume" data-onvisible="fadeFromRight">View Resume</a>
+		<a class="button_view-resume common__btn contained hover-bright" href="#" name="view resume" data-onvisible="fadeFromRight">View Resume</a>
 	</section>
 	<!-- STOP RESUME -->
 	<!-- START CONTACT -->
@@ -296,14 +290,14 @@
 			</div>
 			<form class="contact-content__form" action="https://formspree.io/mvokneej" method="POST">
 				<div class="contact-content__form--user-data">
-					<input type="email" name="email" class="email" id="email" spellcheck="false" placeholder="Enter your Email" data-onVisible="opened" required />
+					<input type="email" name="email" class="email hover-bright" id="email" spellcheck="false" placeholder="Enter your Email" data-onVisible="opened" required />
 					<label style="position: absolute;pointer-events:none;opacity:0" for="email">Email</label>
-					<input type="text" name="name" class="name" id="name" spellcheck="false" placeholder="Enter your Name" data-onVisible="opened" required>
+					<input type="text" name="name" class="name hover-bright" id="name" spellcheck="false" placeholder="Enter your Name" data-onVisible="opened" required>
 					<label style="position: absolute;pointer-events:none;opacity:0" for="name">Name</label>
 				</div>
-				<textarea class="contact-content__form--message" name="message" id="message" placeholder="Tell me what I can do for you" data-onVisible="opened" required></textarea>
+				<textarea class="contact-content__form--message hover-bright" name="message" id="message" placeholder="Tell me what I can do for you" data-onVisible="opened" required></textarea>
 				<label style="position: absolute;pointer-events:none;opacity:0" for="message">Message</label>
-				<button type="submit" name="send" class="common__btn contained" aria-label="Send Email" data-onvisible="fadeFromBottom">
+				<button type="submit" name="send" class="common__btn contained hover-bright" aria-label="Send Email" data-onvisible="fadeFromBottom">
 					Send Message
 				</button>
 			</form>
@@ -321,13 +315,13 @@
 		<div class="copyright" data-onvisible="fadeFromBottom">Copyright 2019. All rights reserved.</div>
 
 		<div class="external-links" data-onvisible="fadeFromRight">
-			<a class="hex hex1-out" href="#" aria-label="github">
-				<div class="svg-icon github"> </div>
+			<a class="hex hex1-out hover-bright" href="#" aria-label="github">
+				<div class="svg-icon github "> </div>
 			</a>
-			<a class="hex hex1-full" href="#" aria-label="linkedin">
+			<a class="hex hex1-full hover-bright-2" href="#" aria-label="linkedin">
 				<div class="svg-icon linkedin"> </div>
 			</a>
-			<a class="hex hex1-out" href="#" aria-label="npm">
+			<a class="hex hex1-out hover-bright-2" href="#" aria-label="npm">
 				<div class="svg-icon npm"> </div>
 			</a>
 		</div>

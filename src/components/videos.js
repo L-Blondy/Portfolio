@@ -2,8 +2,8 @@ let sources = getSources( require( "../assets/video/*.*" ) )
 
 export function setProjectsClasses ( videoState ) {
 
-	const projects = [].slice.call( document.querySelectorAll( ".projects .app" ) )
-	if ( videoState === 1 || videoState === 2 ) {
+	const projects = [].slice.call( document.querySelectorAll( ".portfolio .app" ) )
+	if ( videoState === 1 ) {
 		projects.forEach( p => {
 			if ( p.classList.contains( "app-left" ) ) {
 				p.classList.remove( "app-left" )
@@ -15,7 +15,7 @@ export function setProjectsClasses ( videoState ) {
 			}
 		} )
 	}
-	if ( videoState === 3 ) {
+	if ( videoState === 2 ) {
 		projects.forEach( ( p, i ) => {
 			if ( i % 2 === 0 && !p.classList.contains( "app-left" ) ) {
 				p.classList.add( "app-left" )
@@ -45,24 +45,18 @@ Videos.prototype.setState = function () {
 
 	this.prevState = this.state
 
-	if ( window.matchMedia( "(max-width:576px)" ).matches ) {
+	if ( window.matchMedia( "(max-width:1199.8px)" ).matches ) {
 		this.state = 1
 		setProjectsClasses( 1 )
-		this.src = [ "weather-pic.jpg", "weather-pic.jpg", "weather-pic.jpg" ]
+		this.src = [ "weather-desktop.jpg", "weather-desktop.jpg", "weather-desktop.jpg" ]
 	}
 
-	else if ( window.matchMedia( "(max-width:991.8px)" ).matches ) {
+	else if ( window.matchMedia( "(min-width:1200px)" ).matches ) {
 		this.state = 2
 		setProjectsClasses( 2 )
-		this.src = [ "weather-tablet.mp4", "weather-tablet.mp4", "weather-tablet.mp4" ]
-	}
-
-	else if ( window.matchMedia( "(min-width:992px)" ).matches ) {
-		this.state = 3
-		setProjectsClasses( 3 )
 		this.src = [
 			[ "weather-tablet.mp4", "weather-tablet.mp4", "weather-tablet.mp4" ],
-			[ "weather-phone2.mp4", "weather-phone2.mp4", "weather-phone2.mp4" ]
+			[ "weather-phone.mp4", "weather-phone.mp4", "weather-phone.mp4" ]
 		]
 	}
 
@@ -82,13 +76,6 @@ Videos.prototype.handleStateChange = function () {
 		}
 
 		else if ( this.state === 2 ) {
-			container.innerHTML = `
-				<video class="app-video__tablet">
-					<source src="${ sources[ this.src[ i ] ] }" type="video/mp4" alt="video">
-				</video>`
-		}
-
-		else if ( this.state === 3 ) {
 			const tablet_src = this.src[ 0 ]
 			const phone_src = this.src[ 1 ]
 
@@ -118,23 +105,15 @@ Videos.prototype.setupAnimation = function () {
 	} )
 
 	if ( this.state === 1 ) {
-		this.io = new IntersectionObserver( cb12, { threshold: 0.001 } );
+		this.io = new IntersectionObserver( cb1, { threshold: 0.001 } );
 
 		this.images.forEach( images => {
 			this.io.observe( images )
 		} )
 	}
 
-	if ( this.state === 2 ) {
-		this.io = new IntersectionObserver( cb12, { threshold: 0.001 } );
-
-		this.tablets.forEach( tablet => {
-			this.io.observe( tablet )
-		} )
-	}
-
-	else if ( this.state === 3 ) {
-		this.io = new IntersectionObserver( cb3, { threshold: 0.001 } );
+	else if ( this.state === 2 ) {
+		this.io = new IntersectionObserver( cb2, { threshold: 0.001 } );
 
 		this.tablets.forEach( tablet => {
 			this.io.observe( tablet )
@@ -142,18 +121,19 @@ Videos.prototype.setupAnimation = function () {
 	}
 }
 
-const cb12 = function ( entries ) {
+const cb1 = function ( entries ) {
 
 	entries.forEach( entry => {
 
 		if ( entry.intersectionRatio > 0 ) {
 			entry.target.classList.add( "fadeFromBottom" )
+			entry.target.parentElement.parentElement.classList.add( "fadeFromBottom" )
 			this.unobserve( entry.target )
 		}
 	} )
 }
 
-const cb3 = function ( entries ) {
+const cb2 = function ( entries ) {
 
 	entries.forEach( entry => {
 		const i = entry.target.dataset.index
@@ -162,6 +142,7 @@ const cb3 = function ( entries ) {
 			const newClass = i % 2 == 0 ? "fadeFromLeft" : "fadeFromRight"
 			entry.target.classList.add( newClass )
 			entry.target.nextElementSibling.classList.add( "fadeFromBottom" )
+			entry.target.parentElement.nextElementSibling.classList.add( "fadeFromRight" )
 			this.unobserve( entry.target )
 		}
 	} )
