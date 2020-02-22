@@ -31,4 +31,4 @@ module.exports={"weather-desktop":{jpg:require("./weather-desktop.jpg")},"weathe
 },{"./fix_VH.js":"bRtA","./fix_HashNav.js":"W62B"}],"BZ3n":[function(require,module,exports) {
 "use strict";require("./src/styles/common.scss");var e=require("./src/components/navbar.js"),s=require("./src/components/services.js"),t=require("./src/components/dotAnim.js"),r=require("./src/components/videos.js"),n=require("./src/utils"),i=document.querySelectorAll(".profile-content__skills-skill span"),o=document.querySelectorAll(".contact-content__intro--data span");(0,e.setupNavBar)(),(0,s.setupServices)(),(0,t.setupDotAnim)(i,2),(0,t.setupDotAnim)(o,1),(0,n.fix_HashNav)(),(0,n.fix_VH)();var c=(new r.Videos).setState();function u(){(0,n.fix_VH)(),c.setState()}window.addEventListener("resize",u);
 },{"./src/styles/common.scss":"WPjX","./src/components/navbar.js":"EuNu","./src/components/services.js":"k4T8","./src/components/dotAnim.js":"GSq8","./src/components/videos.js":"tGd2","./src/utils":"iWjG"}]},{},["BZ3n"], null)
-//# sourceMappingURL=https://l-blondy.github.io/Portfolio/entry.0d7759db.js.map
+//# sourceMappingURL=https://l-blondy.github.io/Portfolio/entry.d1db4bce.js.map
