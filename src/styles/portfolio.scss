@@ -39,41 +39,40 @@ section.portfolio {
     color: $clr-font-black;
     font-size: 1.12rem;
 
-    &-video,
+    &-media-container,
     &-intro {
         position: relative;
         flex-grow: 1;
         width: 50%;
     }
 
-    &-video {
+    &-media-container {
         display: flex;
         justify-content: center;
         align-items: center;
-
-        video {
-            background: rgba(0, 0, 0, 0.1);
-            transition: all 1500ms;
-        }
-
-        &__tablet,
-        &__phone {
-            box-shadow: $video-shadow;
-            border-radius: 15px;
-            background: none;
-        }
-
-        &__tablet {
-            width: $tablet-w;
-        }
-
-        &__phone {
-            position: absolute;
-            width: $phone-w;
-            top: 50%;
-            left: 50%;
-        }
     }
+
+
+    &-video__tablet,
+    &-video__phone {
+        box-shadow: $video-shadow;
+        border-radius: 15px;
+        background: none;
+        background: rgba(0, 0, 0, 0.1);
+        transition: all 1500ms;
+    }
+
+    &-video__tablet {
+        width: $tablet-w;
+    }
+
+    &-video__phone {
+        position: absolute;
+        width: $phone-w;
+        top: 50%;
+        left: 50%;
+    }
+
 
     &-intro {
         display: flex;
@@ -129,17 +128,17 @@ section.portfolio {
 }
 
 .app-left {
-    .app-video {
+    .app-media-container {
         margin-right: $central-space;
+    }
 
-        &__tablet {
-            margin-left: -15%;
-        }
+    .app-video__tablet {
+        margin-left: -15%;
+    }
 
-        &__phone {
-            margin-left: 15%;
-            margin-top: -8%;
-        }
+    .app-video__phone {
+        margin-left: 15%;
+        margin-top: -8%;
     }
 
     .app-intro {
@@ -156,18 +155,18 @@ section.portfolio {
     flex-direction: row-reverse;
     text-align: right;
 
-    .app-video {
+    .app-media-container {
         margin-left: $central-space;
+    }
 
-        &__tablet {
-            margin-left: 15%;
-        }
+    .app-video__tablet {
+        margin-left: 15%;
+    }
 
-        &__phone {
-            right: 65%;
-            left: auto;
-            margin-top: -8%;
-        }
+    .app-video__phone {
+        right: 65%;
+        left: auto;
+        margin-top: -8%;
     }
 
     .app-intro {
@@ -191,19 +190,20 @@ section.portfolio {
     width: 100%;
 
     .app {
-        &-video {
+        &-media-container {
             width: 100%;
             height: 50.35%;
             font-size: 0;
+
+            .app-image {
+                height: auto;
+                border-radius: 3px;
+                box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.15);
+                width: 100%;
+                margin: auto;
+            }
         }
 
-        &-image {
-            height: auto;
-            border-radius: 3px;
-            box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.15);
-            width: 100%;
-            margin: auto;
-        }
 
         &-intro {
             width: 100%;

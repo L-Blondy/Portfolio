@@ -2,8 +2,10 @@ import "./src/styles/common.scss"
 import { setupNavBar } from "./src/components/navbar.js"
 import { setupServices } from "./src/components/services.js"
 import { setupDotAnim } from "./src/components/dotAnim.js"
-import { Videos } from "./src/components/videos.js"
-import { fix_VH, fix_HashNav } from "./src/utils"
+import { ResizeHandler } from "./src/components/portfolio/ResizeHandler.js"
+import { Videos } from "./src/components/portfolio/Videos.js"
+import { Images } from "./src/components/portfolio/Images.js"
+import { fix_VH, fix_HashNav, getMediaSources } from "./src/utils"
 
 let skills = document.querySelectorAll( ".profile-content__skills-skill span" )
 let myData = document.querySelectorAll( ".contact-content__intro--data span" )
@@ -13,14 +15,22 @@ setupServices()
 setupDotAnim( skills, 2 )
 setupDotAnim( myData, 1 )
 fix_HashNav()
-fix_VH()
 
-const videos = new Videos().setState()
+let sources = getMediaSources( require( "./src/assets/portfolio-media/*.*" ) )
+const videos = new Videos( sources )
+const images = new Images( sources )
+const resizeHandler = new ResizeHandler( { "video": () => videos.load(), "image": () => images.load() } )
 
 function handleResize () {
 	fix_VH()
-	videos.setState()
+	if ( window.matchMedia( "(max-width:1199.8px)" ).matches ) {
+		resizeHandler.setState( "image" )
+	}
+	else if ( window.matchMedia( "(min-width:1200px)" ).matches ) {
+		resizeHandler.setState( "video" )
+	}
 }
+handleResize()
 window.addEventListener( "resize", handleResize )
 
 

@@ -99,40 +99,41 @@
     opacity: 0;
 }
 
-.has-focus-tablet,
-.not-focus-phone,
-.has-focus-phone {
+.playing-tablet,
+.hiding-phone,
+.playing-phone {
     transition-timing-function: ease-in-out !important;
     transition-duration: 1500ms !important;
 }
 
 .app-left {
-    .has-focus-tablet {
+    .playing-tablet {
         transform: translateX(50px) scale(1.05);
     }
 
-    .not-focus-phone {
+    .hiding-phone {
         transform: translate(100px, 100px);
         opacity: 0;
     }
 
-    .has-focus-phone {
+    .playing-phone {
         transform: translate(-50%, -40%) scale(1.1);
         opacity: 1;
     }
+
 }
 
 .app-right {
-    .has-focus-tablet {
+    .playing-tablet {
         transform: translateX(-50px) scale(1.05);
     }
 
-    .not-focus-phone {
+    .hiding-phone {
         transform: translate(-100px, 100px);
         opacity: 0;
     }
 
-    .has-focus-phone {
+    .playing-phone {
         transform: translate(50%, -40%) scale(1.1);
         opacity: 1;
     }
