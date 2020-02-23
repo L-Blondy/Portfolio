@@ -192,18 +192,67 @@ section.portfolio {
     .app {
         &-media-container {
             width: 100%;
-            height: 50.35%;
             font-size: 0;
+            position: relative;
+
+            .app-slider {
+                position: relative;
+                width: 100%;
+                padding-bottom: 50.35%;
+                border-radius: 6px;
+                overflow: hidden;
+            }
+
+            .app-slider-dots {
+                position: absolute;
+                z-index: 3;
+                left: 50%;
+                bottom: 15%;
+                transform: translateX(-50%);
+                height: 15px;
+                width: 66px;
+                display: flex;
+                justify-content: space-between;
+
+                .dot {
+                    height: 15px;
+                    width: 15px;
+                    background: rgba(140, 140, 140, 0.5);
+                    border: 1px solid rgba(0, 0, 0, 0.5);
+                    border-radius: 50%;
+                }
+            }
 
             .app-image {
-                height: auto;
-                border-radius: 3px;
+                position: absolute;
                 box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.15);
                 width: 100%;
+                height: 100%;
                 margin: auto;
+                transition: opacity 700ms, transform 700ms;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 6px;
+                }
+            }
+
+            .central {
+                z-index: 2
+            }
+
+            .left {
+                transform: translateX(-101%);
+                z-index: 3
+            }
+
+            .right {
+                transform: translateX(101%);
+                transition: none;
+                z-index: 1;
             }
         }
-
 
         &-intro {
             width: 100%;
@@ -277,8 +326,8 @@ section.portfolio {
     }
 
     .app-card {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
 
         &:nth-child(odd) {
             background: white;
