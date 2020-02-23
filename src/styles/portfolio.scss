@@ -203,26 +203,6 @@ section.portfolio {
                 overflow: hidden;
             }
 
-            .app-slider-dots {
-                position: absolute;
-                z-index: 3;
-                left: 50%;
-                bottom: 15%;
-                transform: translateX(-50%);
-                height: 15px;
-                width: 66px;
-                display: flex;
-                justify-content: space-between;
-
-                .dot {
-                    height: 15px;
-                    width: 15px;
-                    background: rgba(140, 140, 140, 0.5);
-                    border: 1px solid rgba(0, 0, 0, 0.5);
-                    border-radius: 50%;
-                }
-            }
-
             .app-image {
                 position: absolute;
                 box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.15);

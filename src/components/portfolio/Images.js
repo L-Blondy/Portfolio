@@ -27,11 +27,6 @@ Images.prototype.load = function () {
 					<div class="app-image left">
 						<img data-src="${ slides[ 2 ] }" data-srcset="${ slides[ 2 ] }" alt="weather-app-pic" />
 					</div>
-				</div>
-				<div class="app-slider-dots">
-					<div class="dot"></div>
-					<div class="dot"></div>
-					<div class="dot"></div>
 				</div>`
 		else {
 			container.innerHTML = `
