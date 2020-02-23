@@ -390,7 +390,6 @@ cursive;
             text-decoration: none;
             color: $clr-font-light;
             position: relative;
-            transition: opacity 100ms;
 
             &:nth-child(2) {
                 margin: 0.5rem 0;
@@ -403,10 +402,11 @@ cursive;
 
             .label {
                 position: absolute;
-                right: 100%;
                 padding: 0 0.5rem;
-                opacity: 0;
-                height: 100%;
+                opacity: 0.5;
+                right: 100%;
+                top: 50%;
+                transform: translateY(-50%);
                 display: none;
                 align-items: center;
                 transition: inherit;
@@ -415,7 +415,7 @@ cursive;
             }
 
             &:hover .label {
-                display: flex;
+                display: inline;
                 opacity: 1;
             }
 

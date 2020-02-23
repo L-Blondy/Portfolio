@@ -1,85 +1,139 @@
 @keyframes grow-title {
-   from {
-      transform: translate(-50%, -50%) scale(0.9);
-      opacity: 0;
-   }
+    from {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
+    }
 
-   to {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 1;
-   }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes fadeFromTop-chevron {
-   from {
-      transform: translate(-50%, -60%);
-      opacity: 0;
-   }
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
 
-   to {
-      transform: translate(-50%, 0);
-      opacity: 1;
-   }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {
-   from {
-      opacity: 0
-   }
+    from {
+        opacity: 0
+    }
 
-   to {
-      opacity: 1;
-   }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeFromBottom-1 {
-   from {
-      opacity: 0;
-      transform: translateY(30px)
-   }
+    from {
+        opacity: 0;
+        transform: translateY(30px)
+    }
 
-   to {
-      opacity: 1;
-      transform: translateY(0)
-   }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
 }
 
 @keyframes fadeFromLeft-1 {
-   from {
-      opacity: 0;
-      transform: translateX(-30px)
-   }
+    from {
+        opacity: 0;
+        transform: translateX(-30px)
+    }
 
-   to {
-      opacity: 1;
-      transform: translateY(0)
-   }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
 }
 
 @keyframes fadeFromRight-1 {
-   from {
-      opacity: 0;
-      transform: translateX(30px)
-   }
+    from {
+        opacity: 0;
+        transform: translateX(30px)
+    }
 
-   to {
-      opacity: 1;
-      transform: translateY(0)
-   }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
 }
 
 .fadeIn {
-   animation: fadeIn 300ms forwards;
+    animation: fadeIn 300ms forwards;
 }
 
 .fadeFromLeft-1 {
-   animation: fadeFromLeft-1 300ms forwards;
+    animation: fadeFromLeft-1 300ms forwards;
 }
 
 .fadeFromRight-1 {
-   animation: fadeFromRight-1 300ms forwards;
+    animation: fadeFromRight-1 300ms forwards;
 }
 
 .fadeFromBottom-1 {
-   animation: fadeFromBottom-1 300ms forwards;
+    animation: fadeFromBottom-1 300ms forwards;
+}
+
+.hideLeft {
+    transform: translateX(-5rem) !important;
+    opacity: 0;
+}
+
+.hideRight {
+    transform: translateX(5rem) !important;
+    opacity: 0;
+}
+
+.hideBottom {
+    transform: translateY(5rem) !important;
+    opacity: 0;
+}
+
+.has-focus-tablet,
+.not-focus-phone,
+.has-focus-phone {
+    transition-timing-function: ease-in-out !important;
+    transition-duration: 1500ms !important;
+}
+
+.app-left {
+    .has-focus-tablet {
+        transform: translateX(50px) scale(1.05);
+    }
+
+    .not-focus-phone {
+        transform: translate(100px, 100px);
+        opacity: 0;
+    }
+
+    .has-focus-phone {
+        transform: translate(-50%, -40%) scale(1.1);
+        opacity: 1;
+    }
+}
+
+.app-right {
+    .has-focus-tablet {
+        transform: translateX(-50px) scale(1.05);
+    }
+
+    .not-focus-phone {
+        transform: translate(-100px, 100px);
+        opacity: 0;
+    }
+
+    .has-focus-phone {
+        transform: translate(50%, -40%) scale(1.1);
+        opacity: 1;
+    }
 }

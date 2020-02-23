@@ -39,6 +39,7 @@ export function Videos () {
 	this.phones = []
 	this.images = []
 	this.io = ""
+	this.playing = ""
 }
 
 Videos.prototype.setState = function () {
@@ -80,17 +81,26 @@ Videos.prototype.handleStateChange = function () {
 			const phone_src = this.src[ 1 ]
 
 			container.innerHTML = `
-				<video class="app-video__tablet" data-index="${ i }">
-					<source src="${ sources[ tablet_src[ i ] ] }" type="video/mp4">
+				<video class="app-video__tablet ${i % 2 == 0 ? "hideLeft" : "hideRight" }" data-index="${ i }" muted="muted" controls="true">
+					<source src="${ sources[ tablet_src[ i ] ] }" type="video/mp4" >
 				</video>
-				<video class="app-video__phone">
-					<source src="${ sources[ phone_src[ i ] ] }" type="video/mp4"">
+				<video class="app-video__phone hideBottom" muted="muted" controls="true">
+					<source src="${ sources[ phone_src[ i ] ] }" type="video/mp4">
 				</video>`
 		}
 	} )
 	if ( "IntersectionObserver" in window ) {
 		this.io && this.io.disconnect()
+		this.playPause_observer && this.playPause_observer.disconnect()
 		this.setupAnimation()
+	} else {
+		[].slice.call( document.querySelectorAll( ".app-video__tablet" ) ).forEach( tablet => {
+			tablet.classList.remove( "hideLeft" )
+			tablet.classList.remove( "hideRight" )
+		} );
+		[].slice.call( document.querySelectorAll( ".app-video__phone" ) ).forEach( phone => {
+			phone.classList.remove( "hideBottom" )
+		} )
 	}
 }
 
@@ -100,12 +110,8 @@ Videos.prototype.setupAnimation = function () {
 	this.phones = [ ...document.querySelectorAll( ".app-video__phone" ) ]
 	this.images = [ ...document.querySelectorAll( ".app-image" ) ];
 
-	[ ...this.tablets, ...this.phones, ...this.images ].forEach( el => {
-		el.style.opacity = 0;
-	} )
-
 	if ( this.state === 1 ) {
-		this.io = new IntersectionObserver( cb1, { threshold: 0.001 } );
+		this.io = new IntersectionObserver( CSS_animation_cb1, { threshold: 0.001 } );
 
 		this.images.forEach( images => {
 			this.io.observe( images )
@@ -113,15 +119,19 @@ Videos.prototype.setupAnimation = function () {
 	}
 
 	else if ( this.state === 2 ) {
-		this.io = new IntersectionObserver( cb2, { threshold: 0.001 } );
+		this.io = new IntersectionObserver( CSS_animation_cb2, { threshold: 0.001 } );
+		this.playPause_observer = new IntersectionObserver( playPause_cb, { threshold: 0.8 } );
 
-		this.tablets.forEach( tablet => {
+		this.tablets.forEach( ( tablet, i ) => {
 			this.io.observe( tablet )
+			this.playPause_observer.observe( tablet )
+
+			tablet.addEventListener( "ended", ( e ) => cb3( e, tablet, i, this ), { once: true } )
 		} )
 	}
 }
 
-const cb1 = function ( entries ) {
+const CSS_animation_cb1 = function ( entries ) {
 
 	entries.forEach( entry => {
 
@@ -133,18 +143,68 @@ const cb1 = function ( entries ) {
 	} )
 }
 
-const cb2 = function ( entries ) {
+const CSS_animation_cb2 = function ( entries ) {
 
 	entries.forEach( entry => {
 		const i = entry.target.dataset.index
 
 		if ( entry.intersectionRatio > 0 ) {
-			const newClass = i % 2 == 0 ? "fadeFromLeft" : "fadeFromRight"
-			entry.target.classList.add( newClass )
-			entry.target.nextElementSibling.classList.add( "fadeFromBottom" )
-			entry.target.parentElement.nextElementSibling.classList.add( "fadeFromRight" )
+			//ADD ANIMATION FOR TEXT HERE
+			entry.target.classList.remove( "hideLeft" )
+			entry.target.classList.remove( "hideRight" )
+			entry.target.nextElementSibling.classList.remove( "hideBottom" )
 			this.unobserve( entry.target )
 		}
+	} )
+}
+
+const cb3 = ( e, tablet, i, that ) => {
+	tablet.parentElement.dataset.playing = "phone"
+	i % 2 === 0 ? tablet.classList.add( "hideLeft" ) : tablet.classList.add( "hideRight" )
+	tablet.classList.remove( "has-focus-tablet" )
+	that.phones[ i ].classList.remove( "not-focus-phone" )
+	that.phones[ i ].classList.add( "has-focus-phone" )
+	that.phones[ i ].play()
+	that.phones[ i ].playbackRate = 15
+	that.phones[ i ].addEventListener( "ended", ( e ) => {
+		that.phones[ i ].parentElement.dataset.playing = "tablet"
+		that.phones[ i ].classList.remove( "has-focus-phone" )
+		tablet.classList.remove( "hideLeft" )
+		tablet.classList.remove( "hideRight" )
+		that.io.unobserve( tablet )
+		that.playPause_observer.unobserve( tablet )
+		that.phones[ i ].parentElement.addEventListener( "click", () => {
+			that.io.observe( tablet )
+			that.playPause_observer.observe( tablet )
+			tablet.addEventListener( "ended", ( e ) => cb3( e, tablet, i, that ), { once: true } )
+		}, { once: true } )
+	}, { once: true } )
+}
+
+const playPause_cb = function ( entries ) {
+	entries.forEach( entry => {
+		const playing = entry.target.parentElement.dataset.playing
+		let video;
+
+		if ( playing === "tablet" ) {
+			video = entry.target
+		}
+		else if ( playing === "phone" ) {
+			video = entry.target.nextElementSibling
+		}
+		if ( entry.intersectionRatio >= 0.8 ) {
+			entry.target.classList.add( "has-focus-tablet" )
+			entry.target.nextElementSibling.classList.add( "not-focus-phone" )
+			this.playing && this.playing.pause()
+			this.playing = video
+			video.play()
+		}
+		else if ( entry.intersectionRatio < 0.8 && entry.intersectionRatio > 0.5 ) {
+			entry.target.classList.remove( "has-focus-tablet" )
+			entry.target.nextElementSibling.classList.remove( "not-focus-phone" )
+			entry.target.pause()
+		}
+		video.playbackRate = 15
 	} )
 }
 

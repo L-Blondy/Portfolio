@@ -25,7 +25,8 @@ section.portfolio {
     padding-right: 15%;
 
     .portfolio-title {
-        padding-top: 1rem;
+        font-size: 3.1rem;
+        padding-top: 2rem;
         padding-bottom: 2rem;
     }
 }
@@ -52,6 +53,7 @@ section.portfolio {
 
         video {
             background: rgba(0, 0, 0, 0.1);
+            transition: all 1500ms;
         }
 
         &__tablet,
@@ -120,6 +122,12 @@ section.portfolio {
     }
 }
 
+.app-left,
+.app-right {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
 .app-left {
     .app-video {
         margin-right: $central-space;
@@ -181,9 +189,6 @@ section.portfolio {
     display: flex;
     flex-direction: column;
     width: 100%;
-    opacity: 0;
-
-
 
     .app {
         &-video {
@@ -249,6 +254,11 @@ section.portfolio {
         font-size: 0.9rem;
     }
 
+    .portfolio-title {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
     .app-card {
         padding-top: 5rem;
         padding-bottom: 5rem;
@@ -264,10 +274,6 @@ section.portfolio {
     section.portfolio {
         padding-left: 15%;
         padding-right: 15%;
-
-        .portfolio-title {
-            padding-bottom: 0 !important;
-        }
     }
 
     .app-card {

@@ -2,6 +2,8 @@
    @include flex-center;
    flex-wrap: wrap;
    background: $clr-bg;
+   padding-top: 3rem;
+   padding-bottom: 3rem;
 
    .service {
       @include flex-center;
@@ -16,15 +18,15 @@
 
       &-description {
          min-height: 3em;
-         margin-top: calc(1rem + 0.6vw);
+         margin-top: 1rem;
          font-weight: 100;
       }
    }
 
    .hex {
       @include flex-center;
-      height: 7rem;
-      width: 7rem;
+      height: 6.5rem;
+      width: 6.5rem;
 
       &.hex2-full {
          padding-bottom: 0.1rem;

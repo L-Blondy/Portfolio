@@ -56,6 +56,12 @@ section {
         text-align: center;
     }
 
+    &__inline-link {
+        text-decoration: none;
+        color: $clr-primary;
+        filter: brightness(130%);
+    }
+
     &__btn {
         padding: 0.4em 1.2em;
         border-radius: 3px;
@@ -95,6 +101,7 @@ strong {
     color: $clr-primary;
     font-weight: 100;
 }
+
 
 .hover {
     &-bright {

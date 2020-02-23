@@ -1,107 +1,133 @@
 @import "./_variables.scss";
 
 .profile {
-   position: relative;
-   color: $clr-font-light;
+    position: relative;
+    color: $clr-font-light;
 
-   .common__section-title {
-      text-align: left;
-   }
+    .common__section-title,
+    .profile-content__description {
+        text-align: left;
+        padding-bottom: 2.5rem;
+    }
 
-   &-bg {
-      position: absolute;
-      z-index: -2;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      background: #0B1518;
+    &-bg {
+        position: absolute;
+        z-index: -2;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: #0B1518;
 
-      &__img,
-      &__gradient {
-         position: absolute;
-         top: 0;
-         right: 0;
-         width: 50%;
-         height: 100%;
-         object-fit: cover
-      }
+        &__img,
+        &__gradient {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            object-fit: cover
+        }
 
-      &__gradient {
-         z-index: 10;
-         background: linear-gradient(90deg, #0B1518 0%, rgba(11, 21, 24, 0.92) 25%, rgba(19, 19, 19, 0) 130%);
-      }
-   }
+        &__gradient {
+            z-index: 10;
+            background: linear-gradient(90deg, #0B1518 0%, rgba(11, 21, 24, 0.92) 25%, rgba(19, 19, 19, 0) 130%);
+        }
+    }
 
-   &-content {
-      width: 50%;
-      font-size: 1.15rem;
+    &-content {
+        width: 100%;
+        font-size: 1.1rem;
 
-      &__description {
-         padding-bottom: 2rem;
-         font-size: inherit;
-      }
-
-      &__skills {
-         display: flex;
-         flex-wrap: wrap;
-         font-size: inherit;
-
-         &-skill {
-            display: flex;
-            align-items: center;
-            min-width: calc(25% + 35px);
+        &__description {
+            padding-bottom: 2rem;
             font-size: inherit;
 
-            .hex1-full-dot {
-               opacity: 0;
-               animation-duration: 300ms;
+            p {
+                line-height: 1.6em;
             }
+        }
 
-            span {
-               padding-left: 1rem;
-               font-size: inherit;
-               line-height: 3em;
-               min-height: 3em;
-               flex-shrink: 0;
+        &__skills {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: inherit;
+            width: 50%;
+
+            &-skill {
+                display: flex;
+                align-items: center;
+                min-width: calc(25% + 35px);
+                font-size: inherit;
+
+                .hex1-full-dot {
+                    opacity: 0;
+                    animation-duration: 300ms;
+                }
+
+                span {
+                    padding-left: 1rem;
+                    font-size: inherit;
+                    line-height: 2.7em;
+                    min-height: 2.7em;
+                    flex-shrink: 0;
+                }
             }
-         }
-      }
-   }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .profile-content__skills {
+        width: 70%;
+    }
 }
 
 @media (max-width: 1200px) {
-   .profile-content {
-      width: 100%;
-      padding: 0 10%;
-   }
+    .profile-content {
+        width: 100%;
+        padding: 0;
+        padding-left: 10%;
+    }
+}
+
+@media (min-width: 992px) {
+    .will-break {
+        display: block;
+    }
+}
+
+@media (max-width: 991.8px) {
+    .profile-content__skills {
+        width: 100%;
+    }
 }
 
 @media (max-width: 767.8px) {
-   .profile-content {
-      padding: 0;
-   }
+    .profile-content {
+        padding: 0;
+    }
 
-   .profile-bg__gradient {
-      background: linear-gradient(90deg, #0B1518 0%, rgba(11, 21, 24, 0.92) 25%, rgba(19, 19, 19, 0) 200%);
-   }
+    .profile-bg__gradient {
+        background: linear-gradient(90deg, #0B1518 0%, rgba(11, 21, 24, 0.92) 25%, rgba(19, 19, 19, 0) 200%);
+    }
 }
 
 @media (max-width: 576px) {
-   .profile-content__skills-skill {
-      min-width: calc(45% + 12px);
-   }
+    .profile-content__skills-skill {
+        min-width: calc(45% + 12px);
+    }
 
-   .profile-content {
-      font-size: 1.05rem;
+    .profile-content {
+        font-size: 1.05rem;
 
-      &__description {
-         padding-bottom: 1rem;
-      }
+        &__description {
+            padding-bottom: 1rem;
+        }
 
-      &__skills-skill span {
-         line-height: 2.6em;
-         min-height: 2.6em;
-      }
-   }
+        &__skills-skill span {
+            line-height: 2.5em;
+            min-height: 2.5em;
+        }
+    }
 }

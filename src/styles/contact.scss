@@ -185,17 +185,7 @@ $clr-placeholder: #96A3A2;
 
         &__intro {
             margin-bottom: 1.5em;
-
-            &--text {
-                text-align: center;
-                padding-bottom: 0.7em;
-                font-size: 1.3rem;
-
-                span {
-                    display: block;
-                    line-height: 1.5em;
-                }
-            }
+            padding: 0 1.5rem;
 
             &--data {
                 padding-left: 0.2rem;
@@ -238,6 +228,19 @@ $clr-placeholder: #96A3A2;
             button[type="submit"] {
                 font-size: 1.05rem;
             }
+        }
+    }
+}
+
+@media(max-width: 450px) {
+    .contact-content__intro--text {
+        text-align: center;
+        padding-bottom: 0.7em;
+        font-size: 1.3rem;
+
+        span {
+            display: block;
+            line-height: 1.5em;
         }
     }
 }
