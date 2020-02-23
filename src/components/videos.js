@@ -102,7 +102,7 @@ Videos.prototype.handleStateChange = function () {
 			phone.classList.remove( "hideBottom" )
 		} )
 	}
-}
+}//test
 
 Videos.prototype.setupAnimation = function () {
 
