@@ -12,10 +12,10 @@ export function Videos ( sources ) {
 Videos.prototype.load = function () {
 	this.containers.forEach( ( container, i ) => {
 		container.innerHTML = `
-		<video class="app-video__tablet ${( "IntersectionObserver" in window ) && ( i % 2 == 0 ? "hideLeft" : "hideRight" ) }" data-index="${ i }" muted="muted" controls="true">
+		<video class="app-video__tablet ${( "IntersectionObserver" in window ) && ( i % 2 == 0 ? "hideLeft" : "hideRight" ) }" data-index="${ i }" muted="muted">
 			<source src="${ this.sources[ this.tablet_src[ i ] ] }" type="video/mp4" >
 		</video>
-		<video class="app-video__phone ${( "IntersectionObserver" in window ) && "hideBottom" }" muted="muted" controls="true">
+		<video class="app-video__phone ${( "IntersectionObserver" in window ) && "hideBottom" }" muted="muted">
 			<source src="${ this.sources[ this.phone_src[ i ] ] }" type="video/mp4">
 		</video>`
 	} )

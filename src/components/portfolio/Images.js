@@ -5,40 +5,44 @@ export function Images ( sources ) {
 	this.sources = sources
 	this.containers = [].slice.call( document.querySelectorAll( ".app-media-container" ) )
 	this.src = [
-		[ "weather-desktop-1.jpg", "weather-desktop-2.jpg", "weather-desktop-3.jpg" ],
-		[ "weather-desktop-1.jpg", "weather-desktop-2.jpg", "weather-desktop-3.jpg" ],
-		[ "weather-desktop-1.jpg", "weather-desktop-2.jpg", "weather-desktop-3.jpg" ]
+		[ "weather-desktop-1", "weather-desktop-2", "weather-desktop-3" ],
+		[ "weather-desktop-1", "weather-desktop-2", "weather-desktop-3" ],
+		[ "weather-desktop-1", "weather-desktop-2", "weather-desktop-3" ]
 	]
 	this.images = ""
 }
 Images.prototype.load = function () {
 	this.containers.forEach( ( container, i ) => {
-		const slides = this.src[ i ].reduce( ( r, c ) => [ ...r, this.sources[ c ] ], [] )
+
+		const slides = this.src[ i ].reduce( ( r, c ) => {
+			const realSrc = [ c + "_450w.jpg", c + "_800w.jpg", c + "_1200w.jpg" ].map( src => this.sources[ src ] )
+			return [ ...r, ...realSrc ]
+		}, [] )
 
 		if ( "IntersectionObserver" in window && "Promise" in window )
 			container.innerHTML = `
 				<div class="app-slider">
 					<div class="app-image active img1">
-						<img class="central" data-src="${ slides[ 0 ] }" data-srcset="${ slides[ 0 ] }" alt="weather-app-pic" />
+						<img class="central" data-src="${ slides[ 2 ] }" data-srcset="${ slides[ 0 ] } 450w,${ slides[ 1 ] } 800w, ${ slides[ 2 ] } 1200w" alt="weather-app-pic" />
 					</div>
 					<div class="app-image img2" >
-						<img class="right" data-src="${ slides[ 1 ] }" data-srcset="${ slides[ 1 ] }" alt="weather-app-pic" />
+						<img class="right" data-src="${ slides[ 5 ] }" data-srcset="${ slides[ 3 ] } 450w,${ slides[ 4 ] } 800w, ${ slides[ 5 ] } 1200w"  alt="weather-app-pic" />
 					</div>
 					<div class="app-image img3">
-						<img class="left" data-src="${ slides[ 2 ] }" data-srcset="${ slides[ 2 ] }" alt="weather-app-pic" />
+						<img class="left" data-src="${ slides[ 8 ] }" data-srcset="${ slides[ 6 ] } 450w,${ slides[ 7 ] } 800w, ${ slides[ 8 ] } 1200w"  alt="weather-app-pic" />
 					</div>
 				</div>`
 		else {
 			container.innerHTML = `
 				<div class="app-slider">
-					<div>
-						<img class="app-image active" src="${ slides[ 0 ] }" srcset="${ slides[ 0 ] }" alt="weather-app-pic" />
+					<div class="app-image active img1">
+						<img class="central" src="${ slides[ 2 ] }" srcset="${ slides[ 0 ] } 450w,${ slides[ 1 ] } 800w, ${ slides[ 2 ] } 1200w" alt="weather-app-pic" />
 					</div>
-					<div>
-						<img class="app-image right" src="${ slides[ 1 ] }" srcset="${ slides[ 1 ] }" alt="weather-app-pic" />
+					<div class="app-image img2" >
+						<img class="right" src="${ slides[ 5 ] }" srcset="${ slides[ 3 ] } 450w,${ slides[ 4 ] } 800w, ${ slides[ 5 ] } 1200w"  alt="weather-app-pic" />
 					</div>
-					<div>
-						<img class="app-image left" src="${ slides[ 2 ] }" srcset="${ slides[ 2 ] }" alt="weather-app-pic" />
+					<div class="app-image img3">
+						<img class="left" src="${ slides[ 8 ] }" srcset="${ slides[ 6 ] } 450w,${ slides[ 7 ] } 800w, ${ slides[ 8 ] } 1200w"  alt="weather-app-pic" />
 					</div>
 				</div>`
 		}

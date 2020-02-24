@@ -3,8 +3,9 @@ $clr-tooltip: #005568;
 .svg-icon {
     position: relative;
     background-position: center;
-    background-size: contain;
     background-repeat: no-repeat;
+    flex-shrink: 0;
+    background-size: 95% 95%;
 }
 
 .app-intro__technologies {
@@ -40,8 +41,16 @@ $clr-tooltip: #005568;
 
         &:hover::before,
         &:hover::after {
-            opacity: 1;
+            opacity: .9;
         }
+    }
+}
+
+.styled-components {
+    background-image: url(../assets/icons/styled-components.png);
+
+    &::after {
+        content: "Styled Components";
     }
 }
 
@@ -73,6 +82,7 @@ $clr-tooltip: #005568;
 .react {
     background-image: url(../assets/icons/react.svg);
     border-radius: 2px;
+    background-size: contain;
 
     &::after {
         content: "React JS";

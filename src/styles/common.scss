@@ -1,5 +1,5 @@
 @import "./hexagon.scss";
-@import "./svg-icon.scss";
+@import "./icon.scss";
 @import "./home.scss";
 @import "./services.scss";
 @import "./profile.scss";
@@ -57,7 +57,7 @@ section {
     }
 
     &__inline-link {
-        text-decoration: none;
+        // text-decoration: none;
         color: $clr-primary;
         filter: brightness(130%);
     }
