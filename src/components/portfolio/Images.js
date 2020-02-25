@@ -64,7 +64,6 @@ Images.prototype.setOnVisible = function () {
 		} )
 	}
 	this.imagesCont.forEach( img => {
-		console.log( 65496798798 )
 		img.classList.add( "hideRight" )
 		onVisibleObs.observe( img )
 		new AutoSlide( img ).setAutoSlideObs()
@@ -117,12 +116,9 @@ AutoSlide.prototype.startAutoSlide = function () {
 		this.center.parentElement.classList.remove( "active" )
 		this.right.classList.add( "center" )
 		this.right.parentElement.classList.add( "active" )
-		this.left.classList.add( "right" )
+		this.left.classList.add( "right" );
 
-		const temp = this.center
-		this.center = this.right;
-		this.right = this.left;
-		this.left = temp
+		[ this.left, this.center, this.right ] = [ this.center, this.right, this.left ]
 	}
 }
 AutoSlide.prototype.stopAutoSlide = function () {

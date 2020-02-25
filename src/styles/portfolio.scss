@@ -195,6 +195,7 @@ section.portfolio {
             font-size: 0;
             position: relative;
 
+
             .app-slider {
                 position: relative;
                 width: 100%;
@@ -228,6 +229,7 @@ section.portfolio {
                     bottom: 10%;
                     left: 50%;
                     z-index: 5;
+                    transform: scale(0);
                 }
 
                 &.img1::after {
@@ -235,20 +237,24 @@ section.portfolio {
                 }
 
                 &.img2::after {
-                    transform: translateX(-50%)
+                    transform: translateX(calc(0px - 50%))
                 }
 
                 &.img3::after {
-                    transform: translateX(calc(-50% + 30px))
+                    transform: translateX(calc(30px - 50%))
                 }
 
                 &.active::after {
                     background: white;
                 }
+
+                &.active {
+                    z-index: 1;
+                }
             }
 
-            .left {
-                transform: translateX(-101%);
+            .center {
+                z-index: 3
             }
 
             .right {
