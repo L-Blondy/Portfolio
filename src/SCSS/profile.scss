@@ -4,8 +4,7 @@
     position: relative;
     color: $clr-font-light;
 
-    .common__section-title,
-    .profile-content__description {
+    .common__section-title {
         text-align: left;
         padding-bottom: 2.5rem;
     }
@@ -40,7 +39,7 @@
         font-size: 1.1rem;
 
         &__description {
-            padding-bottom: 2rem;
+            padding-bottom: 1.5rem;
             font-size: inherit;
 
             p {
@@ -52,13 +51,15 @@
             display: flex;
             flex-wrap: wrap;
             font-size: inherit;
-            width: 50%;
+            width: 65%;
+            // background: #ffffff20;
 
             &-skill {
                 display: flex;
                 align-items: center;
-                min-width: calc(25% + 35px);
+                width: 33.3%;
                 font-size: inherit;
+                // outline: 1px solid #00FF0030;
 
                 .hex1-full-dot {
                     opacity: 0;
@@ -77,9 +78,9 @@
     }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1500px) {
     .profile-content__skills {
-        width: 70%;
+        width: 80%;
     }
 }
 
@@ -111,23 +112,54 @@
     .profile-bg__gradient {
         background: linear-gradient(90deg, #0B1518 0%, rgba(11, 21, 24, 0.92) 25%, rgba(19, 19, 19, 0) 200%);
     }
+
+    .profile-content__skills-skill {
+        width: 45%;
+    }
 }
 
 @media (max-width: 576px) {
     .profile-content__skills-skill {
-        min-width: calc(45% + 12px);
+        width: 50%;
+        letter-spacing: -0.5px;
     }
 
     .profile-content {
         font-size: 1.05rem;
 
+        .common__section-title {
+            padding-bottom: 1.5rem;
+        }
+
         &__description {
-            padding-bottom: 1rem;
+            padding-bottom: 1rem !important;
         }
 
         &__skills-skill span {
             line-height: 2.5em;
             min-height: 2.5em;
         }
+    }
+}
+
+@media (max-width: 400px) {
+    #profile {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .profile-content {
+        font-size: 1rem;
+    }
+
+    .profile-content__skills-skill span {
+        padding-left: 0.4rem;
+    }
+}
+
+@media (max-width: 359.8px) {
+
+    .profile-content__skills-skill {
+        width: 100%;
     }
 }

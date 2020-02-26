@@ -15,8 +15,9 @@ $anim-duration: 1000ms;
 .app-intro__title,
 .app-video__tablet,
 .app-video__phone,
-.portfolio-title {
-    animation-duration: 1000ms !important;
+.portfolio-title,
+.app-intro__buttons .common__btn {
+    animation-duration: 700ms !important;
 }
 
 section.portfolio {
@@ -25,7 +26,6 @@ section.portfolio {
     padding-right: 15%;
 
     .portfolio-title {
-        font-size: 3.1rem;
         padding-top: 2rem;
         padding-bottom: 2rem;
     }
@@ -201,6 +201,7 @@ section.portfolio {
                 width: 100%;
                 padding-bottom: 50.35%;
                 border-radius: 6px;
+                transition: opacity 700ms, transform 700ms;
                 overflow: hidden;
             }
 
@@ -350,7 +351,7 @@ section.portfolio {
     }
 
     .app-intro {
-        font-size: 0.8rem;
+        font-size: 0.84rem;
     }
 
     .app-intro__title {

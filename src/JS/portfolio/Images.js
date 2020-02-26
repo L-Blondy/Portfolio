@@ -64,8 +64,8 @@ Images.prototype.setOnVisible = function () {
 		} )
 	}
 	this.imagesCont.forEach( img => {
-		img.classList.add( "hideRight" )
-		onVisibleObs.observe( img )
+		img.parentElement.classList.add( "hideRight" )
+		onVisibleObs.observe( img.parentElement )
 		new AutoSlide( img ).setAutoSlideObs()
 	} )
 	setIntroClasses()
