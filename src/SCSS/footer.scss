@@ -48,6 +48,11 @@ footer {
             .svg-icon {
                 height: 45%;
                 width: 67%;
+
+                &.github {
+                    height: 45%;
+                    width: 45%;
+                }
             }
         }
     }
