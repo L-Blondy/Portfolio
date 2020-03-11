@@ -5,137 +5,152 @@ $clr-placeholder: #96A3A2;
 
 .contact {
     background: $clr-bg;
+    color: $clr-font-black;
 
     @media (min-width: 576.2px) {
         padding-top: 7rem;
         padding-bottom: 7rem;
     }
+}
 
-    &-content {
-        padding-top: 2rem;
+.contact-content {
+    padding-top: 2rem;
+    display: flex;
+}
+
+.contact-content__intro {
+    width: calc(50% - 8.2em);
+    padding-right: 9%;
+    flex-shrink: 0;
+
+    &--text {
+        font-size: 1.375rem;
+        padding-bottom: 1em;
+    }
+
+    &--data {
+        font-size: 1.375rem;
+
+        &__email,
+        &__phone {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .personal-data {
+        background: none;
+        border: none;
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 2.3em;
+        min-height: 2.3em;
+        padding-left: 1em;
+        white-space: nowrap;
+        animation-duration: 700ms;
+        color: inherit;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .click-to-see {
+        font-style: italic;
+        color: #366970;
+    }
+}
+
+.contact-content__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+
+    &--user-data>input,
+    &--message {
+        font-size: $form-font-size;
+        line-height: 1.5em;
+        background: none;
+    }
+
+    &--user-data {
         display: flex;
+        width: 100%;
 
-        &__intro {
-            width: calc(50% - 8.2em);
-            padding-right: 9%;
-            flex-shrink: 0;
+        input {
+            border: none;
+            border-bottom: 1px solid $clr-primary;
+            width: 0.1%;
+            overflow: hidden;
+            padding: 0 0.5rem;
+            transition: width 500ms;
+            transform: scaleX(0);
 
-            &--text {
-                font-size: 1.375rem;
-                padding-bottom: 1em;
+            &[name="name"] {
+                transition: width 500ms, transform 100ms;
+                transition-delay: 300ms;
             }
 
-            &--data {
-                font-size: 1.375rem;
-
-                &__email,
-                &__phone {
-                    display: flex;
-                    align-items: center;
-
-                    span {
-                        font-size: 1.1rem;
-                        line-height: 2.3em;
-                        min-height: 2.3em;
-                        padding-left: 1em;
-                        white-space: nowrap;
-                        animation-duration: 700ms;
-                    }
-                }
+            &::placeholder {
+                color: $clr-placeholder;
             }
         }
 
-        &__form {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            flex-grow: 1;
+        input.name.opened {
+            width: 47%;
+        }
 
-            &--user-data>input,
-            &--message {
-                font-size: $form-font-size;
-                line-height: 1.5em;
-                background: none;
-            }
+        input.email.opened {
+            width: 48%;
+            margin-right: 5%;
+        }
 
-            &--user-data {
-                display: flex;
-                width: 100%;
+        input.opened {
+            transform: scaleX(1);
+        }
+    }
 
-                input {
-                    border: none;
-                    border-bottom: 1px solid $clr-primary;
-                    width: 0.1%;
-                    overflow: hidden;
-                    padding: 0 0.5rem;
-                    transition: width 500ms;
-                    transform: scaleX(0);
+    &--message {
+        width: 100%;
+        border: 1px solid $clr-primary;
+        border-radius: 3px;
+        height: 12em;
+        margin: 3rem 0;
+        padding: 0.5rem 0.7rem;
+        transition: transform 700ms 600ms;
+        transform-origin: top;
+        transform: scaleY(0);
 
-                    &[name="name"] {
-                        transition: width 500ms, transform 100ms;
-                        transition-delay: 300ms;
-                    }
+        &::placeholder {
+            color: $clr-placeholder;
+            opacity: 0;
+            transition: opacity 2000ms 700ms;
+            user-select: none;
+        }
 
-                    &::placeholder {
-                        color: $clr-placeholder;
-                    }
-                }
+        &.opened {
+            transform: scaleY(1);
 
-                input.name.opened {
-                    width: 47%;
-                }
-
-                input.email.opened {
-                    width: 48%;
-                    margin-right: 5%;
-                }
-
-                input.opened {
-                    transform: scaleX(1);
-                }
-            }
-
-            &--message {
-                width: 100%;
-                border: 1px solid $clr-primary;
-                border-radius: 3px;
-                height: 12em;
-                margin: 3rem 0;
-                padding: 0.5rem 0.7rem;
-                transition: transform 700ms 600ms;
-                transform-origin: top;
-                transform: scaleY(0);
-
-                &::placeholder {
-                    color: $clr-placeholder;
-                    opacity: 0;
-                    transition: opacity 2000ms 700ms;
-                    user-select: none;
-                }
-
-                &.opened {
-                    transform: scaleY(1);
-
-                    &::placeholder {
-                        opacity: 1;
-                    }
-
-                }
-            }
-
-            button {
-                @include flex-center;
-                position: relative;
-                font-size: 1.2rem;
-                padding: 0.5em 1.2em;
-                overflow: hidden;
-                border: none;
-                opacity: 0;
-                animation-delay: 600ms;
+            &::placeholder {
+                opacity: 1;
             }
         }
     }
+
+    button {
+        @include flex-center;
+        position: relative;
+        font-size: 1.2rem;
+        padding: 0.5em 1.2em;
+        overflow: hidden;
+        border: none;
+        opacity: 0;
+        animation-delay: 600ms;
+    }
 }
+
+
 
 @media (max-width: 1200px) {
     .contact-content {

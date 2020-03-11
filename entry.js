@@ -5,15 +5,17 @@ import { setupDotAnim } from "./src/JS/dotAnim.js"
 import { ResizeHandler } from "./src/JS/portfolio/ResizeHandler.js"
 import { Videos } from "./src/JS/portfolio/Videos.js"
 import { Images } from "./src/JS/portfolio/Images.js"
+import { setup_showPhone } from "./src/JS/showPhone.js"
 import { fix_VH, fix_HashNav, getMediaSources } from "./src/utils"
 
 let skills = document.querySelectorAll( ".profile-content__skills-skill span" )
-let myData = document.querySelectorAll( ".contact-content__intro--data span" )
+let myData = document.querySelectorAll( ".contact-content__intro--data .personal-data" )
 
 setupNavBar()
 setupServices()
 setupDotAnim( skills, 2 )
 setupDotAnim( myData, 1 )
+setup_showPhone()
 fix_HashNav()
 
 let sources = getMediaSources( require( "./src/assets/portfolio-media/*.*" ) )
