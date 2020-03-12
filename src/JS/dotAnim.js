@@ -1,6 +1,6 @@
 import { writeOnVisible, WriteSequence } from "lb-write"
 
-export function setupDotAnim ( skills, speed ) {
+export function setupDotAnim( skills, speed ) {
 
 	skills = [].slice.call( skills )
 
@@ -24,7 +24,7 @@ export function setupDotAnim ( skills, speed ) {
 	}
 }
 
-function handleSkillSeq ( skills_seqs, skills, i = 0 ) {
+function handleSkillSeq( skills_seqs, skills, i = 0 ) {
 	const dot = skills[ i + 1 ].previousElementSibling
 
 	dot.classList.add( "fadeFromLeft-1" )
