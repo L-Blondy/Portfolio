@@ -5,8 +5,8 @@
   "main": "entry.js",
   "scripts": {
     "start": "rm -rf dist && parcel index.html",
-    "build": "rm -rf dist && parcel build index.html --public-url https://l-blondy.github.io/Portfolio/",
-    "deploy": "npm run build && gh-pages -d dist"
+    "build": "rm -rf dist && parcel build index.html 404.html --public-url https://l-blondy.github.io/Portfolio/",
+    "deploy": "npm run build && copyfiles robots.txt dist && gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -17,5 +17,5 @@
     "lb-onvisible": "^1.0.9",
     "lb-write": "^1.0.6",
     "sass": "^1.24.3"
-  },
+  }
 }
