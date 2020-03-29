@@ -33,4 +33,3 @@ function handleSkillSeq(skills_seqs, skills, i = 0) {
 			handleSkillSeq(skills_seqs, skills, i + 1);
 	});
 }
-//test
