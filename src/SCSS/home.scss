@@ -385,11 +385,12 @@ cursive;
 
         .hex {
             @include flex-center;
-            height: 42px;
-            width: 42px;
+            height: 43px;
+            width: 43px;
             text-decoration: none;
             color: $clr-font-light;
             position: relative;
+            flex-shrink: 0;
 
             &:nth-child(2) {
                 margin: 0.5rem 0;
@@ -398,6 +399,8 @@ cursive;
             .svg-icon {
                 height: 45%;
                 width: 67%;
+                background-size: contain;
+
 
                 &.github-white {
                     height: 45%;
