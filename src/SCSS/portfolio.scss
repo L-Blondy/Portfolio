@@ -203,11 +203,11 @@ section.portfolio {
                 border-radius: 6px;
                 transition: opacity 700ms, transform 700ms;
                 overflow: hidden;
+                box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
             }
 
             .app-image {
                 position: absolute;
-                box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.15);
                 width: 100%;
                 height: 100%;
                 margin: auto;
@@ -247,6 +247,7 @@ section.portfolio {
 
                 &.active::after {
                     background: white;
+                    box-shadow: 0 0 3px 0 black;
                 }
 
                 &.active {

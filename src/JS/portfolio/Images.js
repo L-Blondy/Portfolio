@@ -3,45 +3,53 @@ import { setIntroClasses } from "./setIntroClasses";
 export function Images(sources) {
 	this.sources = sources;
 	this.containers = [].slice.call(document.querySelectorAll(".app-media-container"));
+	this.links = [
+		'https://l-blondy.github.io/H2O/contact',
+		'https://l-blondy.github.io/weather',
+		'https://l-blondy.github.io/Tina-Ponticelli'
+	];
 	this.src = [
+		[ "H2O-desktop-1", "H2O-desktop-2", "H2O-desktop-3" ],
 		[ "weather-desktop-1", "weather-desktop-2", "weather-desktop-3" ],
-		[ "weather-desktop-1", "weather-desktop-2", "weather-desktop-3" ],
-		[ "weather-desktop-1", "weather-desktop-2", "weather-desktop-3" ]
+		[ "tina-desktop-1", "tina-desktop-2", "tina-desktop-3" ]
 	];
 	this.images = "";
 }
 Images.prototype.load = function () {
 	this.containers.forEach((container, i) => {
 
+		const link = this.links[ i ];
+		console.log(link);
+
 		const slides = this.src[ i ].reduce((r, c) => {
-			const realSrc = [ c + "_400w.jpg", c + "_700w.jpg", c + "_1200w.jpg" ].map(src => this.sources[ src ]);
+			const realSrc = [ c + "_450w.jpg", c + "_800w.jpg", c + "_1200w.jpg" ].map(src => this.sources[ src ]);
 			return [ ...r, ...realSrc ];
 		}, []);
 
 		if ("IntersectionObserver" in window && "Promise" in window)
 			container.innerHTML = `
-				<div class="app-slider">
+				<a class="app-slider" href="${link }" target="_blank" rel="noopener noreferrer">
 					<div class="app-image active img1">
-						<img class="central" data-src="${ slides[ 2 ] }" data-srcset="${ slides[ 0 ] } 400w,${ slides[ 1 ] } 700w, ${ slides[ 2 ] } 1200w" alt="weather-app-pic" />
+						<img class="central" data-src="${ slides[ 2 ] }" data-srcset="${ slides[ 0 ] } 450w,${ slides[ 1 ] } 800w, ${ slides[ 2 ] } 1200w" alt="weather-app-pic" />
 					</div>
 					<div class="app-image img2" >
-						<img class="right" data-src="${ slides[ 5 ] }" data-srcset="${ slides[ 3 ] } 400w,${ slides[ 4 ] } 700w, ${ slides[ 5 ] } 1200w"  alt="weather-app-pic" />
+						<img class="right" data-src="${ slides[ 5 ] }" data-srcset="${ slides[ 3 ] } 450w,${ slides[ 4 ] } 800w, ${ slides[ 5 ] } 1200w"  alt="weather-app-pic" />
 					</div>
 					<div class="app-image img3">
-						<img class="left" data-src="${ slides[ 8 ] }" data-srcset="${ slides[ 6 ] } 400w,${ slides[ 7 ] } 700w, ${ slides[ 8 ] } 1200w"  alt="weather-app-pic" />
+						<img class="left" data-src="${ slides[ 8 ] }" data-srcset="${ slides[ 6 ] } 450w,${ slides[ 7 ] } 800w, ${ slides[ 8 ] } 1200w"  alt="weather-app-pic" />
 					</div>
-				</div>`;
+				</a>`;
 		else {
 			container.innerHTML = `
 				<div class="app-slider">
 					<div class="app-image active img1">
-						<img class="central" src="${ slides[ 2 ] }" srcset="${ slides[ 0 ] } 400w,${ slides[ 1 ] } 700w, ${ slides[ 2 ] } 1200w" alt="weather-app-pic" />
+						<img class="central" src="${ slides[ 2 ] }" srcset="${ slides[ 0 ] } 450w,${ slides[ 1 ] } 800w, ${ slides[ 2 ] } 1200w" alt="weather-app-pic" />
 					</div>
 					<div class="app-image img2" >
-						<img class="right" src="${ slides[ 5 ] }" srcset="${ slides[ 3 ] } 400w,${ slides[ 4 ] } 700w, ${ slides[ 5 ] } 1200w"  alt="weather-app-pic" />
+						<img class="right" src="${ slides[ 5 ] }" srcset="${ slides[ 3 ] } 450w,${ slides[ 4 ] } 800w, ${ slides[ 5 ] } 1200w"  alt="weather-app-pic" />
 					</div>
 					<div class="app-image img3">
-						<img class="left" src="${ slides[ 8 ] }" srcset="${ slides[ 6 ] } 400w,${ slides[ 7 ] } 700w, ${ slides[ 8 ] } 1200w"  alt="weather-app-pic" />
+						<img class="left" src="${ slides[ 8 ] }" srcset="${ slides[ 6 ] } 450w,${ slides[ 7 ] } 800w, ${ slides[ 8 ] } 1200w"  alt="weather-app-pic" />
 					</div>
 				</div>`;
 		}

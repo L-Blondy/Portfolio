@@ -24,7 +24,10 @@ fix_HashNav();
 let sources = getMediaSources(require("./src/assets/portfolio-media/*.*"));
 const videos = new Videos(sources);
 const images = new Images(sources);
-const resizeHandler = new ResizeHandler({ "video": () => videos.load(), "image": () => images.load() });
+const resizeHandler = new ResizeHandler({
+	"video": () => videos.load(),
+	"image": () => images.load()
+});
 
 function handleResize() {
 	fix_VH();
