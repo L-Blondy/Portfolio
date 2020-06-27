@@ -385,8 +385,8 @@ cursive;
 
         .hex {
             @include flex-center;
-            height: 2.55rem;
-            width: 2.55rem;
+            height: 42px;
+            width: 42px;
             text-decoration: none;
             color: $clr-font-light;
             position: relative;
@@ -408,7 +408,6 @@ cursive;
             .label {
                 position: absolute;
                 padding: 0 0.5rem;
-                opacity: 0.5;
                 right: 100%;
                 top: 50%;
                 transform: translateY(-50%);
@@ -417,11 +416,12 @@ cursive;
                 transition: inherit;
                 text-align: end;
                 white-space: nowrap;
+                transition: opacity 500ms;
             }
 
             &:hover .label {
                 display: inline;
-                opacity: 1;
+                animation: fadeIn 300ms forwards;
             }
 
             &:hover {
