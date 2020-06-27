@@ -12,7 +12,10 @@
   "license": "ISC",
   "devDependencies": {
     "cssnano": "^4.1.10",
-    "gh-pages": "^2.2.0",
+    "gh-pages": "^2.2.0"
+  },
+  "dependencies": {
+    "lb-lazy-images": "^2.0.7",
     "lb-burger": "^1.1.0",
     "lb-onvisible": "^1.0.9",
     "lb-write": "^1.0.6",
