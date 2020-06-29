@@ -42,6 +42,11 @@ html {
     }
 }
 
+a {
+    color: inherit;
+    text-decoration-color: currentColor;
+}
+
 section {
     padding: 5rem 20vw;
 }

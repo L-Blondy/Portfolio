@@ -46,6 +46,22 @@ $clr-tooltip: #005568;
     }
 }
 
+.jquery {
+    background-image: url(../assets/icons/jquery.svg);
+
+    &::after {
+        content: "JQuery";
+    }
+}
+
+.sass {
+    background-image: url(../assets/icons/sass.svg);
+
+    &::after {
+        content: "SASS";
+    }
+}
+
 .styled-components {
     background-image: url(../assets/icons/styled-components.png);
 

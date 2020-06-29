@@ -4,14 +4,14 @@ export function Images(sources) {
 	this.sources = sources;
 	this.containers = [].slice.call(document.querySelectorAll(".app-media-container"));
 	this.links = [
-		'https://l-blondy.github.io/H2O/contact',
+		'https://l-blondy.github.io/H2O/',
+		'https://l-blondy.github.io/Tina-Ponticelli',
 		'https://l-blondy.github.io/weather',
-		'https://l-blondy.github.io/Tina-Ponticelli'
 	];
 	this.src = [
 		[ "H2O-desktop-1", "H2O-desktop-2", "H2O-desktop-3" ],
+		[ "tina-desktop-1", "tina-desktop-2", "tina-desktop-3" ],
 		[ "weather-desktop-1", "weather-desktop-2", "weather-desktop-3" ],
-		[ "tina-desktop-1", "tina-desktop-2", "tina-desktop-3" ]
 	];
 	this.images = "";
 }
@@ -19,7 +19,6 @@ Images.prototype.load = function () {
 	this.containers.forEach((container, i) => {
 
 		const link = this.links[ i ];
-		console.log(link);
 
 		const slides = this.src[ i ].reduce((r, c) => {
 			const realSrc = [ c + "_450w.jpg", c + "_800w.jpg", c + "_1200w.jpg" ].map(src => this.sources[ src ]);

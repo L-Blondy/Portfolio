@@ -5,13 +5,13 @@ export function Videos(sources) {
 	this.containers = [].slice.call(document.querySelectorAll(".app-media-container"));
 	this.tablet_src = [
 		"H2O-tablet.mp4",
+		"tina-tablet.mp4",
 		"weather-tablet.mp4",
-		"tina-tablet.mp4"
 	];
 	this.phone_src = [
 		"H2O-phone.mp4",
+		"tina-phone.mp4",
 		"weather-phone.mp4",
-		"tina-phone.mp4"
 	];
 	this.tablets = "";
 	this.phones = "";

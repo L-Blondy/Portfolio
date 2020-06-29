@@ -91,8 +91,9 @@ section.portfolio {
 
         &__description {
             width: 100%;
-            font-size: 1.15em;
+            font-size: 1.1em;
             padding-bottom: 1.1em;
+            line-height: 1.5em;
         }
 
         &__technologies {
@@ -278,6 +279,7 @@ section.portfolio {
 
             &__description {
                 text-align: justify;
+                line-height: 1.5em;
             }
 
             &__technologies .svg-icon {
@@ -299,6 +301,10 @@ section.portfolio {
     section.portfolio {
         padding-left: 25%;
         padding-right: 25%;
+    }
+
+    .app-intro__description {
+        font-size: 1.15em;
     }
 }
 
