@@ -1,6 +1,6 @@
 @import "./_variables.scss";
 
-$form-font-size: 1.3em;
+$form-font-size: 1.2em;
 $clr-placeholder: #96A3A2;
 
 .contact {
@@ -219,7 +219,7 @@ $clr-placeholder: #96A3A2;
         }
 
         &__form {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             width: 90%;
             padding: 0;
 
@@ -258,5 +258,9 @@ $clr-placeholder: #96A3A2;
             display: block;
             line-height: 1.5em;
         }
+    }
+
+    .personal-data {
+        padding-left: 0.6em !important;
     }
 }
