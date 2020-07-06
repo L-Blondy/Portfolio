@@ -37,6 +37,7 @@ $clr-tooltip: #005568;
         &::after {
             opacity: 0;
             transition: opacity 150ms;
+            pointer-events: none;
         }
 
         &:hover::before,

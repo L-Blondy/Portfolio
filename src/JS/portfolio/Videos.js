@@ -62,6 +62,7 @@ Videos.prototype.setPlayPauseObs = function () {
 
 	function playPause(entries) {
 		entries.forEach(e => {
+			if (!e.target.parentElement) return;
 			const state = e.target.parentElement.dataset.playing;
 			const tablet = e.target;
 			const phone = e.target.nextElementSibling;
